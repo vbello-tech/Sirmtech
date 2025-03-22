@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<a href="{% url 'nysc:generate_pdf' pk=order.pk %}">GENERATE PDF</a>
+
+Hello {{ order }}
+<br>
+You have made a payment for Nysc registration with us at sirmtech academiy solution.
+This are the list of services you have payed for:
+<br>
+Capturing : {{ order.capturing }}
+<br>
+Medical certificate: {{ order.medical }}
+<br>
+Passport : {{ order.passport }}
+<br>
+The total amount you have payed is {{ order.get_amount }}.
+
+Your slot number is {{ order.slot }}
+
+
+</body>
+</html>
