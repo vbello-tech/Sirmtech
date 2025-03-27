@@ -6624,3 +6624,2227 @@ django.server INFO 2025-03-10 20:43:48,005 basehttp 50237 13028671488 "GET /admi
 django.server INFO 2025-03-10 20:43:48,005 basehttp 50237 13028671488 "GET /admin/nysc/nysc/ HTTP/1.1" 200 11362
 django.server INFO 2025-03-10 20:43:48,506 basehttp 50237 13028671488 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
 django.server INFO 2025-03-10 20:43:48,506 basehttp 50237 13028671488 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+django.utils.autoreload INFO 2025-03-22 15:17:45,107 autoreload 2475 8605676032 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-22 15:17:45,107 autoreload 2475 8605676032 Watching for file changes with StatReloader
+django.server INFO 2025-03-22 15:17:48,788 basehttp 2475 12965076992 "GET / HTTP/1.1" 200 2794
+django.server INFO 2025-03-22 15:17:48,788 basehttp 2475 12965076992 "GET / HTTP/1.1" 200 2794
+django.server INFO 2025-03-22 15:17:57,960 basehttp 2475 12981866496 "GET / HTTP/1.1" 200 2794
+django.server INFO 2025-03-22 15:17:57,960 basehttp 2475 12981866496 "GET / HTTP/1.1" 200 2794
+django.request WARNING 2025-03-22 15:17:59,447 log 2475 12998656000 Not Found: /favicon.ico
+django.request WARNING 2025-03-22 15:17:59,447 log 2475 12998656000 Not Found: /favicon.ico
+django.server WARNING 2025-03-22 15:17:59,448 basehttp 2475 12998656000 "GET /favicon.ico HTTP/1.1" 404 3570
+django.server WARNING 2025-03-22 15:17:59,448 basehttp 2475 12998656000 "GET /favicon.ico HTTP/1.1" 404 3570
+django.server INFO 2025-03-22 15:18:44,520 basehttp 2475 13015445504 "GET / HTTP/1.1" 200 2867
+django.server INFO 2025-03-22 15:18:44,520 basehttp 2475 13015445504 "GET / HTTP/1.1" 200 2867
+django.server INFO 2025-03-22 15:18:46,892 basehttp 2475 13015445504 "GET / HTTP/1.1" 200 2867
+django.server INFO 2025-03-22 15:18:46,892 basehttp 2475 13015445504 "GET / HTTP/1.1" 200 2867
+django.server INFO 2025-03-22 15:18:47,995 basehttp 2475 13015445504 "GET / HTTP/1.1" 200 2867
+django.server INFO 2025-03-22 15:18:47,995 basehttp 2475 13015445504 "GET / HTTP/1.1" 200 2867
+django.server INFO 2025-03-25 00:04:17,956 basehttp 2475 12981866496 "GET / HTTP/1.1" 200 2867
+django.server INFO 2025-03-25 00:04:17,956 basehttp 2475 12981866496 "GET / HTTP/1.1" 200 2867
+django.server INFO 2025-03-25 21:13:40,360 basehttp 2475 12998656000 "GET / HTTP/1.1" 200 2867
+django.server INFO 2025-03-25 21:13:40,360 basehttp 2475 12998656000 "GET / HTTP/1.1" 200 2867
+django.server INFO 2025-03-25 21:15:09,142 basehttp 2475 12981866496 "GET / HTTP/1.1" 200 2867
+django.server INFO 2025-03-25 21:15:09,142 basehttp 2475 12981866496 "GET / HTTP/1.1" 200 2867
+django.server INFO 2025-03-25 21:15:10,882 basehttp 2475 12981866496 "GET / HTTP/1.1" 200 3802
+django.server INFO 2025-03-25 21:15:10,882 basehttp 2475 12981866496 "GET / HTTP/1.1" 200 3802
+django.server INFO 2025-03-25 21:15:17,764 basehttp 2475 12965076992 "GET / HTTP/1.1" 200 3802
+django.server INFO 2025-03-25 21:15:17,764 basehttp 2475 12965076992 "GET / HTTP/1.1" 200 3802
+django.server INFO 2025-03-25 21:17:08,651 basehttp 2475 12998656000 "GET / HTTP/1.1" 200 2828
+django.server INFO 2025-03-25 21:17:08,651 basehttp 2475 12998656000 "GET / HTTP/1.1" 200 2828
+django.server INFO 2025-03-25 21:17:11,087 basehttp 2475 12998656000 "GET / HTTP/1.1" 200 2828
+django.server INFO 2025-03-25 21:17:11,087 basehttp 2475 12998656000 "GET / HTTP/1.1" 200 2828
+django.request ERROR 2025-03-25 21:17:49,454 log 2475 12965076992 Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'user'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 29, in get
+    return render(request, 'home.html', context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'user' is not a registered namespace
+django.request ERROR 2025-03-25 21:17:49,454 log 2475 12965076992 Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'user'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 29, in get
+    return render(request, 'home.html', context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'user' is not a registered namespace
+django.server ERROR 2025-03-25 21:17:49,478 basehttp 2475 12965076992 "GET / HTTP/1.1" 500 159583
+django.server ERROR 2025-03-25 21:17:49,478 basehttp 2475 12965076992 "GET / HTTP/1.1" 500 159583
+django.server INFO 2025-03-25 21:18:24,715 basehttp 2475 13015445504 "GET / HTTP/1.1" 200 4851
+django.server INFO 2025-03-25 21:18:24,715 basehttp 2475 13015445504 "GET / HTTP/1.1" 200 4851
+django.server INFO 2025-03-25 21:24:00,398 basehttp 2475 13032235008 "GET / HTTP/1.1" 200 16503
+django.server INFO 2025-03-25 21:24:00,398 basehttp 2475 13032235008 "GET / HTTP/1.1" 200 16503
+django.server INFO 2025-03-25 21:24:03,508 basehttp 2475 12965076992 "GET / HTTP/1.1" 200 16503
+django.server INFO 2025-03-25 21:24:03,508 basehttp 2475 12965076992 "GET / HTTP/1.1" 200 16503
+django.server INFO 2025-03-25 21:24:16,028 basehttp 2475 13015445504 "GET / HTTP/1.1" 200 16467
+django.server INFO 2025-03-25 21:24:16,028 basehttp 2475 13015445504 "GET / HTTP/1.1" 200 16467
+django.server INFO 2025-03-25 21:24:34,419 basehttp 2475 12965076992 "GET / HTTP/1.1" 200 4850
+django.server INFO 2025-03-25 21:24:34,419 basehttp 2475 12965076992 "GET / HTTP/1.1" 200 4850
+django.server INFO 2025-03-25 21:27:34,529 basehttp 2475 13049024512 "GET / HTTP/1.1" 200 1558
+django.server INFO 2025-03-25 21:27:34,529 basehttp 2475 13049024512 "GET / HTTP/1.1" 200 1558
+django.server INFO 2025-03-25 21:31:06,636 basehttp 2475 13065814016 "GET / HTTP/1.1" 200 1729
+django.server INFO 2025-03-25 21:31:06,636 basehttp 2475 13065814016 "GET / HTTP/1.1" 200 1729
+django.server INFO 2025-03-25 21:31:08,035 basehttp 2475 13065814016 "GET / HTTP/1.1" 200 1729
+django.server INFO 2025-03-25 21:31:08,035 basehttp 2475 13065814016 "GET / HTTP/1.1" 200 1729
+django.server INFO 2025-03-25 21:31:08,723 basehttp 2475 13082603520 "GET / HTTP/1.1" 200 1729
+django.server INFO 2025-03-25 21:31:08,723 basehttp 2475 13082603520 "GET / HTTP/1.1" 200 1729
+django.server INFO 2025-03-25 21:31:09,767 basehttp 2475 13082603520 "GET / HTTP/1.1" 200 1729
+django.server INFO 2025-03-25 21:31:09,767 basehttp 2475 13082603520 "GET / HTTP/1.1" 200 1729
+django.server INFO 2025-03-25 21:31:10,150 basehttp 2475 13082603520 "GET / HTTP/1.1" 200 1729
+django.server INFO 2025-03-25 21:31:10,150 basehttp 2475 13082603520 "GET / HTTP/1.1" 200 1729
+django.server INFO 2025-03-25 21:32:04,071 basehttp 2475 13049024512 "GET / HTTP/1.1" 200 1697
+django.server INFO 2025-03-25 21:32:04,071 basehttp 2475 13049024512 "GET / HTTP/1.1" 200 1697
+django.server INFO 2025-03-25 21:33:31,726 basehttp 2475 13065814016 "GET / HTTP/1.1" 200 1692
+django.server INFO 2025-03-25 21:33:31,726 basehttp 2475 13065814016 "GET / HTTP/1.1" 200 1692
+django.server INFO 2025-03-25 21:33:32,106 basehttp 2475 13065814016 "GET / HTTP/1.1" 200 1692
+django.server INFO 2025-03-25 21:33:32,106 basehttp 2475 13065814016 "GET / HTTP/1.1" 200 1692
+django.server INFO 2025-03-25 21:34:06,186 basehttp 2475 13082603520 "GET / HTTP/1.1" 200 6341
+django.server INFO 2025-03-25 21:34:06,186 basehttp 2475 13082603520 "GET / HTTP/1.1" 200 6341
+django.utils.autoreload INFO 2025-03-25 21:39:09,505 autoreload 2475 8605676032 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/forms.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 21:39:09,505 autoreload 2475 8605676032 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/forms.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 21:39:10,485 autoreload 12965 8592388608 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 21:39:10,485 autoreload 12965 8592388608 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 21:39:13,481 autoreload 12965 8592388608 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/forms.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 21:39:13,481 autoreload 12965 8592388608 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/forms.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 21:39:14,638 autoreload 12976 8670503424 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 21:39:14,638 autoreload 12976 8670503424 Watching for file changes with StatReloader
+django.server INFO 2025-03-25 21:39:18,889 basehttp 12976 13095030784 "GET / HTTP/1.1" 200 6494
+django.server INFO 2025-03-25 21:39:18,889 basehttp 12976 13095030784 "GET / HTTP/1.1" 200 6494
+django.server INFO 2025-03-25 21:39:20,919 basehttp 12976 13095030784 "GET / HTTP/1.1" 200 6494
+django.server INFO 2025-03-25 21:39:20,919 basehttp 12976 13095030784 "GET / HTTP/1.1" 200 6494
+django.server INFO 2025-03-25 21:39:55,368 basehttp 12976 13111820288 "GET / HTTP/1.1" 200 6497
+django.server INFO 2025-03-25 21:39:55,368 basehttp 12976 13111820288 "GET / HTTP/1.1" 200 6497
+django.server INFO 2025-03-25 21:41:05,396 basehttp 12976 13128609792 "GET / HTTP/1.1" 200 6474
+django.server INFO 2025-03-25 21:41:05,396 basehttp 12976 13128609792 "GET / HTTP/1.1" 200 6474
+django.server INFO 2025-03-25 21:41:44,176 basehttp 12976 13145399296 "GET / HTTP/1.1" 200 6511
+django.server INFO 2025-03-25 21:41:44,176 basehttp 12976 13145399296 "GET / HTTP/1.1" 200 6511
+django.server INFO 2025-03-25 21:43:16,306 basehttp 12976 13095030784 "GET / HTTP/1.1" 200 6945
+django.server INFO 2025-03-25 21:43:16,306 basehttp 12976 13095030784 "GET / HTTP/1.1" 200 6945
+django.server INFO 2025-03-25 21:44:48,680 basehttp 12976 13111820288 "GET / HTTP/1.1" 200 7671
+django.server INFO 2025-03-25 21:44:48,680 basehttp 12976 13111820288 "GET / HTTP/1.1" 200 7671
+django.server INFO 2025-03-25 21:45:11,547 basehttp 12976 13128609792 "GET / HTTP/1.1" 200 5578
+django.server INFO 2025-03-25 21:45:11,547 basehttp 12976 13128609792 "GET / HTTP/1.1" 200 5578
+django.utils.autoreload INFO 2025-03-25 21:46:56,499 autoreload 12976 8670503424 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/forms.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 21:46:56,499 autoreload 12976 8670503424 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/forms.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 21:46:57,316 autoreload 13208 8630026752 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 21:46:57,316 autoreload 13208 8630026752 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 21:47:13,641 autoreload 13208 8630026752 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/forms.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 21:47:13,641 autoreload 13208 8630026752 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/forms.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 21:47:14,709 autoreload 13227 8638521856 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 21:47:14,709 autoreload 13227 8638521856 Watching for file changes with StatReloader
+django.server INFO 2025-03-25 21:47:18,122 basehttp 13227 13030096896 "GET / HTTP/1.1" 200 5790
+django.server INFO 2025-03-25 21:47:18,122 basehttp 13227 13030096896 "GET / HTTP/1.1" 200 5790
+django.utils.autoreload INFO 2025-03-25 21:47:54,159 autoreload 13227 8638521856 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/forms.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 21:47:54,159 autoreload 13227 8638521856 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/forms.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 21:47:55,170 autoreload 13257 8638358016 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 21:47:55,170 autoreload 13257 8638358016 Watching for file changes with StatReloader
+django.server INFO 2025-03-25 21:47:57,387 basehttp 13257 13029449728 "GET / HTTP/1.1" 200 5792
+django.server INFO 2025-03-25 21:47:57,387 basehttp 13257 13029449728 "GET / HTTP/1.1" 200 5792
+django.server INFO 2025-03-25 21:47:58,506 basehttp 13257 13029449728 "GET / HTTP/1.1" 200 5792
+django.server INFO 2025-03-25 21:47:58,506 basehttp 13257 13029449728 "GET / HTTP/1.1" 200 5792
+django.server INFO 2025-03-25 21:47:59,613 basehttp 13257 13029449728 "GET / HTTP/1.1" 200 5792
+django.server INFO 2025-03-25 21:47:59,613 basehttp 13257 13029449728 "GET / HTTP/1.1" 200 5792
+django.server INFO 2025-03-25 21:47:59,899 basehttp 13257 13029449728 "GET / HTTP/1.1" 200 5792
+django.server INFO 2025-03-25 21:47:59,899 basehttp 13257 13029449728 "GET / HTTP/1.1" 200 5792
+django.server INFO 2025-03-25 21:48:00,220 basehttp 13257 13029449728 "GET / HTTP/1.1" 200 5792
+django.server INFO 2025-03-25 21:48:00,220 basehttp 13257 13029449728 "GET / HTTP/1.1" 200 5792
+django.server INFO 2025-03-25 21:48:00,528 basehttp 13257 13029449728 "GET / HTTP/1.1" 200 5792
+django.server INFO 2025-03-25 21:48:00,528 basehttp 13257 13029449728 "GET / HTTP/1.1" 200 5792
+django.utils.autoreload INFO 2025-03-25 21:48:24,975 autoreload 13257 8638358016 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/forms.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 21:48:24,975 autoreload 13257 8638358016 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/forms.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 21:48:25,779 autoreload 13297 8602579456 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 21:48:25,779 autoreload 13297 8602579456 Watching for file changes with StatReloader
+django.server INFO 2025-03-25 21:48:28,265 basehttp 13297 12959707136 "GET / HTTP/1.1" 200 5793
+django.server INFO 2025-03-25 21:48:28,265 basehttp 13297 12959707136 "GET / HTTP/1.1" 200 5793
+django.server INFO 2025-03-25 21:48:29,257 basehttp 13297 12959707136 "GET / HTTP/1.1" 200 5793
+django.server INFO 2025-03-25 21:48:29,257 basehttp 13297 12959707136 "GET / HTTP/1.1" 200 5793
+django.utils.autoreload INFO 2025-03-25 21:48:34,023 autoreload 13297 8602579456 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/forms.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 21:48:34,023 autoreload 13297 8602579456 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/forms.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 21:48:34,629 autoreload 13307 8632152576 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 21:48:34,629 autoreload 13307 8632152576 Watching for file changes with StatReloader
+django.server INFO 2025-03-25 21:48:37,783 basehttp 13307 13019402240 "GET / HTTP/1.1" 200 5793
+django.server INFO 2025-03-25 21:48:37,783 basehttp 13307 13019402240 "GET / HTTP/1.1" 200 5793
+django.server INFO 2025-03-25 21:48:39,020 basehttp 13307 13019402240 "GET / HTTP/1.1" 200 5793
+django.server INFO 2025-03-25 21:48:39,020 basehttp 13307 13019402240 "GET / HTTP/1.1" 200 5793
+django.server INFO 2025-03-25 21:48:40,032 basehttp 13307 13019402240 "GET / HTTP/1.1" 200 5793
+django.server INFO 2025-03-25 21:48:40,032 basehttp 13307 13019402240 "GET / HTTP/1.1" 200 5793
+django.server INFO 2025-03-25 21:48:40,322 basehttp 13307 13019402240 "GET / HTTP/1.1" 200 5793
+django.server INFO 2025-03-25 21:48:40,322 basehttp 13307 13019402240 "GET / HTTP/1.1" 200 5793
+django.server INFO 2025-03-25 21:48:40,565 basehttp 13307 13019402240 "GET / HTTP/1.1" 200 5793
+django.server INFO 2025-03-25 21:48:40,565 basehttp 13307 13019402240 "GET / HTTP/1.1" 200 5793
+django.server INFO 2025-03-25 21:49:14,230 basehttp 13307 13036191744 "GET / HTTP/1.1" 200 5793
+django.server INFO 2025-03-25 21:49:14,230 basehttp 13307 13036191744 "GET / HTTP/1.1" 200 5793
+django.server INFO 2025-03-25 21:49:15,064 basehttp 13307 13036191744 "GET / HTTP/1.1" 200 5793
+django.server INFO 2025-03-25 21:49:15,064 basehttp 13307 13036191744 "GET / HTTP/1.1" 200 5793
+django.server INFO 2025-03-25 21:49:15,306 basehttp 13307 13036191744 "GET / HTTP/1.1" 200 5793
+django.server INFO 2025-03-25 21:49:15,306 basehttp 13307 13036191744 "GET / HTTP/1.1" 200 5793
+django.utils.autoreload INFO 2025-03-25 21:49:53,830 autoreload 13307 8632152576 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/forms.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 21:49:53,830 autoreload 13307 8632152576 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/forms.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 21:49:54,804 autoreload 13359 8607560192 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 21:49:54,804 autoreload 13359 8607560192 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 21:50:08,003 autoreload 13359 8607560192 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/forms.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 21:50:08,003 autoreload 13359 8607560192 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/forms.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 21:50:08,590 autoreload 13372 8662794752 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 21:50:08,590 autoreload 13372 8662794752 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 21:50:21,796 autoreload 13372 8662794752 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/forms.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 21:50:21,796 autoreload 13372 8662794752 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/forms.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 21:50:22,475 autoreload 13383 8672453120 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 21:50:22,475 autoreload 13383 8672453120 Watching for file changes with StatReloader
+django.server INFO 2025-03-25 21:50:25,911 basehttp 13383 13097897984 "GET / HTTP/1.1" 200 5890
+django.server INFO 2025-03-25 21:50:25,911 basehttp 13383 13097897984 "GET / HTTP/1.1" 200 5890
+django.utils.autoreload INFO 2025-03-25 21:52:20,183 autoreload 13383 8672453120 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/forms.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 21:52:20,183 autoreload 13383 8672453120 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/forms.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 21:52:20,901 autoreload 13453 8638956032 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 21:52:20,901 autoreload 13453 8638956032 Watching for file changes with StatReloader
+django.server INFO 2025-03-25 21:52:23,011 basehttp 13453 13032161280 "GET / HTTP/1.1" 200 5899
+django.server INFO 2025-03-25 21:52:23,011 basehttp 13453 13032161280 "GET / HTTP/1.1" 200 5899
+django.utils.autoreload INFO 2025-03-25 21:56:00,611 autoreload 13453 8638956032 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/models.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 21:56:00,611 autoreload 13453 8638956032 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/models.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 21:56:01,694 autoreload 13554 8641794560 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 21:56:01,694 autoreload 13554 8641794560 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 21:56:33,267 autoreload 13554 8641794560 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/models.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 21:56:33,267 autoreload 13554 8641794560 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/models.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 21:56:33,786 autoreload 13580 8627241472 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 21:56:33,786 autoreload 13580 8627241472 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 21:59:55,696 autoreload 13729 8636215808 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 21:59:55,696 autoreload 13729 8636215808 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 22:00:58,505 autoreload 13729 8636215808 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/models.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 22:00:58,505 autoreload 13729 8636215808 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/models.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 22:00:59,266 autoreload 13779 8630428160 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 22:00:59,266 autoreload 13779 8630428160 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 22:01:24,779 autoreload 13779 8630428160 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/models.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 22:01:24,779 autoreload 13779 8630428160 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/models.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 22:01:25,428 autoreload 13818 8635859456 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 22:01:25,428 autoreload 13818 8635859456 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 22:01:52,798 autoreload 13818 8635859456 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/models.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 22:01:52,798 autoreload 13818 8635859456 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/models.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 22:01:53,334 autoreload 13843 8678056448 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 22:01:53,334 autoreload 13843 8678056448 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 22:03:30,588 autoreload 13843 8678056448 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/migrations/0001_initial.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 22:03:30,588 autoreload 13843 8678056448 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/migrations/0001_initial.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 22:03:30,996 autoreload 13899 8632640000 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 22:03:30,996 autoreload 13899 8632640000 Watching for file changes with StatReloader
+django.server INFO 2025-03-25 22:03:42,120 basehttp 13899 13019774976 "GET / HTTP/1.1" 200 6235
+django.server INFO 2025-03-25 22:03:42,120 basehttp 13899 13019774976 "GET / HTTP/1.1" 200 6235
+django.utils.autoreload INFO 2025-03-25 22:04:51,991 autoreload 13899 8632640000 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/models.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 22:04:51,991 autoreload 13899 8632640000 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/models.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 22:04:53,281 autoreload 13937 8660939264 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 22:04:53,281 autoreload 13937 8660939264 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 22:05:10,724 autoreload 13937 8660939264 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/models.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 22:05:10,724 autoreload 13937 8660939264 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/models.py changed, reloading.
+django.utils.autoreload INFO 2025-03-25 22:05:11,375 autoreload 14003 8639943168 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-25 22:05:11,375 autoreload 14003 8639943168 Watching for file changes with StatReloader
+django.server INFO 2025-03-25 22:05:41,126 basehttp 14003 13032869888 "GET / HTTP/1.1" 200 6508
+django.server INFO 2025-03-25 22:05:41,126 basehttp 14003 13032869888 "GET / HTTP/1.1" 200 6508
+django.server INFO 2025-03-25 22:06:44,649 basehttp 14003 13032869888 "GET / HTTP/1.1" 200 6508
+django.server INFO 2025-03-25 22:06:44,649 basehttp 14003 13032869888 "GET / HTTP/1.1" 200 6508
+django.request ERROR 2025-03-25 22:07:05,886 log 14003 13049659392 Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table nysc_nysc has no column named medical_certificate
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 35, in post
+    order = form.save()
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/forms/models.py", line 554, in save
+    self.instance.save()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: table nysc_nysc has no column named medical_certificate
+django.request ERROR 2025-03-25 22:07:05,886 log 14003 13049659392 Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table nysc_nysc has no column named medical_certificate
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 35, in post
+    order = form.save()
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/forms/models.py", line 554, in save
+    self.instance.save()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: table nysc_nysc has no column named medical_certificate
+django.server ERROR 2025-03-25 22:07:05,897 basehttp 14003 13049659392 "POST / HTTP/1.1" 500 161844
+django.server ERROR 2025-03-25 22:07:05,897 basehttp 14003 13049659392 "POST / HTTP/1.1" 500 161844
+django.request ERROR 2025-03-25 22:08:32,099 log 14003 13032869888 Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table nysc_nysc has no column named medical_certificate
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 35, in post
+    order = form.save()
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/forms/models.py", line 554, in save
+    self.instance.save()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: table nysc_nysc has no column named medical_certificate
+django.request ERROR 2025-03-25 22:08:32,099 log 14003 13032869888 Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table nysc_nysc has no column named medical_certificate
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 35, in post
+    order = form.save()
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/forms/models.py", line 554, in save
+    self.instance.save()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: table nysc_nysc has no column named medical_certificate
+django.server ERROR 2025-03-25 22:08:32,104 basehttp 14003 13032869888 "POST / HTTP/1.1" 500 161844
+django.server ERROR 2025-03-25 22:08:32,104 basehttp 14003 13032869888 "POST / HTTP/1.1" 500 161844
+django.request ERROR 2025-03-25 22:09:37,266 log 14003 13049659392 Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table nysc_nysc has no column named medical_certificate
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 35, in post
+    order = form.save()
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/forms/models.py", line 554, in save
+    self.instance.save()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: table nysc_nysc has no column named medical_certificate
+django.request ERROR 2025-03-25 22:09:37,266 log 14003 13049659392 Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table nysc_nysc has no column named medical_certificate
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 35, in post
+    order = form.save()
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/forms/models.py", line 554, in save
+    self.instance.save()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: table nysc_nysc has no column named medical_certificate
+django.server ERROR 2025-03-25 22:09:37,275 basehttp 14003 13049659392 "POST / HTTP/1.1" 500 161844
+django.server ERROR 2025-03-25 22:09:37,275 basehttp 14003 13049659392 "POST / HTTP/1.1" 500 161844
+django.server INFO 2025-03-25 22:11:20,463 basehttp 14003 13066448896 "GET / HTTP/1.1" 200 6508
+django.server INFO 2025-03-25 22:11:20,463 basehttp 14003 13066448896 "GET / HTTP/1.1" 200 6508
+django.request ERROR 2025-03-25 22:11:40,102 log 14003 13083238400 Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table nysc_nysc has no column named medical_certificate
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 35, in post
+    order = form.save()
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/forms/models.py", line 554, in save
+    self.instance.save()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: table nysc_nysc has no column named medical_certificate
+django.request ERROR 2025-03-25 22:11:40,102 log 14003 13083238400 Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table nysc_nysc has no column named medical_certificate
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 35, in post
+    order = form.save()
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/forms/models.py", line 554, in save
+    self.instance.save()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: table nysc_nysc has no column named medical_certificate
+django.server ERROR 2025-03-25 22:11:40,112 basehttp 14003 13083238400 "POST / HTTP/1.1" 500 161844
+django.server ERROR 2025-03-25 22:11:40,112 basehttp 14003 13083238400 "POST / HTTP/1.1" 500 161844
+django.utils.autoreload INFO 2025-03-26 09:56:19,295 autoreload 3470 8606020096 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-26 09:56:19,295 autoreload 3470 8606020096 Watching for file changes with StatReloader
+django.server INFO 2025-03-26 09:56:22,931 basehttp 3470 12964737024 "GET / HTTP/1.1" 200 6508
+django.server INFO 2025-03-26 09:56:22,931 basehttp 3470 12964737024 "GET / HTTP/1.1" 200 6508
+django.request WARNING 2025-03-26 09:56:38,204 log 3470 12964737024 Not Found: /favicon.ico
+django.request WARNING 2025-03-26 09:56:38,204 log 3470 12964737024 Not Found: /favicon.ico
+django.server WARNING 2025-03-26 09:56:38,205 basehttp 3470 12964737024 "GET /favicon.ico HTTP/1.1" 404 3570
+django.server WARNING 2025-03-26 09:56:38,205 basehttp 3470 12964737024 "GET /favicon.ico HTTP/1.1" 404 3570
+django.request ERROR 2025-03-26 09:57:26,487 log 3470 12981526528 Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table nysc_nysc has no column named medical_certificate
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 35, in post
+    order = form.save()
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/forms/models.py", line 554, in save
+    self.instance.save()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: table nysc_nysc has no column named medical_certificate
+django.request ERROR 2025-03-26 09:57:26,487 log 3470 12981526528 Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table nysc_nysc has no column named medical_certificate
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 35, in post
+    order = form.save()
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/forms/models.py", line 554, in save
+    self.instance.save()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: table nysc_nysc has no column named medical_certificate
+django.server ERROR 2025-03-26 09:57:26,495 basehttp 3470 12981526528 "POST / HTTP/1.1" 500 162595
+django.server ERROR 2025-03-26 09:57:26,495 basehttp 3470 12981526528 "POST / HTTP/1.1" 500 162595
+django.utils.autoreload INFO 2025-03-26 10:40:18,424 autoreload 3470 8606020096 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/migrations/0001_initial.py changed, reloading.
+django.utils.autoreload INFO 2025-03-26 10:40:18,424 autoreload 3470 8606020096 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/migrations/0001_initial.py changed, reloading.
+django.utils.autoreload INFO 2025-03-26 10:40:19,057 autoreload 4005 8661201408 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-26 10:40:19,057 autoreload 4005 8661201408 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-26 10:40:21,733 autoreload 4005 8661201408 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/migrations/0001_initial.py changed, reloading.
+django.utils.autoreload INFO 2025-03-26 10:40:21,733 autoreload 4005 8661201408 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/migrations/0001_initial.py changed, reloading.
+django.utils.autoreload INFO 2025-03-26 10:40:22,149 autoreload 4006 8599007744 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-26 10:40:22,149 autoreload 4006 8599007744 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-26 10:44:52,473 autoreload 4116 8669327872 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-26 10:44:52,473 autoreload 4116 8669327872 Watching for file changes with StatReloader
+django.server INFO 2025-03-26 10:46:47,646 basehttp 4116 13092339712 "GET / HTTP/1.1" 200 6508
+django.server INFO 2025-03-26 10:46:47,646 basehttp 4116 13092339712 "GET / HTTP/1.1" 200 6508
+django.server INFO 2025-03-26 10:46:57,723 basehttp 4116 13092339712 "POST / HTTP/1.1" 302 0
+django.server INFO 2025-03-26 10:46:57,723 basehttp 4116 13092339712 "POST / HTTP/1.1" 302 0
+django.request ERROR 2025-03-26 10:46:57,776 log 4116 13092339712 Internal Server Error: /payment/1/
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 45, in get
+    return render(request, 'nysc/payment.html', context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 718, in resolve
+    obj = self.var.resolve(context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 850, in resolve
+    value = self._resolve_lookup(context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 917, in _resolve_lookup
+    current = current()
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/models.py", line 51, in get_amount
+    if self.passport and self.medical:
+                         ^^^^^^^^^^^^
+AttributeError: 'Nysc' object has no attribute 'medical'
+django.request ERROR 2025-03-26 10:46:57,776 log 4116 13092339712 Internal Server Error: /payment/1/
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 45, in get
+    return render(request, 'nysc/payment.html', context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 718, in resolve
+    obj = self.var.resolve(context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 850, in resolve
+    value = self._resolve_lookup(context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 917, in _resolve_lookup
+    current = current()
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/models.py", line 51, in get_amount
+    if self.passport and self.medical:
+                         ^^^^^^^^^^^^
+AttributeError: 'Nysc' object has no attribute 'medical'
+django.server ERROR 2025-03-26 10:46:57,781 basehttp 4116 13092339712 "GET /payment/1/ HTTP/1.1" 500 161289
+django.server ERROR 2025-03-26 10:46:57,781 basehttp 4116 13092339712 "GET /payment/1/ HTTP/1.1" 500 161289
+django.request ERROR 2025-03-26 10:47:25,173 log 4116 13092339712 Internal Server Error: /payment/1/
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 45, in get
+    return render(request, 'nysc/payment.html', context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 718, in resolve
+    obj = self.var.resolve(context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 850, in resolve
+    value = self._resolve_lookup(context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 917, in _resolve_lookup
+    current = current()
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/models.py", line 51, in get_amount
+    if self.passport and self.medical:
+                         ^^^^^^^^^^^^
+AttributeError: 'Nysc' object has no attribute 'medical'
+django.request ERROR 2025-03-26 10:47:25,173 log 4116 13092339712 Internal Server Error: /payment/1/
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 45, in get
+    return render(request, 'nysc/payment.html', context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 718, in resolve
+    obj = self.var.resolve(context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 850, in resolve
+    value = self._resolve_lookup(context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 917, in _resolve_lookup
+    current = current()
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/models.py", line 51, in get_amount
+    if self.passport and self.medical:
+                         ^^^^^^^^^^^^
+AttributeError: 'Nysc' object has no attribute 'medical'
+django.server ERROR 2025-03-26 10:47:25,176 basehttp 4116 13092339712 "GET /payment/1/ HTTP/1.1" 500 161349
+django.server ERROR 2025-03-26 10:47:25,176 basehttp 4116 13092339712 "GET /payment/1/ HTTP/1.1" 500 161349
+django.utils.autoreload INFO 2025-03-26 10:48:04,092 autoreload 4116 8669327872 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/models.py changed, reloading.
+django.utils.autoreload INFO 2025-03-26 10:48:04,092 autoreload 4116 8669327872 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/models.py changed, reloading.
+django.utils.autoreload INFO 2025-03-26 10:48:04,713 autoreload 4218 8610492928 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-26 10:48:04,713 autoreload 4218 8610492928 Watching for file changes with StatReloader
+django.server INFO 2025-03-26 10:48:06,138 basehttp 4218 12972441600 "GET /payment/1/ HTTP/1.1" 200 3098
+django.server INFO 2025-03-26 10:48:06,138 basehttp 4218 12972441600 "GET /payment/1/ HTTP/1.1" 200 3098
+django.request ERROR 2025-03-26 10:50:55,717 log 4218 12972441600 Internal Server Error: /payment/1/
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 45, in get
+    return render(request, 'nysc/payment.html', context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 489, in parse
+    raise self.error(token, e)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ' if is_capturing_consent else 'False'' from ''True' if is_capturing_consent else 'False''
+django.request ERROR 2025-03-26 10:50:55,717 log 4218 12972441600 Internal Server Error: /payment/1/
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 45, in get
+    return render(request, 'nysc/payment.html', context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 489, in parse
+    raise self.error(token, e)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ' if is_capturing_consent else 'False'' from ''True' if is_capturing_consent else 'False''
+django.server ERROR 2025-03-26 10:50:55,728 basehttp 4218 12972441600 "GET /payment/1/ HTTP/1.1" 500 199608
+django.server ERROR 2025-03-26 10:50:55,728 basehttp 4218 12972441600 "GET /payment/1/ HTTP/1.1" 500 199608
+django.request ERROR 2025-03-26 10:51:52,091 log 4218 12972441600 Internal Server Error: /payment/1/
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 45, in get
+    return render(request, 'nysc/payment.html', context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 489, in parse
+    raise self.error(token, e)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ' if capturing else 'False'' from ''True' if capturing else 'False''
+django.request ERROR 2025-03-26 10:51:52,091 log 4218 12972441600 Internal Server Error: /payment/1/
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 45, in get
+    return render(request, 'nysc/payment.html', context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 489, in parse
+    raise self.error(token, e)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ' if capturing else 'False'' from ''True' if capturing else 'False''
+django.server ERROR 2025-03-26 10:51:52,096 basehttp 4218 12972441600 "GET /payment/1/ HTTP/1.1" 500 199375
+django.server ERROR 2025-03-26 10:51:52,096 basehttp 4218 12972441600 "GET /payment/1/ HTTP/1.1" 500 199375
+django.request ERROR 2025-03-26 10:53:25,531 log 4218 12972441600 Internal Server Error: /payment/1/
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 45, in get
+    return render(request, 'nysc/payment.html', context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 489, in parse
+    raise self.error(token, e)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ' if capturing else 'False'' from ''True' if capturing else 'False''
+django.request ERROR 2025-03-26 10:53:25,531 log 4218 12972441600 Internal Server Error: /payment/1/
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 45, in get
+    return render(request, 'nysc/payment.html', context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 489, in parse
+    raise self.error(token, e)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ' if capturing else 'False'' from ''True' if capturing else 'False''
+django.server ERROR 2025-03-26 10:53:25,537 basehttp 4218 12972441600 "GET /payment/1/ HTTP/1.1" 500 200445
+django.server ERROR 2025-03-26 10:53:25,537 basehttp 4218 12972441600 "GET /payment/1/ HTTP/1.1" 500 200445
+django.server INFO 2025-03-26 10:57:13,502 basehttp 4218 12972441600 "GET /payment/1/ HTTP/1.1" 200 4513
+django.server INFO 2025-03-26 10:57:13,502 basehttp 4218 12972441600 "GET /payment/1/ HTTP/1.1" 200 4513
+django.server INFO 2025-03-26 11:00:16,187 basehttp 4218 12989231104 "GET /payment/1/ HTTP/1.1" 200 5749
+django.server INFO 2025-03-26 11:00:16,187 basehttp 4218 12989231104 "GET /payment/1/ HTTP/1.1" 200 5749
+django.server INFO 2025-03-26 11:00:50,953 basehttp 4218 13006020608 "GET / HTTP/1.1" 200 6508
+django.server INFO 2025-03-26 11:00:50,953 basehttp 4218 13006020608 "GET / HTTP/1.1" 200 6508
+django.server INFO 2025-03-26 11:00:55,127 basehttp 4218 13022810112 "GET / HTTP/1.1" 200 6508
+django.server INFO 2025-03-26 11:00:55,127 basehttp 4218 13022810112 "GET / HTTP/1.1" 200 6508
+django.server INFO 2025-03-26 11:01:05,526 basehttp 4218 13039599616 "POST / HTTP/1.1" 302 0
+django.server INFO 2025-03-26 11:01:05,526 basehttp 4218 13039599616 "POST / HTTP/1.1" 302 0
+django.server INFO 2025-03-26 11:01:05,535 basehttp 4218 13039599616 "GET /payment/2/ HTTP/1.1" 200 5749
+django.server INFO 2025-03-26 11:01:05,535 basehttp 4218 13039599616 "GET /payment/2/ HTTP/1.1" 200 5749
+django.server INFO 2025-03-26 11:01:16,152 basehttp 4218 12972441600 "GET / HTTP/1.1" 200 6508
+django.server INFO 2025-03-26 11:01:16,152 basehttp 4218 12972441600 "GET / HTTP/1.1" 200 6508
+django.server INFO 2025-03-26 11:01:25,128 basehttp 4218 12989231104 "POST / HTTP/1.1" 302 0
+django.server INFO 2025-03-26 11:01:25,128 basehttp 4218 12989231104 "POST / HTTP/1.1" 302 0
+django.server INFO 2025-03-26 11:01:25,152 basehttp 4218 12989231104 "GET /payment/3/ HTTP/1.1" 200 5749
+django.server INFO 2025-03-26 11:01:25,152 basehttp 4218 12989231104 "GET /payment/3/ HTTP/1.1" 200 5749
+django.server INFO 2025-03-26 22:39:26,365 basehttp 4218 13006020608 "GET /payment/3/ HTTP/1.1" 200 5749
+django.server INFO 2025-03-26 22:39:26,365 basehttp 4218 13006020608 "GET /payment/3/ HTTP/1.1" 200 5749
+django.server INFO 2025-03-26 22:40:20,245 basehttp 4218 13022810112 "GET /payment/3/ HTTP/1.1" 200 5752
+django.server INFO 2025-03-26 22:40:20,245 basehttp 4218 13022810112 "GET /payment/3/ HTTP/1.1" 200 5752
+django.server INFO 2025-03-26 22:41:06,920 basehttp 4218 13039599616 "GET /payment/verify/3/ HTTP/1.1" 302 0
+django.server INFO 2025-03-26 22:41:06,920 basehttp 4218 13039599616 "GET /payment/verify/3/ HTTP/1.1" 302 0
+django.server INFO 2025-03-26 22:41:06,925 basehttp 4218 13056389120 "GET /slot/preview/3/ HTTP/1.1" 200 483
+django.server INFO 2025-03-26 22:41:06,925 basehttp 4218 13056389120 "GET /slot/preview/3/ HTTP/1.1" 200 483
+django.server INFO 2025-03-26 22:41:06,968 basehttp 4218 13039599616 "GET /payment/verify/3/ HTTP/1.1" 302 0
+django.server INFO 2025-03-26 22:41:06,968 basehttp 4218 13039599616 "GET /payment/verify/3/ HTTP/1.1" 302 0
+django.server INFO 2025-03-26 22:41:06,974 basehttp 4218 13039599616 "GET /slot/preview/3/ HTTP/1.1" 200 483
+django.server INFO 2025-03-26 22:41:06,974 basehttp 4218 13039599616 "GET /slot/preview/3/ HTTP/1.1" 200 483
+django.request ERROR 2025-03-26 22:44:07,607 log 4218 12972441600 Internal Server Error: /slot/preview/3/
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 82, in get
+    return render(self.request, 'nysc/slot_review.html', context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'generate_pdf' not found. 'generate_pdf' is not a valid view function or pattern name.
+django.request ERROR 2025-03-26 22:44:07,607 log 4218 12972441600 Internal Server Error: /slot/preview/3/
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 82, in get
+    return render(self.request, 'nysc/slot_review.html', context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'generate_pdf' not found. 'generate_pdf' is not a valid view function or pattern name.
+django.server ERROR 2025-03-26 22:44:07,618 basehttp 4218 12972441600 "GET /slot/preview/3/ HTTP/1.1" 500 157020
+django.server ERROR 2025-03-26 22:44:07,618 basehttp 4218 12972441600 "GET /slot/preview/3/ HTTP/1.1" 500 157020
+django.request ERROR 2025-03-26 22:44:31,464 log 4218 12972441600 Internal Server Error: /slot/preview/3/
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 82, in get
+    return render(self.request, 'nysc/slot_review.html', context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'generate_pdf' not found. 'generate_pdf' is not a valid view function or pattern name.
+django.request ERROR 2025-03-26 22:44:31,464 log 4218 12972441600 Internal Server Error: /slot/preview/3/
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 82, in get
+    return render(self.request, 'nysc/slot_review.html', context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'generate_pdf' not found. 'generate_pdf' is not a valid view function or pattern name.
+django.server ERROR 2025-03-26 22:44:31,469 basehttp 4218 12972441600 "GET /slot/preview/3/ HTTP/1.1" 500 156410
+django.server ERROR 2025-03-26 22:44:31,469 basehttp 4218 12972441600 "GET /slot/preview/3/ HTTP/1.1" 500 156410
+django.server INFO 2025-03-26 22:45:43,083 basehttp 4218 12972441600 "GET /slot/preview/3/ HTTP/1.1" 200 4593
+django.server INFO 2025-03-26 22:45:43,083 basehttp 4218 12972441600 "GET /slot/preview/3/ HTTP/1.1" 200 4593
+django.server INFO 2025-03-26 22:46:07,716 basehttp 4218 12989231104 "GET /slot/preview/3/ HTTP/1.1" 200 4604
+django.server INFO 2025-03-26 22:46:07,716 basehttp 4218 12989231104 "GET /slot/preview/3/ HTTP/1.1" 200 4604
+django.server INFO 2025-03-26 22:46:21,383 basehttp 4218 13006020608 "GET /slot/preview/3/ HTTP/1.1" 200 4604
+django.server INFO 2025-03-26 22:46:21,383 basehttp 4218 13006020608 "GET /slot/preview/3/ HTTP/1.1" 200 4604
+django.server INFO 2025-03-26 22:46:37,702 basehttp 4218 13022810112 "GET /slot/preview/3/ HTTP/1.1" 200 4600
+django.server INFO 2025-03-26 22:46:37,702 basehttp 4218 13022810112 "GET /slot/preview/3/ HTTP/1.1" 200 4600
+django.server INFO 2025-03-26 22:47:07,039 basehttp 4218 13039599616 "GET /slot/preview/3/ HTTP/1.1" 200 4596
+django.server INFO 2025-03-26 22:47:07,039 basehttp 4218 13039599616 "GET /slot/preview/3/ HTTP/1.1" 200 4596
+django.server INFO 2025-03-26 22:47:09,907 basehttp 4218 13039599616 "GET /slot/preview/3/ HTTP/1.1" 200 4596
+django.server INFO 2025-03-26 22:47:09,907 basehttp 4218 13039599616 "GET /slot/preview/3/ HTTP/1.1" 200 4596
+django.server INFO 2025-03-26 22:47:10,519 basehttp 4218 13039599616 "GET /slot/preview/3/ HTTP/1.1" 200 4596
+django.server INFO 2025-03-26 22:47:10,519 basehttp 4218 13039599616 "GET /slot/preview/3/ HTTP/1.1" 200 4596
+django.server INFO 2025-03-26 22:47:21,514 basehttp 4218 13056389120 "GET /slot/generate-pdf/3/ HTTP/1.1" 200 1683
+django.server INFO 2025-03-26 22:47:21,514 basehttp 4218 13056389120 "GET /slot/generate-pdf/3/ HTTP/1.1" 200 1683
+django.server INFO 2025-03-26 23:32:52,394 basehttp 4218 12972441600 "GET /slot/preview/3/ HTTP/1.1" 200 4596
+django.server INFO 2025-03-26 23:32:52,394 basehttp 4218 12972441600 "GET /slot/preview/3/ HTTP/1.1" 200 4596
+django.server INFO 2025-03-27 10:26:16,001 basehttp 4218 12989231104 "GET /slot/preview/3/ HTTP/1.1" 200 4596
+django.server INFO 2025-03-27 10:26:16,001 basehttp 4218 12989231104 "GET /slot/preview/3/ HTTP/1.1" 200 4596

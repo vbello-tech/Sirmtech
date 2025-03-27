@@ -1,28 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-<a href="{% url 'nysc:generate_pdf' pk=order.pk %}">GENERATE PDF</a>
-
-Hello {{ order }}
-<br>
-You have made a payment for Nysc registration with us at sirmtech academiy solution.
-This are the list of services you have payed for:
-<br>
-Capturing : {{ order.capturing }}
-<br>
-Medical certificate: {{ order.medical }}
-<br>
-Passport : {{ order.passport }}
-<br>
-The total amount you have payed is {{ order.get_amount }}.
-
-Your slot number is {{ order.slot }}
+{% block title %} {% endblock title %}
 
 
-</body>
-</html>
+{% block body %}
+
+<div class="max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+    <div class="px-6 py-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 flex justify-between items-center">
+            Payment Receipt
+            <a href="{% url 'nysc:generate_pdf' pk=order.pk  %}" class="text-sm bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition-colors">
+                GENERATE PDF
+            </a>
+        </h2>
+
+        <div class="space-y-4">
+            <p class="text-lg">
+                <span class="font-semibold">Hello {{ order.first_name }} {{ order.last_name }}</span>
+            </p>
+
+            <p class="text-gray-700">
+                You have made a payment for Nysc registration with us at Sirmtech Academy Solution.
+            </p>
+
+            <div class="bg-gray-100 rounded-md p-4 mt-4">
+                <h3 class="text-lg font-semibold mb-3">Paid Services:</h3>
+                <ul class="space-y-2">
+                    <li class="flex justify-between items-center">
+                        <span>Capturing:</span>
+                        <span class="font-medium">
+                            {% if order.capturing %}
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            {% else %}
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            {% endif %}
+                        </span>
+                    </li>
+                    <li class="flex justify-between items-center">
+                        <span>Medical Certificate:</span>
+                        <span class="font-medium">
+                            {% if order.medical_certificate %}
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            {% else %}
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            {% endif %}
+                        </span>
+                    </li>
+                    <li class="flex justify-between items-center">
+                        <span>Passport:</span>
+                        <span class="font-medium">
+                            {% if order.passport %}
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            {% else %}
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            {% endif %}
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="text-center mt-6 space-y-2">
+                <p class="text-xl font-bold text-gray-900">
+                    Total Amount Paid: ₦5,000
+                </p>
+                <p class="text-lg text-gray-700">
+                    Your Slot Number: <span class="font-bold text-blue-600">N25-B1-371</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

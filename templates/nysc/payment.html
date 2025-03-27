@@ -4,23 +4,82 @@
 
 {% block body %}
 
-Hello {{ order }}
-<br>
-You are about to pay for Nysc registration with us at sirmtech academiy solution.
-This are the list of services you have selected to pay form:
-<br>
-Capturing : {{ order.capturing }}
-<br>
-Medical certificate: {{ order.medical }}
-<br>
-Passport : {{ order.passport }}
-<br>
-The total amount you are to pay is {{ order.get_amount }}
+<div class="max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+    <div class="px-6 py-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">Payment Confirmation</h2>
 
+        <div class="space-y-4">
+            <p class="text-lg">
+                <span class="font-semibold">Hello {{ order.first_name }} {{ order.last_name }}</span>
+            </p>
 
-<div class="form-submit">
-    <button type="submit" onclick="payWithPaystack()"> Pay </button>
-  </div>
+            <p class="text-gray-700">
+                You are about to pay for Nysc registration with us at Sirmtech Academy Solution.
+            </p>
+
+            <div class="bg-gray-100 rounded-md p-4 mt-4">
+                <h3 class="text-lg font-semibold mb-3">Selected Services:</h3>
+                <ul class="space-y-2">
+                    <li class="flex justify-between">
+                        <span>Capturing:</span>
+                        <span class="font-medium">
+                            {% if order.capturing %}
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            {% else %}
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            {% endif %}
+                        </span>
+                    </li>
+                    <li class="flex justify-between">
+                        <span>Medical Certificate:</span>
+                        <span class="font-medium">
+                            {% if order.medical_certificate %}
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            {% else %}
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            {% endif %}
+                        </span>
+                    </li>
+                    <li class="flex justify-between">
+                        <span>Passport:</span>
+                        <span class="font-medium">
+                            {% if order.passport %}
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            {% else %}
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            {% endif %}
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="text-center mt-6">
+                <p class="text-xl font-bold text-gray-900">
+                    Total Amount to Pay: ₦{{ order.get_amount }}
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-6 flex justify-center">
+            <button onclick="payWithPaystack()" class="px-8 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500">
+                Proceed to Payment
+            </button>
+        </div>
+    </div>
+</div>
+
 
 
 

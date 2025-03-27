@@ -1,27 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
 {% load static %}
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Booking Platform{% endblock %}</title>
 
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-    <title>{% block title %}  {% endblock title %}</title>
+    <!-- Optional: Custom tailwind configuration -->
+    <script>
+        tailwind
+        .config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        accent: '#8B5CF6',
+                        warning: '#F59E0B',
+                        danger: '#EF4444',
+                    }
+                },
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                }
+            }
+        }
+    </script>
+
+    <!-- Optional: Custom CSS -->
+    <style type="text/css">
+        /* Custom styles can go here */
+        .form-input:focus {
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+        }
+    </style>
+
+    {% block extra_css %}{% endblock %}
 </head>
-<body>
 
-<div class="container">
-{% if messages %}
-    {% for message in messages %}
-         {{ message }}
-    {% endfor %}
-{% endif %}
+<body class="bg-gray-50 min-h-screen font-sans">
+    <div class="container mx-auto px-4 py-8">
+        {% if messages %}
+        <div class="mb-4">
+            {% for message in messages %}
+            <div class="p-3 {% if message.tags == 'error' %}bg-red-100 text-red-700{% elif message.tags == 'success' %}bg-green-100 text-green-700{% else %}bg-blue-100 text-blue-700{% endif %} rounded-md">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
 
-    {% block body %}
 
-    {% endblock body %}
+            <!-- Form template -->
 
-</div>
+
+        {% block body %}
+
+        {% endblock %}
+    </div>
+
+
+     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 </body>
 </html>
