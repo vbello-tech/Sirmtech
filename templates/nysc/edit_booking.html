@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %} {% endblock title %}
+
+ {% load crispy_forms_tags %}
+
+{% block body %}
+
+<div class="max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+    <div class="px-6 py-4">
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">{% block form_title %}Edit Booking{% endblock %}</h2>
+
+         <form method="post" action="#" class="space-y-4">
+            {% csrf_token %}
+             {% for field in form %}
+                    <div class="mb-4">
+                        <label for="{{ field.id_for_label }}" class="block text-gray-900 text-sm font-bold mb-2">
+                            {{ field.label }}
+                        </label>
+
+                        {% if field.field.widget_type == 'checkbox' %}
+                            <div class="flex items-center">
+                                {{ field }}
+                                <span class="ml-2 text-gray-600 text-sm">{{ field.help_text }}</span>
+                            </div>
+                        {% else %}
+                            {{ field }}
+                            {% if field.errors %}
+                                <p class="text-red-500 text-xs italic mt-1">
+                                    {% for error in field.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </p>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+            {% endfor %}
+
+            <button type="submit" class="px-6 py-2 bg-primary text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors">
+                Register
+            </button>
+        </form>
+    </div>
+</div>
+
+
+{% endblock body %}
+
+
+
+

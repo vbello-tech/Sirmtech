@@ -1,7 +1,7 @@
 import random
 import string
 
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Nysc
 from .forms import NyscForm
 from django.views.generic import TemplateView, DetailView, View, ListView
@@ -34,6 +34,20 @@ class HomeView(View):
             if form.is_valid:
                 order = form.save()
                 return redirect("nysc:payment", pk=order.pk)
+
+
+def edit_booking(request, pk):
+    product = get_object_or_404(Nysc, pk=pk)
+
+    if request.method == 'POST':
+        form = NyscForm(request.POST, instance=product)
+        if form.is_valid():
+            order = form.save()
+            return redirect("nysc:payment", pk=order.pk)
+    else:
+        form = NyscForm(instance=product)
+
+    return render(request, 'nysc/edit_booking.html', {'form': form})
 
 
 class PaymentView(View):

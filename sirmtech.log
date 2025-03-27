@@ -8848,3 +8848,99 @@ django.server INFO 2025-03-26 23:32:52,394 basehttp 4218 12972441600 "GET /slot/
 django.server INFO 2025-03-26 23:32:52,394 basehttp 4218 12972441600 "GET /slot/preview/3/ HTTP/1.1" 200 4596
 django.server INFO 2025-03-27 10:26:16,001 basehttp 4218 12989231104 "GET /slot/preview/3/ HTTP/1.1" 200 4596
 django.server INFO 2025-03-27 10:26:16,001 basehttp 4218 12989231104 "GET /slot/preview/3/ HTTP/1.1" 200 4596
+django.utils.autoreload INFO 2025-03-27 11:20:21,756 autoreload 4218 8610492928 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py changed, reloading.
+django.utils.autoreload INFO 2025-03-27 11:20:21,756 autoreload 4218 8610492928 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py changed, reloading.
+django.utils.autoreload INFO 2025-03-27 11:20:22,576 autoreload 19751 8597918208 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-27 11:20:22,576 autoreload 19751 8597918208 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-27 11:21:39,025 autoreload 19751 8597918208 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py changed, reloading.
+django.utils.autoreload INFO 2025-03-27 11:21:39,025 autoreload 19751 8597918208 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py changed, reloading.
+django.utils.autoreload INFO 2025-03-27 11:21:39,702 autoreload 19802 8642527744 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-27 11:21:39,702 autoreload 19802 8642527744 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-27 11:24:20,939 autoreload 19802 8642527744 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/urls.py changed, reloading.
+django.utils.autoreload INFO 2025-03-27 11:24:20,939 autoreload 19802 8642527744 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/urls.py changed, reloading.
+django.utils.autoreload INFO 2025-03-27 11:24:21,616 autoreload 19868 8630346240 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-27 11:24:21,616 autoreload 19868 8630346240 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-27 11:24:31,580 autoreload 19868 8630346240 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py changed, reloading.
+django.utils.autoreload INFO 2025-03-27 11:24:31,580 autoreload 19868 8630346240 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py changed, reloading.
+django.utils.autoreload INFO 2025-03-27 11:24:32,254 autoreload 19880 8599470592 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-27 11:24:32,254 autoreload 19880 8599470592 Watching for file changes with StatReloader
+django.server INFO 2025-03-27 11:25:24,943 basehttp 19880 12953939968 "GET /slot/preview/3/ HTTP/1.1" 200 4772
+django.server INFO 2025-03-27 11:25:24,943 basehttp 19880 12953939968 "GET /slot/preview/3/ HTTP/1.1" 200 4772
+django.server INFO 2025-03-27 11:25:39,378 basehttp 19880 12953939968 "GET /slot/preview/3/ HTTP/1.1" 200 4772
+django.server INFO 2025-03-27 11:25:39,378 basehttp 19880 12953939968 "GET /slot/preview/3/ HTTP/1.1" 200 4772
+django.request ERROR 2025-03-27 11:25:41,458 log 19880 12953939968 Internal Server Error: /slot/edit/3/
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 50, in edit_booking
+    return render(request, 'products/edit_product.html', {'form': form})
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: products/edit_product.html
+django.request ERROR 2025-03-27 11:25:41,458 log 19880 12953939968 Internal Server Error: /slot/edit/3/
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 50, in edit_booking
+    return render(request, 'products/edit_product.html', {'form': form})
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: products/edit_product.html
+django.server ERROR 2025-03-27 11:25:41,463 basehttp 19880 12953939968 "GET /slot/edit/3/ HTTP/1.1" 500 80203
+django.server ERROR 2025-03-27 11:25:41,463 basehttp 19880 12953939968 "GET /slot/edit/3/ HTTP/1.1" 500 80203
+django.utils.autoreload INFO 2025-03-27 11:26:13,619 autoreload 19880 8599470592 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py changed, reloading.
+django.utils.autoreload INFO 2025-03-27 11:26:13,619 autoreload 19880 8599470592 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py changed, reloading.
+django.utils.autoreload INFO 2025-03-27 11:26:14,242 autoreload 19935 8671490560 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-27 11:26:14,242 autoreload 19935 8671490560 Watching for file changes with StatReloader
+django.server INFO 2025-03-27 11:26:16,225 basehttp 19935 13095260160 "GET /slot/edit/3/ HTTP/1.1" 200 5679
+django.server INFO 2025-03-27 11:26:16,225 basehttp 19935 13095260160 "GET /slot/edit/3/ HTTP/1.1" 200 5679
+django.server INFO 2025-03-27 11:27:58,860 basehttp 19935 13095260160 "GET /payment/3/ HTTP/1.1" 200 6096
+django.server INFO 2025-03-27 11:27:58,860 basehttp 19935 13095260160 "GET /payment/3/ HTTP/1.1" 200 6096
+django.server INFO 2025-03-27 11:28:49,447 basehttp 19935 13095260160 "GET /payment/3/ HTTP/1.1" 200 6055
+django.server INFO 2025-03-27 11:28:49,447 basehttp 19935 13095260160 "GET /payment/3/ HTTP/1.1" 200 6055
+django.server INFO 2025-03-27 11:29:21,084 basehttp 19935 13112049664 "GET /payment/3/ HTTP/1.1" 200 5956
+django.server INFO 2025-03-27 11:29:21,084 basehttp 19935 13112049664 "GET /payment/3/ HTTP/1.1" 200 5956
+django.server INFO 2025-03-27 11:29:49,951 basehttp 19935 13128839168 "GET /payment/3/ HTTP/1.1" 200 5932
+django.server INFO 2025-03-27 11:29:49,951 basehttp 19935 13128839168 "GET /payment/3/ HTTP/1.1" 200 5932
+django.server INFO 2025-03-27 11:30:38,175 basehttp 19935 13145628672 "GET /payment/3/ HTTP/1.1" 200 5940
+django.server INFO 2025-03-27 11:30:38,175 basehttp 19935 13145628672 "GET /payment/3/ HTTP/1.1" 200 5940
+django.server INFO 2025-03-27 11:30:47,201 basehttp 19935 13162418176 "GET /payment/3/ HTTP/1.1" 200 5944
+django.server INFO 2025-03-27 11:30:47,201 basehttp 19935 13162418176 "GET /payment/3/ HTTP/1.1" 200 5944
+django.server INFO 2025-03-27 11:31:30,134 basehttp 19935 13179207680 "GET /payment/3/ HTTP/1.1" 200 5982
+django.server INFO 2025-03-27 11:31:30,134 basehttp 19935 13179207680 "GET /payment/3/ HTTP/1.1" 200 5982
+django.server INFO 2025-03-27 11:31:35,698 basehttp 19935 13095260160 "GET /slot/edit/3/ HTTP/1.1" 200 5679
+django.server INFO 2025-03-27 11:31:35,698 basehttp 19935 13095260160 "GET /slot/edit/3/ HTTP/1.1" 200 5679
+django.server INFO 2025-03-27 11:40:45,099 basehttp 19935 13112049664 "GET /payment/3/ HTTP/1.1" 200 5982
+django.server INFO 2025-03-27 11:40:45,099 basehttp 19935 13112049664 "GET /payment/3/ HTTP/1.1" 200 5982
+django.utils.autoreload INFO 2025-03-27 11:41:21,951 autoreload 19935 8671490560 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py changed, reloading.
+django.utils.autoreload INFO 2025-03-27 11:41:21,951 autoreload 19935 8671490560 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py changed, reloading.
+django.utils.autoreload INFO 2025-03-27 11:41:22,635 autoreload 20380 8667542016 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-03-27 11:41:22,635 autoreload 20380 8667542016 Watching for file changes with StatReloader
+django.server INFO 2025-03-27 11:41:28,218 basehttp 20380 13086904320 "GET /payment/3/ HTTP/1.1" 200 5982
+django.server INFO 2025-03-27 11:41:28,218 basehttp 20380 13086904320 "GET /payment/3/ HTTP/1.1" 200 5982
+django.server INFO 2025-03-27 11:41:29,959 basehttp 20380 13086904320 "GET /slot/edit/3/ HTTP/1.1" 200 5679
+django.server INFO 2025-03-27 11:41:29,959 basehttp 20380 13086904320 "GET /slot/edit/3/ HTTP/1.1" 200 5679
+django.server INFO 2025-03-27 11:41:32,775 basehttp 20380 13086904320 "POST /slot/edit/3/ HTTP/1.1" 302 0
+django.server INFO 2025-03-27 11:41:32,775 basehttp 20380 13086904320 "POST /slot/edit/3/ HTTP/1.1" 302 0
+django.server INFO 2025-03-27 11:41:32,782 basehttp 20380 13086904320 "GET /payment/3/ HTTP/1.1" 200 5978
+django.server INFO 2025-03-27 11:41:32,782 basehttp 20380 13086904320 "GET /payment/3/ HTTP/1.1" 200 5978
+django.server INFO 2025-03-27 11:42:13,936 basehttp 20380 13103693824 "GET /payment/verify/3/ HTTP/1.1" 302 0
+django.server INFO 2025-03-27 11:42:13,936 basehttp 20380 13103693824 "GET /payment/verify/3/ HTTP/1.1" 302 0
+django.server INFO 2025-03-27 11:42:13,946 basehttp 20380 13120483328 "GET /slot/preview/3/ HTTP/1.1" 200 4853
+django.server INFO 2025-03-27 11:42:13,946 basehttp 20380 13120483328 "GET /slot/preview/3/ HTTP/1.1" 200 4853
+django.server INFO 2025-03-27 11:42:13,946 basehttp 20380 13103693824 "GET /payment/verify/3/ HTTP/1.1" 302 0
+django.server INFO 2025-03-27 11:42:13,946 basehttp 20380 13103693824 "GET /payment/verify/3/ HTTP/1.1" 302 0
+django.server INFO 2025-03-27 11:42:13,950 basehttp 20380 13103693824 "GET /slot/preview/3/ HTTP/1.1" 200 4853
+django.server INFO 2025-03-27 11:42:13,950 basehttp 20380 13103693824 "GET /slot/preview/3/ HTTP/1.1" 200 4853
