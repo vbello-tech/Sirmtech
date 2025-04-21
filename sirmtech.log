@@ -8944,3 +8944,547 @@ django.server INFO 2025-03-27 11:42:13,946 basehttp 20380 13103693824 "GET /paym
 django.server INFO 2025-03-27 11:42:13,946 basehttp 20380 13103693824 "GET /payment/verify/3/ HTTP/1.1" 302 0
 django.server INFO 2025-03-27 11:42:13,950 basehttp 20380 13103693824 "GET /slot/preview/3/ HTTP/1.1" 200 4853
 django.server INFO 2025-03-27 11:42:13,950 basehttp 20380 13103693824 "GET /slot/preview/3/ HTTP/1.1" 200 4853
+django.utils.autoreload INFO 2025-04-11 12:17:18,408 autoreload 19012 8636830208 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-04-11 12:17:18,408 autoreload 19012 8636830208 Watching for file changes with StatReloader
+django.server INFO 2025-04-11 12:17:25,722 basehttp 19012 13028614144 "GET /slot/preview/3/ HTTP/1.1" 200 4592
+django.server INFO 2025-04-11 12:17:25,722 basehttp 19012 13028614144 "GET /slot/preview/3/ HTTP/1.1" 200 4592
+django.request WARNING 2025-04-11 12:17:26,442 log 19012 13028614144 Not Found: /favicon.ico
+django.request WARNING 2025-04-11 12:17:26,442 log 19012 13028614144 Not Found: /favicon.ico
+django.server WARNING 2025-04-11 12:17:26,444 basehttp 19012 13028614144 "GET /favicon.ico HTTP/1.1" 404 3841
+django.server WARNING 2025-04-11 12:17:26,444 basehttp 19012 13028614144 "GET /favicon.ico HTTP/1.1" 404 3841
+django.server INFO 2025-04-11 12:18:07,949 basehttp 19012 13028614144 "GET /slot/preview/3/ HTTP/1.1" 200 4592
+django.server INFO 2025-04-11 12:18:07,949 basehttp 19012 13028614144 "GET /slot/preview/3/ HTTP/1.1" 200 4592
+django.server INFO 2025-04-11 12:19:23,167 basehttp 19012 13045403648 "GET / HTTP/1.1" 200 6508
+django.server INFO 2025-04-11 12:19:23,167 basehttp 19012 13045403648 "GET / HTTP/1.1" 200 6508
+django.server INFO 2025-04-11 12:31:20,798 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 10486
+django.server INFO 2025-04-11 12:31:20,798 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 10486
+django.server INFO 2025-04-11 12:32:03,517 basehttp 19012 13078982656 "GET / HTTP/1.1" 200 13655
+django.server INFO 2025-04-11 12:32:03,517 basehttp 19012 13078982656 "GET / HTTP/1.1" 200 13655
+django.server INFO 2025-04-11 12:32:27,180 basehttp 19012 13028614144 "GET / HTTP/1.1" 200 11634
+django.server INFO 2025-04-11 12:32:27,180 basehttp 19012 13028614144 "GET / HTTP/1.1" 200 11634
+django.server INFO 2025-04-11 12:33:11,511 basehttp 19012 13045403648 "GET / HTTP/1.1" 200 10492
+django.server INFO 2025-04-11 12:33:11,511 basehttp 19012 13045403648 "GET / HTTP/1.1" 200 10492
+django.request ERROR 2025-04-11 12:33:50,972 log 19012 13062193152 Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'user'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 29, in get
+    return render(request, 'home.html', context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'user' is not a registered namespace
+django.request ERROR 2025-04-11 12:33:50,972 log 19012 13062193152 Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'user'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 29, in get
+    return render(request, 'home.html', context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'user' is not a registered namespace
+django.server ERROR 2025-04-11 12:33:50,988 basehttp 19012 13062193152 "GET / HTTP/1.1" 500 146378
+django.server ERROR 2025-04-11 12:33:50,988 basehttp 19012 13062193152 "GET / HTTP/1.1" 500 146378
+django.request ERROR 2025-04-11 12:34:43,010 log 19012 13028614144 Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'user'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 29, in get
+    return render(request, 'home.html', context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'user' is not a registered namespace
+django.request ERROR 2025-04-11 12:34:43,010 log 19012 13028614144 Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'user'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 29, in get
+    return render(request, 'home.html', context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'user' is not a registered namespace
+django.server ERROR 2025-04-11 12:34:43,015 basehttp 19012 13028614144 "GET / HTTP/1.1" 500 160992
+django.server ERROR 2025-04-11 12:34:43,015 basehttp 19012 13028614144 "GET / HTTP/1.1" 500 160992
+django.request ERROR 2025-04-11 12:34:44,442 log 19012 13028614144 Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'user'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 29, in get
+    return render(request, 'home.html', context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'user' is not a registered namespace
+django.request ERROR 2025-04-11 12:34:44,442 log 19012 13028614144 Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'user'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/nysc/views.py", line 29, in get
+    return render(request, 'home.html', context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/vbello/Desktop/PROJECT/sirmtech-api/venv/lib/python3.13/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'user' is not a registered namespace
+django.server ERROR 2025-04-11 12:34:44,446 basehttp 19012 13028614144 "GET / HTTP/1.1" 500 160992
+django.server ERROR 2025-04-11 12:34:44,446 basehttp 19012 13028614144 "GET / HTTP/1.1" 500 160992
+django.server INFO 2025-04-11 12:35:02,351 basehttp 19012 13045403648 "GET / HTTP/1.1" 200 12573
+django.server INFO 2025-04-11 12:35:02,351 basehttp 19012 13045403648 "GET / HTTP/1.1" 200 12573
+django.server INFO 2025-04-11 12:37:41,350 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 11344
+django.server INFO 2025-04-11 12:37:41,350 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 11344
+django.server INFO 2025-04-11 12:38:23,822 basehttp 19012 13078982656 "GET / HTTP/1.1" 200 11380
+django.server INFO 2025-04-11 12:38:23,822 basehttp 19012 13078982656 "GET / HTTP/1.1" 200 11380
+django.server INFO 2025-04-11 12:38:59,492 basehttp 19012 13028614144 "GET / HTTP/1.1" 200 11360
+django.server INFO 2025-04-11 12:38:59,492 basehttp 19012 13028614144 "GET / HTTP/1.1" 200 11360
+django.server INFO 2025-04-11 12:42:09,505 basehttp 19012 13045403648 "GET / HTTP/1.1" 200 11390
+django.server INFO 2025-04-11 12:42:09,505 basehttp 19012 13045403648 "GET / HTTP/1.1" 200 11390
+django.server INFO 2025-04-11 12:45:40,334 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 11353
+django.server INFO 2025-04-11 12:45:40,334 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 11353
+django.server INFO 2025-04-11 12:46:36,491 basehttp 19012 13028614144 "GET / HTTP/1.1" 200 11360
+django.server INFO 2025-04-11 12:46:36,491 basehttp 19012 13028614144 "GET / HTTP/1.1" 200 11360
+django.server INFO 2025-04-11 12:47:17,296 basehttp 19012 13045403648 "GET / HTTP/1.1" 200 11339
+django.server INFO 2025-04-11 12:47:17,296 basehttp 19012 13045403648 "GET / HTTP/1.1" 200 11339
+django.server INFO 2025-04-11 12:47:52,945 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 11128
+django.server INFO 2025-04-11 12:47:52,945 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 11128
+django.server INFO 2025-04-11 12:49:29,631 basehttp 19012 13028614144 "GET / HTTP/1.1" 200 11138
+django.server INFO 2025-04-11 12:49:29,631 basehttp 19012 13028614144 "GET / HTTP/1.1" 200 11138
+django.server INFO 2025-04-11 20:46:24,639 basehttp 19012 13045403648 "GET / HTTP/1.1" 200 11182
+django.server INFO 2025-04-11 20:46:24,639 basehttp 19012 13045403648 "GET / HTTP/1.1" 200 11182
+django.server INFO 2025-04-11 20:47:21,394 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 11308
+django.server INFO 2025-04-11 20:47:21,394 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 11308
+django.server INFO 2025-04-11 20:49:39,884 basehttp 19012 13028614144 "GET / HTTP/1.1" 200 11441
+django.server INFO 2025-04-11 20:49:39,884 basehttp 19012 13028614144 "GET / HTTP/1.1" 200 11441
+django.server INFO 2025-04-11 20:50:31,675 basehttp 19012 13045403648 "GET / HTTP/1.1" 200 11441
+django.server INFO 2025-04-11 20:50:31,675 basehttp 19012 13045403648 "GET / HTTP/1.1" 200 11441
+django.server INFO 2025-04-11 20:50:34,712 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 11263
+django.server INFO 2025-04-11 20:50:34,712 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 11263
+django.server INFO 2025-04-11 20:52:22,260 basehttp 19012 13078982656 "GET / HTTP/1.1" 200 11256
+django.server INFO 2025-04-11 20:52:22,260 basehttp 19012 13078982656 "GET / HTTP/1.1" 200 11256
+django.server INFO 2025-04-11 20:54:01,461 basehttp 19012 13028614144 "GET / HTTP/1.1" 200 11722
+django.server INFO 2025-04-11 20:54:01,461 basehttp 19012 13028614144 "GET / HTTP/1.1" 200 11722
+django.server INFO 2025-04-11 20:56:37,748 basehttp 19012 13045403648 "GET / HTTP/1.1" 200 11763
+django.server INFO 2025-04-11 20:56:37,748 basehttp 19012 13045403648 "GET / HTTP/1.1" 200 11763
+django.server INFO 2025-04-11 20:58:25,803 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 12001
+django.server INFO 2025-04-11 20:58:25,803 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 12001
+django.server INFO 2025-04-11 20:58:58,033 basehttp 19012 13028614144 "GET / HTTP/1.1" 200 11981
+django.server INFO 2025-04-11 20:58:58,033 basehttp 19012 13028614144 "GET / HTTP/1.1" 200 11981
+django.server INFO 2025-04-11 20:59:18,968 basehttp 19012 13045403648 "GET / HTTP/1.1" 200 12051
+django.server INFO 2025-04-11 20:59:18,968 basehttp 19012 13045403648 "GET / HTTP/1.1" 200 12051
+django.server INFO 2025-04-11 21:00:55,981 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 12033
+django.server INFO 2025-04-11 21:00:55,981 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 12033
+django.server INFO 2025-04-11 21:02:24,206 basehttp 19012 13028614144 "GET / HTTP/1.1" 200 12033
+django.server INFO 2025-04-11 21:02:24,206 basehttp 19012 13028614144 "GET / HTTP/1.1" 200 12033
+django.server INFO 2025-04-11 21:03:06,668 basehttp 19012 13045403648 "GET / HTTP/1.1" 200 12149
+django.server INFO 2025-04-11 21:03:06,668 basehttp 19012 13045403648 "GET / HTTP/1.1" 200 12149
+django.server INFO 2025-04-11 21:03:09,906 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 12149
+django.server INFO 2025-04-11 21:03:09,906 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 12149
+django.server INFO 2025-04-11 21:03:11,374 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 12149
+django.server INFO 2025-04-11 21:03:11,374 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 12149
+django.server INFO 2025-04-11 21:03:35,963 basehttp 19012 13095772160 "GET / HTTP/1.1" 200 12257
+django.server INFO 2025-04-11 21:03:35,963 basehttp 19012 13095772160 "GET / HTTP/1.1" 200 12257
+django.server INFO 2025-04-11 21:03:40,323 basehttp 19012 13028614144 "GET / HTTP/1.1" 200 12257
+django.server INFO 2025-04-11 21:03:40,323 basehttp 19012 13028614144 "GET / HTTP/1.1" 200 12257
+django.server INFO 2025-04-11 21:04:29,238 basehttp 19012 13045403648 "GET / HTTP/1.1" 200 12257
+django.server INFO 2025-04-11 21:04:29,238 basehttp 19012 13045403648 "GET / HTTP/1.1" 200 12257
+django.server INFO 2025-04-11 21:05:13,708 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 12461
+django.server INFO 2025-04-11 21:05:13,708 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 12461
+django.server INFO 2025-04-11 21:05:15,854 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 12461
+django.server INFO 2025-04-11 21:05:15,854 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 12461
+django.server INFO 2025-04-11 21:05:16,677 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 12461
+django.server INFO 2025-04-11 21:05:16,677 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 12461
+django.server INFO 2025-04-11 21:05:17,447 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 12461
+django.server INFO 2025-04-11 21:05:17,447 basehttp 19012 13062193152 "GET / HTTP/1.1" 200 12461
+django.server INFO 2025-04-11 21:05:18,208 basehttp 19012 13028614144 "GET / HTTP/1.1" 200 12461
+django.server INFO 2025-04-11 21:05:18,208 basehttp 19012 13028614144 "GET / HTTP/1.1" 200 12461
+django.server INFO 2025-04-11 21:05:45,398 basehttp 19012 13045403648 "GET / HTTP/1.1" 200 12423
+django.server INFO 2025-04-11 21:05:45,398 basehttp 19012 13045403648 "GET / HTTP/1.1" 200 12423
+django.server INFO 2025-04-11 21:05:46,582 basehttp 19012 13045403648 "GET / HTTP/1.1" 200 12423
+django.server INFO 2025-04-11 21:05:46,582 basehttp 19012 13045403648 "GET / HTTP/1.1" 200 12423
+django.server INFO 2025-04-11 21:06:01,883 basehttp 19012 13078982656 "GET / HTTP/1.1" 200 12423
+django.server INFO 2025-04-11 21:06:01,883 basehttp 19012 13078982656 "GET / HTTP/1.1" 200 12423
+django.server INFO 2025-04-11 21:08:23,188 basehttp 19012 13028614144 "POST / HTTP/1.1" 302 0
+django.server INFO 2025-04-11 21:08:23,188 basehttp 19012 13028614144 "POST / HTTP/1.1" 302 0
+django.server INFO 2025-04-11 21:08:23,199 basehttp 19012 13028614144 "GET /payment/4/ HTTP/1.1" 200 11027
+django.server INFO 2025-04-11 21:08:23,199 basehttp 19012 13028614144 "GET /payment/4/ HTTP/1.1" 200 11027
+django.server INFO 2025-04-11 21:08:29,747 basehttp 19012 13045403648 "GET /slot/edit/4/ HTTP/1.1" 200 10736
+django.server INFO 2025-04-11 21:08:29,747 basehttp 19012 13045403648 "GET /slot/edit/4/ HTTP/1.1" 200 10736
+django.server INFO 2025-04-11 21:08:33,447 basehttp 19012 13078982656 "POST /slot/edit/4/ HTTP/1.1" 302 0
+django.server INFO 2025-04-11 21:08:33,447 basehttp 19012 13078982656 "POST /slot/edit/4/ HTTP/1.1" 302 0
+django.server INFO 2025-04-11 21:08:33,454 basehttp 19012 13078982656 "GET /payment/4/ HTTP/1.1" 200 11031
+django.server INFO 2025-04-11 21:08:33,454 basehttp 19012 13078982656 "GET /payment/4/ HTTP/1.1" 200 11031
+django.server INFO 2025-04-11 21:08:37,702 basehttp 19012 13112561664 "GET /slot/edit/4/ HTTP/1.1" 200 10728
+django.server INFO 2025-04-11 21:08:37,702 basehttp 19012 13112561664 "GET /slot/edit/4/ HTTP/1.1" 200 10728
+django.server INFO 2025-04-11 21:08:41,245 basehttp 19012 13112561664 "POST /slot/edit/4/ HTTP/1.1" 302 0
+django.server INFO 2025-04-11 21:08:41,245 basehttp 19012 13112561664 "POST /slot/edit/4/ HTTP/1.1" 302 0
+django.server INFO 2025-04-11 21:08:41,254 basehttp 19012 13112561664 "GET /payment/4/ HTTP/1.1" 200 11027
+django.server INFO 2025-04-11 21:08:41,254 basehttp 19012 13112561664 "GET /payment/4/ HTTP/1.1" 200 11027
+django.server INFO 2025-04-11 21:10:05,167 basehttp 19012 13129351168 "GET / HTTP/1.1" 200 12423
+django.server INFO 2025-04-11 21:10:05,167 basehttp 19012 13129351168 "GET / HTTP/1.1" 200 12423
+django.server INFO 2025-04-11 21:10:33,847 basehttp 19012 13028614144 "GET /slot/edit/4/ HTTP/1.1" 200 10736
+django.server INFO 2025-04-11 21:10:33,847 basehttp 19012 13028614144 "GET /slot/edit/4/ HTTP/1.1" 200 10736
+django.utils.autoreload INFO 2025-04-11 21:13:03,427 autoreload 23929 8662946304 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-04-11 21:13:03,427 autoreload 23929 8662946304 Watching for file changes with StatReloader
+django.server INFO 2025-04-15 14:49:45,626 basehttp 23929 13077692416 "GET /payment/4/ HTTP/1.1" 200 11027
+django.server INFO 2025-04-15 14:49:45,626 basehttp 23929 13077692416 "GET /payment/4/ HTTP/1.1" 200 11027
+django.server INFO 2025-04-15 14:54:51,577 basehttp 23929 13077692416 "GET /payment/4/ HTTP/1.1" 200 11027
+django.server INFO 2025-04-15 14:54:51,577 basehttp 23929 13077692416 "GET /payment/4/ HTTP/1.1" 200 11027
+django.server INFO 2025-04-15 14:57:06,366 basehttp 23929 13094481920 "GET /payment/4/ HTTP/1.1" 200 11027
+django.server INFO 2025-04-15 14:57:06,366 basehttp 23929 13094481920 "GET /payment/4/ HTTP/1.1" 200 11027
+django.server INFO 2025-04-15 15:00:08,078 basehttp 23929 13111271424 "GET / HTTP/1.1" 200 12423
+django.server INFO 2025-04-15 15:00:08,078 basehttp 23929 13111271424 "GET / HTTP/1.1" 200 12423
+django.server INFO 2025-04-15 15:00:20,707 basehttp 23929 13128060928 "POST / HTTP/1.1" 302 0
+django.server INFO 2025-04-15 15:00:20,707 basehttp 23929 13128060928 "POST / HTTP/1.1" 302 0
+django.server INFO 2025-04-15 15:00:20,712 basehttp 23929 13128060928 "GET /payment/5/ HTTP/1.1" 200 11031
+django.server INFO 2025-04-15 15:00:20,712 basehttp 23929 13128060928 "GET /payment/5/ HTTP/1.1" 200 11031
+django.utils.autoreload INFO 2025-04-21 07:33:24,092 autoreload 18250 8662315520 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-04-21 07:33:24,092 autoreload 18250 8662315520 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-04-21 07:34:04,827 autoreload 18250 8662315520 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/sirmtech/settings/settings.py changed, reloading.
+django.utils.autoreload INFO 2025-04-21 07:34:04,827 autoreload 18250 8662315520 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/sirmtech/settings/settings.py changed, reloading.
+django.utils.autoreload INFO 2025-04-21 07:34:05,213 autoreload 18267 8629572096 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-04-21 07:34:05,213 autoreload 18267 8629572096 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-04-21 07:34:42,350 autoreload 18286 8591372800 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-04-21 07:34:42,350 autoreload 18286 8591372800 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-04-21 07:34:47,483 autoreload 18286 8591372800 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/sirmtech/settings/settings.py changed, reloading.
+django.utils.autoreload INFO 2025-04-21 07:34:47,483 autoreload 18286 8591372800 /Users/vbello/Desktop/PROJECT/sirmtech-api/sirmtech/sirmtech/settings/settings.py changed, reloading.
+django.utils.autoreload INFO 2025-04-21 07:34:48,002 autoreload 18294 8637428224 Watching for file changes with StatReloader
+django.utils.autoreload INFO 2025-04-21 07:34:48,002 autoreload 18294 8637428224 Watching for file changes with StatReloader
+django.server INFO 2025-04-21 07:34:51,103 basehttp 18294 13026639872 "GET / HTTP/1.1" 200 12423
+django.server INFO 2025-04-21 07:34:51,103 basehttp 18294 13026639872 "GET / HTTP/1.1" 200 12423
+django.request WARNING 2025-04-21 07:34:51,711 log 18294 13026639872 Not Found: /favicon.ico
+django.request WARNING 2025-04-21 07:34:51,711 log 18294 13026639872 Not Found: /favicon.ico
+django.server WARNING 2025-04-21 07:34:51,711 basehttp 18294 13026639872 "GET /favicon.ico HTTP/1.1" 404 3841
+django.server WARNING 2025-04-21 07:34:51,711 basehttp 18294 13026639872 "GET /favicon.ico HTTP/1.1" 404 3841
+django.server INFO 2025-04-21 07:35:29,025 basehttp 18294 13026639872 "POST / HTTP/1.1" 302 0
+django.server INFO 2025-04-21 07:35:29,025 basehttp 18294 13026639872 "POST / HTTP/1.1" 302 0
+django.server INFO 2025-04-21 07:35:29,040 basehttp 18294 13026639872 "GET /payment/6/ HTTP/1.1" 200 11027
+django.server INFO 2025-04-21 07:35:29,040 basehttp 18294 13026639872 "GET /payment/6/ HTTP/1.1" 200 11027
+django.server INFO 2025-04-21 07:35:31,507 basehttp 18294 13026639872 "GET /slot/edit/6/ HTTP/1.1" 200 10736
+django.server INFO 2025-04-21 07:35:31,507 basehttp 18294 13026639872 "GET /slot/edit/6/ HTTP/1.1" 200 10736
+django.server INFO 2025-04-21 07:35:34,318 basehttp 18294 13026639872 "POST /slot/edit/6/ HTTP/1.1" 302 0
+django.server INFO 2025-04-21 07:35:34,318 basehttp 18294 13026639872 "POST /slot/edit/6/ HTTP/1.1" 302 0
+django.server INFO 2025-04-21 07:35:34,325 basehttp 18294 13026639872 "GET /payment/6/ HTTP/1.1" 200 11027
+django.server INFO 2025-04-21 07:35:34,325 basehttp 18294 13026639872 "GET /payment/6/ HTTP/1.1" 200 11027
+django.server INFO 2025-04-21 07:36:37,394 basehttp 18294 13026639872 "GET / HTTP/1.1" 200 12423
+django.server INFO 2025-04-21 07:36:37,394 basehttp 18294 13026639872 "GET / HTTP/1.1" 200 12423

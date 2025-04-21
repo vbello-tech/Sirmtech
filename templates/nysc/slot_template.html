@@ -2,26 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Nysc Slot Card</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .id-card {
+            width: 350px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px 25px;
+            text-align: left;
+            border: 2px solid #007bff;
+        }
+
+        .id-card h2 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .id-card p {
+            margin: 8px 0;
+            font-size: 15px;
+        }
+
+        .id-card .label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .id-card .value {
+            color: #555;
+        }
+
+        .slot {
+            background-color: #007bff;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
+    <div class="id-card">
+        <h2>NYSC SLOT</h2>
+        <p><span class="label">Name:</span> Hello {{ order }}</p>
+        <p><span class="label">Service:</span> NYSC Registration</p>
+        <p><span class="label">Provider:</span> Sirmtech Academy Solution</p>
 
-Hello {{ order }}
-<br>
-You have made a payment for Nysc registration with us at sirmtech academiy solution.
-This are the list of services you have payed for:
-<br>
-Capturing : {{ order.capturing }}
-<br>
-Medical certificate: {{ order.medical }}
-<br>
-Passport : {{ order.passport }}
-<br>
-The total amount you have payed is {{ order.get_amount }}.
+        <hr style="margin: 15px 0; border: 0; border-top: 1px solid #ccc;">
 
-Your slot number is {{ order.slot }}
+        <p><span class="label">Capturing:</span> <span class="value">{{ order.capturing }}</span></p>
+        <p><span class="label">Medical Certificate:</span> <span class="value">{{ order.medical }}</span></p>
+        <p><span class="label">Passport:</span> <span class="value">{{ order.passport }}</span></p>
+        <p><span class="label">Total Paid:</span> <span class="value">{{ order.get_amount }}</span></p>
 
+        <div class="slot">Slot Number: {{ order.slot }}</div>
+    </div>
 
 </body>
 </html>
