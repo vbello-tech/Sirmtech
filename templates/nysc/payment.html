@@ -86,18 +86,16 @@
     </div>
 </div>
 
-
-
-
 <script src="https://js.paystack.co/v1/inline.js"></script>
-
 <script src="https://js.paystack.co/v1/inline.js"></script>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- paystack payment -->
 <script>
 function payWithPaystack() {
   var handler = PaystackPop.setup({
     key: 'pk_test_feba4156df35513a5957f20e0ad24bdb65d19284', // Replace with your public key
-    email: '{{order.email}}',
+    email: '{{ order.email }}',
     amount: {{ order.get_amount }} * 100, // the amount value is multiplied by 100 to convert to the lowest currency unit
     currency: 'NGN', // Use GHS for Ghana Cedis or USD for US Dollars
     ref: ''+Math.floor((Math.random() * 1000000000) + 1), // Replace with a reference you generated
@@ -105,11 +103,11 @@ function payWithPaystack() {
       // Make an AJAX call to your server with the reference to verify the transaction
       data = response.reference
       $.ajax({
-        url: "{{ order.get_verify_payment }}",
+        url: "{{ order.get_paystack_verify_url }}",
         method: 'GET',
 
       });
-      window.location.href = "{{ order.get_verify_payment }}";
+      window.location.href = "{{ order.get_paystack_verify_url }}";
       //this happens after the payment is completed successfully
       var reference = response.reference;
       //alert('Payment complete! Reference: ' + reference);
@@ -122,4 +120,5 @@ function payWithPaystack() {
   handler.openIframe();
 }
 </script>
+
 {% endblock body %}
