@@ -22,6 +22,7 @@ pyHanko==0.26.0
 pyhanko-certvalidator==0.26.5
 pypdf==5.3.1
 python-bidi==0.6.6
+python-decouple==3.8
 PyYAML==6.0.2
 qrcode==8.0
 reportlab==4.3.1
