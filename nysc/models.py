@@ -5,9 +5,10 @@ from django.core.validators import EmailValidator
 # Create your models here.
 
 # pricing list
-c_p = 4000
+s_c = 6500
 p_p = 1000
-m_p = 1000
+m_p = 1500
+c_m_p = 500
 
 
 class Nysc(models.Model):
@@ -21,6 +22,11 @@ class Nysc(models.Model):
         verbose_name="Last Name",
         help_text="Enter your last name"
     )
+    other_name = models.CharField(
+        max_length=100,
+        verbose_name="Other Name",
+        help_text="Enter your last name"
+    )
     email = models.EmailField(
         validators=[EmailValidator()],
         verbose_name="Email Address",
@@ -31,29 +37,40 @@ class Nysc(models.Model):
     capturing = models.BooleanField(
         default=False,
         verbose_name="Capturing",
-        help_text="Do you need capturing?"
+        null=False,  # Ensure database doesn't allow null
+        blank=False  # Ensure form validation requires this field
+    )
+    call_up = models.BooleanField(
+        default=False,
+        verbose_name="Call Up Letter",
+        null=False,  # Ensure database doesn't allow null
+        blank=False  # Ensure form validation requires this field
     )
     passport = models.BooleanField(
         default=False,
-        verbose_name="Passport",
-        help_text="Do you need passport?"
+        verbose_name="Passport Photograph"
     )
     medical_certificate = models.BooleanField(
         default=False,
-        verbose_name="Medical Certificate",
-        help_text="Do you want medical certificate?"
+        verbose_name="Medical Fitness Certificate"
+    )
+    concord_printing = models.BooleanField(
+        default=False,
+        verbose_name="Medical Certificate Concord printing"
     )
     slot = models.SlugField()
     payment_status = models.BooleanField(default=False)
     payment_id = models.CharField(max_length=20, blank=True, null=True)
 
     def get_amount(self):
-        if self.passport and self.medical_certificate:
-            return c_p + p_p + m_p
-        elif self.passport and not self.medical_certificate:
-            return c_p + p_p
-        elif not self.passport and self.medical_certificate:
-            return c_p + m_p
+        amount = s_c  # base charge (assuming it's always included)
+        if self.passport:
+            amount += p_p
+        if self.medical_certificate:
+            amount += m_p
+        if self.concord_printing:
+            amount += c_m_p
+        return amount
 
     def get_verify_payment(self):
         return reverse("nysc:verify", kwargs={

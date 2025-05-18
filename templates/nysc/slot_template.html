@@ -2,74 +2,207 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Nysc Slot Card</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identity Card</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f4f8;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            padding: 20px;
         }
 
         .id-card {
-            width: 350px;
-            background-color: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            padding: 20px 25px;
-            text-align: left;
-            border: 2px solid #007bff;
+            width: 340px;
+            height: 520px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            position: relative;
         }
 
-        .id-card h2 {
-            color: #007bff;
-            margin-bottom: 10px;
+        .header {
+            height: 80px;
+            background: linear-gradient(135deg, #1a5276 0%, #2980b9 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
         }
 
-        .id-card p {
-            margin: 8px 0;
-            font-size: 15px;
+        .header-content {
+            width: 100%;
         }
 
-        .id-card .label {
+        .company-name {
+            font-size: 20px;
             font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .card-type {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .photo-section {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .photo-container {
+            width: 120px;
+            height: 150px;
+            border: 1px solid #ddd;
+            margin-bottom: 15px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f5f5f5;
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 12px;
+        }
+
+        .id-number {
+            font-size: 14px;
+            font-weight: bold;
+            padding: 5px 15px;
+            background-color: #f5f5f5;
+            border-radius: 15px;
+            margin-top: 5px;
+        }
+
+        .details-section {
+            padding: 20px;
+        }
+
+        .detail-row {
+            margin-bottom: 15px;
+            display: flex;
+        }
+
+        .detail-label {
+            width: 100px;
+            font-size: 12px;
+            color: #777;
+            text-transform: uppercase;
+        }
+
+        .detail-value {
+            flex: 1;
+            font-size: 14px;
+            font-weight: 500;
             color: #333;
         }
 
-        .id-card .value {
-            color: #555;
+        .expiry {
+            margin-top: 25px;
+            text-align: center;
+            font-size: 12px;
+            color: #777;
         }
 
-        .slot {
-            background-color: #007bff;
-            color: #fff;
-            padding: 6px 12px;
-            border-radius: 6px;
-            display: inline-block;
-            margin-top: 15px;
+        .expiry-value {
             font-weight: bold;
+            color: #d35400;
+            margin-top: 5px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 15px;
+            background-color: #f8f8f8;
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+            border-top: 1px solid #eee;
+        }
+
+        .barcode {
+            width: 80%;
+            height: 40px;
+            margin: 15px auto;
+            background: repeating-linear-gradient(
+                90deg,
+                #000,
+                #000 2px,
+                #fff 2px,
+                #fff 4px
+            );
         }
     </style>
 </head>
 <body>
-
     <div class="id-card">
-        <h2>NYSC SLOT</h2>
-        <p><span class="label">Name:</span> Hello {{ order }}</p>
-        <p><span class="label">Service:</span> NYSC Registration</p>
-        <p><span class="label">Provider:</span> Sirmtech Academy Solution</p>
+        <div class="header">
+            <div class="header-content">
+                <div class="company-name">SIRMTECH Academic Solution</div>
+                <div class="card-type">NYSC registration Slot</div>
+            </div>
+        </div>
 
-        <hr style="margin: 15px 0; border: 0; border-top: 1px solid #ccc;">
+        <div class="photo-section">
+<!--            <div class="photo-container">-->
+<!--                <div class="photo-placeholder">PHOTO</div>-->
+<!--            </div>-->
+            <h2> {{ order.first_name }} {{ order.last_name }} {{ order.other_name }}</h2>
+            <div class="id-number">SLOT NUMBER: {{ order.slot }}</div>
+        </div>
 
-        <p><span class="label">Capturing:</span> <span class="value">{{ order.capturing }}</span></p>
-        <p><span class="label">Medical Certificate:</span> <span class="value">{{ order.medical }}</span></p>
-        <p><span class="label">Passport:</span> <span class="value">{{ order.passport }}</span></p>
-        <p><span class="label">Total Paid:</span> <span class="value">{{ order.get_amount }}</span></p>
+        <div class="details-section">
+            <div class="detail-row">
+                <div class="detail-label">Position</div>
+                <div class="detail-value">Software Developer</div>
+            </div>
 
-        <div class="slot">Slot Number: {{ order.slot }}</div>
+            <div class="detail-row">
+                <div class="detail-label">Department</div>
+                <div class="detail-value">Technology</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-label">Joined</div>
+                <div class="detail-value">January 05, 2025</div>
+            </div>
+
+            <div class="expiry">
+                <div>VALID UNTIL</div>
+                <div class="expiry-value">December 31, 2025</div>
+            </div>
+        </div>
+
+<!--        <div class="barcode"></div>-->
+
+<!--        <div class="footer">-->
+<!--            This ID card remains the property of ACME Corporation.<br>-->
+<!--            If found, please return to 123 Business Ave, Tech City.-->
+<!--        </div>-->
     </div>
-
 </body>
 </html>
