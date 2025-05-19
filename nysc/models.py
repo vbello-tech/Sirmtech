@@ -10,6 +10,19 @@ p_p = 1000
 m_p = 1500
 c_m_p = 500
 
+BatchNumber = [
+    ('1', '1'),
+    ('2', '2'),
+    ('3', '3'),
+]
+
+
+class Batch(models.Model):
+    year = models.CharField(max_length=4)
+    batch = models.CharField(max_length=2, choices=BatchNumber, blank=True, null=True)
+    stream = models.CharField(max_length=2, choices=BatchNumber, blank=True, null=True)
+    last_no = models.IntegerField(default=0)
+
 
 class Nysc(models.Model):
     first_name = models.CharField(
@@ -20,11 +33,6 @@ class Nysc(models.Model):
     last_name = models.CharField(
         max_length=100,
         verbose_name="Last Name",
-        help_text="Enter your last name"
-    )
-    other_name = models.CharField(
-        max_length=100,
-        verbose_name="Other Name",
         help_text="Enter your last name"
     )
     email = models.EmailField(
@@ -74,6 +82,11 @@ class Nysc(models.Model):
 
     def get_verify_payment(self):
         return reverse("nysc:verify", kwargs={
+            'pk': self.pk,
+        })
+
+    def get_preview(self):
+        return reverse("nysc:preview", kwargs={
             'pk': self.pk,
         })
 

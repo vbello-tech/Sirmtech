@@ -2,7 +2,7 @@ import random
 import string
 
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Nysc
+from .models import Nysc, Batch
 from .forms import NyscForm
 from django.views.generic import TemplateView, DetailView, View, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -61,8 +61,12 @@ class PaymentView(View):
 
 # generate NYSC code
 def code():
-    order_code = ''.join(random.choices(string.digits, k=3))
-    return f"N25-B1-{order_code}"
+    batch = Batch.objects.order_by('year').first()
+    slot = batch.last_no + 1
+    code = f"N{batch.year[2:]}-B{batch.batch}-S{batch.stream}-{slot}"
+    batch.last_no = slot
+    batch.save()
+    return code
 
 
 class PaymentVerifyView(View):
@@ -71,7 +75,7 @@ class PaymentVerifyView(View):
             order = Nysc.objects.get(pk=pk)
             order.payment_status = True
             order.slot = code()
-            order.payment_id = request.GET.get("data")
+            order.payment_id = request.POST.get('reference')
             order.save()
             subject = "ACTIVATION CODE FOR YOUR NURU ACCOUNT"
             html_message = render_to_string('nysc/order.html', {'order': order})

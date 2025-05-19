@@ -41,6 +41,34 @@
                         </span>
                     </li>
                     <li class="flex justify-between items-center">
+                        <span>Call Up Letter:</span>
+                        <span class="font-medium">
+                            {% if order.call_up %}
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            {% else %}
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            {% endif %}
+                        </span>
+                    </li>
+                    <li class="flex justify-between items-center">
+                        <span>Passport Photograph:</span>
+                        <span class="font-medium">
+                            {% if order.passport %}
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            {% else %}
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            {% endif %}
+                        </span>
+                    </li>
+                    <li class="flex justify-between items-center">
                         <span>Medical Certificate:</span>
                         <span class="font-medium">
                             {% if order.medical_certificate %}
@@ -55,9 +83,9 @@
                         </span>
                     </li>
                     <li class="flex justify-between items-center">
-                        <span>Passport:</span>
+                        <span>Medical Certificate Concord printing:</span>
                         <span class="font-medium">
-                            {% if order.passport %}
+                            {% if order.concord_printing %}
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                 </svg>
@@ -73,10 +101,10 @@
 
             <div class="text-center mt-6 space-y-2">
                 <p class="text-xl font-bold text-gray-900">
-                    Total Amount Paid: ₦5,000
+                    Total Amount Paid: ₦{{order.get_amount}}
                 </p>
                 <p class="text-lg text-gray-700">
-                    Your Slot Number: <span class="font-bold text-blue-600">N25-B1-371</span>
+                    Your Slot Number: <span class="font-bold text-blue-600">{{order.slot}}</span>
                 </p>
             </div>
         </div>

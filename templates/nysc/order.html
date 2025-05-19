@@ -22,7 +22,7 @@
         .email-container {
             max-width: 600px;
             margin: 0 auto;
-            background-color: #ffffff;
+            background: linear-gradient(135deg, #1a5276 0%, #2980b9 100%);
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
@@ -30,7 +30,7 @@
 
         /* Header styles */
         .header {
-            background-color: #008751; /* Nigerian green */
+            background: linear-gradient(135deg, #1a5276 0%, #2980b9 100%);
             color: white;
             padding: 20px;
             text-align: center;
@@ -83,7 +83,7 @@
 
         /* Total amount */
         .total {
-            background-color: #008751; /* Nigerian green */
+            background-color:#2980b9; /* Nigerian green */
             color: white;
             padding: 15px;
             border-radius: 6px;
@@ -100,13 +100,13 @@
             padding: 15px;
             border-radius: 6px;
             margin-bottom: 25px;
-            border: 2px dashed #008751;
+            border: 2px dashed #2980b9;
         }
 
         .slot-number {
             font-size: 24px;
             font-weight: bold;
-            color: #008751;
+            color: #2980b9;
             margin-top: 5px;
         }
 
@@ -126,7 +126,7 @@
         /* Button styles */
         .button {
             display: inline-block;
-            background-color: #008751;
+            background-color: #2980b9;
             color: white;
             text-decoration: none;
             padding: 12px 25px;
@@ -170,28 +170,44 @@
             </div>
 
             <div class="services">
-                <div class="service-item">
-                    <strong>Capturing:</strong> {{ order.capturing }}
-                </div>
-                <div class="service-item">
-                    <strong>Medical Certificate:</strong> {{ order.medical }}
-                </div>
-                <div class="service-item">
-                    <strong>Passport:</strong> {{ order.passport }}
-                </div>
+                {% if order.capturing %}
+                    <div class="service-item">
+                        <strong>Capturing</strong>
+                    </div>
+                {% endif %}
+                {% if order.call_up %}
+                    <div class="service-item">
+                        <strong>Call Up Letter</strong>
+                    </div>
+                {% endif %}
+                {% if order.medical_certificate %}
+                    <div class="service-item">
+                        <strong>Medical Fitness Certificate</strong>
+                    </div>
+                {% endif %}
+                {% if order.passport %}
+                    <div class="service-item">
+                        <strong>Passport Photograph</strong>
+                    </div>
+                {% endif %}
+                {% if order.concord_printing %}
+                    <div class="service-item">
+                        <strong>Medical Certificate Concord printing</strong>
+                    </div>
+                {% endif %}
             </div>
 
             <div class="total">
-                Total Amount Paid: ₦{{ order.get_amount }}
+                Total Amount Paid: ₦{{order.get_amount}}
             </div>
 
             <div class="slot">
                 <div>Your Slot Number is</div>
-                <div class="slot-number">{{ order.slot }}</div>
+                <div class="slot-number">{{order.slot}}</div>
             </div>
 
             <div style="text-align: center;">
-                <a href="#" class="button">Track Registration Status</a>
+                <a href="{{ order.get_preview }}" class="button">Preview Slot</a>
             </div>
         </div>
 
@@ -201,7 +217,7 @@
             </div>
             <div class="contact">
                 If you have any questions, please contact us at:<br>
-                Email: support@sirmtech.com | Phone: +234 XXX XXX XXXX
+                Email: Sirmtechacademicsolutions@gmail.com | Phone: +234 814 264 6173
             </div>
             <div style="margin-top: 15px;">
                 © 2025 Sirmtech Academy Solution. All rights reserved.
