@@ -126,12 +126,6 @@
             color: #777;
         }
 
-        .expiry-value {
-            font-weight: bold;
-            color: #d35400;
-            margin-top: 5px;
-        }
-
         .footer {
             position: absolute;
             bottom: 0;
@@ -143,19 +137,6 @@
             color: #888;
             border-top: 1px solid #eee;
         }
-
-        .barcode {
-            width: 80%;
-            height: 40px;
-            margin: 15px auto;
-            background: repeating-linear-gradient(
-                90deg,
-                #000,
-                #000 2px,
-                #fff 2px,
-                #fff 4px
-            );
-        }
     </style>
 </head>
 <body>
@@ -163,37 +144,45 @@
         <div class="header">
             <div class="header-content">
                 <div class="company-name">SIRMTECH Academic Solution</div>
-                <div class="card-type">NYSC registration Slot</div>
+                <div class="card-type">NYSC registration Slot Card</div>
             </div>
         </div>
 
         <div class="photo-section">
-<!--            <div class="photo-container">-->
-<!--                <div class="photo-placeholder">PHOTO</div>-->
-<!--            </div>-->
-            <h2> {{ order.first_name }} {{ order.last_name }} {{ order.other_name }}</h2>
+            <h2> {{ order }}</h2>
             <div class="id-number">SLOT NUMBER: {{ order.slot }}</div>
         </div>
 
         <div class="details-section">
-            <div class="detail-row">
-                <div class="detail-label">Position</div>
-                <div class="detail-value">Software Developer</div>
-            </div>
 
-            <div class="detail-row">
-                <div class="detail-label">Department</div>
-                <div class="detail-value">Technology</div>
-            </div>
-
-            <div class="detail-row">
-                <div class="detail-label">Joined</div>
-                <div class="detail-value">January 05, 2025</div>
-            </div>
+            {% if order.capturing %}
+                <div class="detail-row">
+                    <div class="detail-value">Capturing</div>
+                </div>
+            {% endif %}
+            {% if order.call_up %}
+                <div class="detail-row">
+                    <div class="detail-value">Call Up Letter</div>
+                </div>
+            {% endif %}
+            {% if order.medical_certificate %}
+                <div class="detail-row">
+                    <div class="detail-value">Medical Fitness Certificate</div>
+                </div>
+            {% endif %}
+            {% if order.passport %}
+                <div class="detail-row">
+                    <div class="detail-value">Passport Photograph</div>
+                </div>
+            {% endif %}
+            {% if order.concord_printing %}
+                    <div class="detail-row">
+                    <div class="detail-value">Medical Certificate Concord printing</div>
+                </div>
+            {% endif %}
 
             <div class="expiry">
-                <div>VALID UNTIL</div>
-                <div class="expiry-value">December 31, 2025</div>
+                <div>Click this <a href="#">link</a> to join our NYSC whatsapp group.</div>
             </div>
         </div>
 

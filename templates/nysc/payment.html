@@ -95,7 +95,7 @@
 
             <div class="text-center mt-6">
                 <p class="text-xl font-bold text-gray-900">
-                    Total Amount to Pay: ₦{{ order.get_amount }}
+                    Total Amount to Pay: ₦{{ order.amount }}
                 </p>
             </div>
         </div>
@@ -107,88 +107,40 @@
         </div>
 
         <div class="mt-6 flex justify-center">
-            <button onclick="payWithPaystack()" class="px-8 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500">
+            <button onclick="payWithPayStack()" class="px-8 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500">
                 Proceed to Payment
             </button>
         </div>
 
-         <div class="text-center mt-6">
-            <a href="{{ order.get_verify_payment }}" class="text-sm bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition-colors">
-               Generate Slot
-            </a>
-        </div>
+<!--         <div class="text-center mt-6">-->
+<!--            <a href="{% url 'nysc:verify' pk=order.pk %}?ref={{ ref }}" class="text-sm bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition-colors">-->
+<!--               Generate Slot-->
+<!--            </a>-->
+<!--        </div>-->
     </div>
 </div>
 
 <script src="https://js.paystack.co/v1/inline.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-<!--&lt;!&ndash; paystack payment &ndash;&gt;-->
-<!--<script>-->
-<!--function payWithPaystack() {-->
-<!--  var handler = PaystackPop.setup({-->
-<!--    key: 'pk_test_feba4156df35513a5957f20e0ad24bdb65d19284', // Replace with your public key-->
-<!--    email: '{{order.email}}',-->
-<!--    amount: {{ order.get_amount }} * 100, // the amount value is multiplied by 100 to convert to the lowest currency unit-->
-<!--    currency: 'NGN', // Use GHS for Ghana Cedis or USD for US Dollars-->
-<!--    ref: ''+Math.floor((Math.random() * 1000000000) + 1), // Replace with a reference you generated-->
-<!--    callback: function(response) {-->
-<!--      // Make an AJAX call to your server with the reference to verify the transaction-->
-<!--      data = response.reference-->
-<!--      $.ajax({-->
-<!--        url: "{{ order.get_verify_payment }}",-->
-<!--        method: 'GET',-->
-
-<!--      });-->
-<!--      window.location.href = "{% url 'nysc:verify' pk=order.pk %}";-->
-<!--      //this happens after the payment is completed successfully-->
-<!--      var reference = response.reference;-->
-<!--      //alert('Payment complete! Reference: ' + reference);-->
-
-<!--    },-->
-<!--    onClose: function() {-->
-<!--      alert('Transaction was not completed, window closed.');-->
-<!--    },-->
-<!--  });-->
-<!--  handler.openIframe();-->
-<!--}-->
-<!--</script>-->
-
-<!-- paystack payment -->
 <script>
-function payWithPaystack() {
-  var handler = PaystackPop.setup({
-    key: 'pk_test_feba4156df35513a5957f20e0ad24bdb65d19284', // Replace with your public key
-    email: '{{order.email}}',
-    amount: {{ order.get_amount }} * 100, // the amount value is multiplied by 100 to convert to the lowest currency unit
-    currency: 'NGN', // Use GHS for Ghana Cedis or USD for US Dollars
-    ref: ''+Math.floor((Math.random() * 1000000000) + 1), // Replace with a reference you generated
-    callback: function(response) {
-      // Make an AJAX call to your server with the reference to verify the transaction
-      // Only redirect after the verification is complete
-      var reference = response.reference;
-
-      $.ajax({
-        url: "{{ order.get_verify_payment }}",
-        method: 'GET',
-        data: { reference: reference }, // Pass the reference to your backend
-        success: function(data) {
-          // Redirect after successful verification
-          window.location.href = "{% url 'nysc:verify' pk=order.pk %}";
-        },
-        error: function(xhr, status, error) {
-          // Handle errors
-          alert('Payment verification failed. Please contact support.');
-          console.error(error);
+    function payWithPayStack() {
+        let currency = "NGN";
+        let plan = "";
+        let ref = "{{ ref }}";
+        let obj = {
+            key: "{{ paystack_public_key }}",
+            email: "{{order.email}}",
+            amount: {{ order.amount }} * 100,
+            ref: ref,
+            callback: function(response) {
+                window.location.href = "{% url 'nysc:verify' pk=order.pk %}?ref={{ ref }}";
+            }
         }
-      });
-    },
-    onClose: function() {
-      alert('Transaction was not completed, window closed.');
-    },
-  });
-  handler.openIframe();
-}
+
+        var handler = PaystackPop.setup(obj);
+        handler.openIframe();
+    }
 </script>
+
 
 {% endblock body %}

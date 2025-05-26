@@ -67,18 +67,9 @@ class Nysc(models.Model):
         verbose_name="Medical Certificate Concord printing"
     )
     slot = models.SlugField()
+    amount = models.IntegerField(blank=True, null=True)
     payment_status = models.BooleanField(default=False)
     payment_id = models.CharField(max_length=20, blank=True, null=True)
-
-    def get_amount(self):
-        amount = s_c  # base charge (assuming it's always included)
-        if self.passport:
-            amount += p_p
-        if self.medical_certificate:
-            amount += m_p
-        if self.concord_printing:
-            amount += c_m_p
-        return amount
 
     def get_verify_payment(self):
         return reverse("nysc:verify", kwargs={
@@ -89,6 +80,19 @@ class Nysc(models.Model):
         return reverse("nysc:preview", kwargs={
             'pk': self.pk,
         })
+
+    def save(self, *args, **kwargs):
+        amount = s_c  # base charge (assuming it's always included)
+        if self.passport:
+            amount += p_p
+        if self.medical_certificate:
+            amount += m_p
+        if self.concord_printing:
+            amount += c_m_p
+        self.amount = amount
+
+        # Call the parent save method
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"

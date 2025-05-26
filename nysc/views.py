@@ -4,11 +4,9 @@ import string
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Nysc, Batch
 from .forms import NyscForm
-from django.views.generic import TemplateView, DetailView, View, ListView
+from django.views.generic import View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import ObjectDoesNotExist
-from django.utils import timezone
-from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
@@ -17,6 +15,10 @@ from io import BytesIO
 from django.http import HttpResponse
 from django.template.loader import get_template, render_to_string
 from xhtml2pdf import pisa
+from django.conf import settings
+from .paystack import Paystack
+
+key = settings.PAYSTACK_PUBLIC_KEY
 
 
 # Create your views here.
@@ -50,11 +52,17 @@ def edit_booking(request, pk):
     return render(request, 'nysc/edit_booking.html', {'form': form})
 
 
+def ref():
+    return ''.join(random.choices(string.ascii_lowercase + string.digits, k=10))
+
+
 class PaymentView(View):
     def get(self, request, pk, *args, **kwargs):
         order = Nysc.objects.get(pk=pk)
         context = {
             'order': order,
+            "paystack_public_key": key,
+            "ref": ref(),
         }
         return render(request, 'nysc/payment.html', context)
 
@@ -71,23 +79,31 @@ def code():
 
 class PaymentVerifyView(View):
     def get(self, request, pk, *args, **kwargs):
-        try:
-            order = Nysc.objects.get(pk=pk)
-            order.payment_status = True
-            order.slot = code()
-            order.payment_id = request.POST.get('reference')
-            order.save()
-            subject = "ACTIVATION CODE FOR YOUR NURU ACCOUNT"
-            html_message = render_to_string('nysc/order.html', {'order': order})
-            plain_message = strip_tags(html_message)
-            send_mail(subject, plain_message, 'vbellotech@gmail.com', [order.email],
-                      html_message=html_message)
-            messages.success(self.request, "Your order was successful. We will send an email to the email address "
-                                           "provided.")
-            return redirect("nysc:preview", pk=order.pk)
-        except ObjectDoesNotExist:
-            messages.success(self.request, "Your order was not successful")
-            return redirect("/")
+        ref = request.GET.get("ref")
+        paystack = Paystack()
+        order = Nysc.objects.get(pk=pk)
+
+        status, result = paystack.verify_payment(ref, order.amount)
+        if status:
+            if result["amount"] / 100 == order.amount:
+                try:
+                    order.payment_status = True
+                    order.slot = code()
+                    order.payment_id = ref
+                    order.save()
+                    subject = "NYSC Registration Confirmation"
+                    html_message = render_to_string('nysc/order.html', {'order': order})
+                    plain_message = strip_tags(html_message)
+                    send_mail(subject, plain_message, 'vbellotech@gmail.com', [order.email],
+                              html_message=html_message)
+                    messages.success(self.request, "Your booking was successful. We will send an email to the email "
+                                                   "address provided.")
+                    return redirect("nysc:preview", pk=order.pk)
+                except ObjectDoesNotExist:
+                    messages.success(self.request, "Your order was not successful")
+                    return redirect("/")
+        else:
+            messages.error(request, 'Your payment could not be verified')
 
 
 # PREVIEW SLOT
@@ -95,7 +111,7 @@ class SlotPreviewView(View, LoginRequiredMixin):
     def get(self, request, pk, *args, **kwargs):
         order = Nysc.objects.get(pk=pk)
         context = {
-            'order':order
+            'order': order
         }
         return render(self.request, 'nysc/slot_review.html', context)
 

@@ -154,8 +154,6 @@
 <body>
     <div class="email-container">
         <div class="header">
-            <!-- You can replace this with an actual logo if needed -->
-            <img src="{% static 'SIRMTECH-LOGO-PNG.png' %}" alt="Sirmtech Academy Solution" class="logo">
             <h1>NYSC Registration Confirmation</h1>
         </div>
 
@@ -198,7 +196,7 @@
             </div>
 
             <div class="total">
-                Total Amount Paid: ₦{{order.get_amount}}
+                Total Amount Paid: ₦{{order.amount}}
             </div>
 
             <div class="slot">
