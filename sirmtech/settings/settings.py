@@ -16,6 +16,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
 
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
 
 ALLOWED_HOSTS = [
     'ayomidebello.pythonanywhere.com',
@@ -142,3 +145,37 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # paystack secrets
 PAYSTACK_PUBLIC_KEY = config("PAYSTACK_PUBLIC_KEY")
 PAYSTACK_SECRET_KEY = config("PAYSTACK_SECRET_KEY")
+
+
+# LOGGING TO FILE
+
+LOGGING = {
+    "version": 1,
+    'disable_existing_loggers': False,
+    "formatters": {
+        "verbose": {
+            "format": "{name} {levelname} {asctime} {module} {process:d} {thread:d} {message}",
+            "style": "{",
+        },
+        "simple": {
+            "format": "{levelname} {message}",
+            "style": "{",
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR / 'sirmtech.log',
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
+    "root": {"level": "INFO", "handlers": ["file"]},
+}
