@@ -40,7 +40,8 @@ DJANGO_APPS = [
 ]
 
 PROJECT_APPS = [
-    'nysc'
+    'nysc',
+    'store'
 ]
 
 THIRD_PARTY_APPS = [
@@ -135,6 +136,11 @@ STATIC_URL = '/static/'
 # crispy form
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+# MEDIA FILES
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'MEDIA')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
