@@ -28,7 +28,7 @@
                 {% endif %}
             </div>
             <div class="p-4">
-                <h4 class="font-semibold text-lg mb-2 text-gray-800"><a href="#">{{ item.name }}</a></h4>
+                <h4 class="font-semibold text-lg mb-2 text-gray-800"><a href="{% url 'store:product' item.pk %}">{{ item.name }}</a></h4>
                 <p class="text-gray-600 text-sm mb-3">
                     {% if item.description %}
                         {{ item.description|truncatewords:10 }}
@@ -50,8 +50,5 @@
 
     </div>
 </div>
+
 {% endblock body %}
-
-
-
-
