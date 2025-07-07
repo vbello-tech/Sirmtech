@@ -41,12 +41,14 @@ DJANGO_APPS = [
 
 PROJECT_APPS = [
     'nysc',
-    'store'
+    'store',
+    'accounts',
 ]
 
 THIRD_PARTY_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
@@ -150,3 +152,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # paystack secrets
 PAYSTACK_PUBLIC_KEY = config("PAYSTACK_PUBLIC_KEY")
 PAYSTACK_SECRET_KEY = config("PAYSTACK_SECRET_KEY")
+
+# USER AUTHENTICATION SETTINGS
+AUTH_USER_MODEL = "accounts.User"
+# LOGIN_URL = "user:login"
+# LOGOUT_URL = "user:logout"
+# LOGIN_REDIRECT_URL = '/'
+# LOGOUT_REDIRECT_URL = '/'
+# PASSWORD_RESET_TIMEOUT = 360
