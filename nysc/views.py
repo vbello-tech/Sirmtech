@@ -23,12 +23,12 @@ key = settings.PAYSTACK_PUBLIC_KEY
 
 # Create your views here.
 
-class HomeView(View):
+class NyscView(View):
     def get(self, request, *args, **kwargs):
         context = {
             'form': NyscForm(request.POST)
         }
-        return render(request, 'home.html', context)
+        return render(request, 'nysc/nysc.html', context)
 
     def post(self, request, *args, **kwargs):
         if request.method == "POST":

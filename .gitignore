@@ -9,3 +9,13 @@ nysc/migrations/__pycache__/
 sirmtech/__pycache__/
 sirmtech/settings/__pycache__/
 MEDIA
+static/__pycache__/
+store/__pycache__/
+store/migrations/__pycache__/
+templates/__pycache__/
+templates/nysc/__pycache__/
+templates/registrations/__pycache__/
+templates/store/__pycache__/
+db/__pycache__/
+accounts/__pycache__/
+accounts/migrations/__pycache__/
