@@ -50,11 +50,7 @@
         <div class="container mx-auto px-4 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-4">
-                    <h1 class="text-2xl font-bold text-gray-800"><a href="{% url 'nysc:home' %}">SirmTech</a></h1>
-                </div>
-                <div class="flex-1 max-w-md mx-8">
-                    <input type="text" placeholder="Search products..."
-                           class="search-bar w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:border-purple-500">
+                    <h1 class="text-2xl font-bold text-gray-800"><a href="/">SirmTech</a></h1>
                 </div>
                 <div class="flex items-center space-x-4">
                     <button class="relative p-2 text-gray-600 hover:text-purple-600 transition-colors">
@@ -64,7 +60,22 @@
                         <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
                     </button>
                     <button class="bg-purple-600 text-white px-4 py-2 rounded-full hover:bg-purple-700 transition-colors">
+                        <a class="text-md font-medium hover:underline hover:text-white underline-offset-4" href="{% url 'nysc:form' %}">
+                            Nysc
+                          </a>
+                    </button>
+                    <button class="bg-purple-600 text-white px-4 py-2 rounded-full hover:bg-purple-700 transition-colors">
+                        <a class="text-md font-medium hover:underline hover:text-white underline-offset-4" href="{% url 'store:list' %}">
+                            Store
+                          </a>
+                    </button>
+                    <button class="bg-purple-600 text-white px-4 py-2 rounded-full hover:bg-purple-700 transition-colors">
                         <a class="text-md font-medium hover:underline hover:text-white underline-offset-4" href="#">
+                            Catalogue
+                          </a>
+                    </button>
+                    <button class="bg-purple-600 text-white px-4 py-2 rounded-full hover:bg-purple-700 transition-colors">
+                        <a class="text-md font-medium hover:underline hover:text-white underline-offset-4" href="{% url 'user:login' %}">
                             Login
                           </a>
                     </button>

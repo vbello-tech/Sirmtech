@@ -8,7 +8,7 @@ from .views import NyscView, PaymentView, PaymentVerifyView, GeneratePdf, SlotPr
 app_name = "nysc"
 
 urlpatterns = [
-    path('', NyscView.as_view(), name="home"),
+    path('', NyscView.as_view(), name="form"),
     path('payment/<int:pk>/', PaymentView.as_view(), name="payment"),
     path('payment/verify/<int:pk>/', PaymentVerifyView.as_view(), name="verify"),
     path('slot/preview/<int:pk>/', SlotPreviewView.as_view(), name="preview"),
