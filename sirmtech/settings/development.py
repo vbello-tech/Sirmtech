@@ -8,8 +8,15 @@ django.utils.encoding.force_text = force_str
 
 # settings for development server.
 
+# Database
+# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # storage settings
 
