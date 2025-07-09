@@ -63,11 +63,9 @@
         <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="text-2xl font-bold">Simtech</div>
             <div class="hidden md:flex space-x-6">
-                <a href="#home" class="hover:text-blue-200">Home</a>
-                <a href="#services" class="hover:text-blue-200">Services</a>
-                <a href="#catalog" class="hover:text-blue-200">Catalog</a>
-                <a href="#testimonials" class="hover:text-blue-200">Testimonials</a>
-                <a href="#contact" class="hover:text-blue-200">Contact</a>
+                <a href="/" class="hover:text-blue-200">Home</a>
+                <a href="{% url 'user:catalogue' %}" class="hover:text-blue-200">Services</a>
+                <a href="{% url 'nysc:form' %}" class="hover:text-blue-200">Nysc</a>
             </div>
             <button class="md:hidden focus:outline-none" onclick="toggleMenu()">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -77,11 +75,9 @@
         </nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-blue-700 text-white">
-            <a href="#home" class="block px-4 py-2 hover:bg-blue-800">Home</a>
-            <a href="#services" class="block px-4 py-2 hover:bg-blue-800">Services</a>
-            <a href="#catalog" class="block px-4 py-2 hover:bg-blue-800">Catalog</a>
-            <a href="#testimonials" class="block px-4 py-2 hover:bg-blue-800">Testimonials</a>
-            <a href="#contact" class="block px-4 py-2 hover:bg-blue-800">Contact</a>
+            <a href="/" class="block px-4 py-2 hover:bg-blue-800">Home</a>
+            <a href="{% url 'user:catalogue' %}" class="block px-4 py-2 hover:bg-blue-800">Services</a>
+            <a href="{% url 'nysc:form' %}" class="block px-4 py-2 hover:bg-blue-800">Nysc</a>
         </div>
     </header>
 
