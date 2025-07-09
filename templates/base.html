@@ -39,6 +39,18 @@
         .form-input:focus {
             box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
         }
+         .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-card {
+            min-height: 200px;
+        }
     </style>
 
     {% block extra_css %}{% endblock %}
@@ -53,32 +65,40 @@
                     <h1 class="text-2xl font-bold text-gray-800"><a href="/">SirmTech</a></h1>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <button class="relative p-2 text-gray-600 hover:text-purple-600 transition-colors">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 5H19"></path>
-                        </svg>
-                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
-                    </button>
-                    <button class="bg-purple-600 text-white px-4 py-2 rounded-full hover:bg-purple-700 transition-colors">
+<!--                    <button class="relative p-2 text-gray-600 hover:text-purple-600 transition-colors">-->
+<!--                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">-->
+<!--                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 5H19"></path>-->
+<!--                        </svg>-->
+<!--                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>-->
+<!--                    </button>-->
+
                         <a class="text-md font-medium hover:underline hover:text-white underline-offset-4" href="{% url 'nysc:form' %}">
-                            Nysc
-                          </a>
-                    </button>
-                    <button class="bg-purple-600 text-white px-4 py-2 rounded-full hover:bg-purple-700 transition-colors">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-full hover:bg-purple-700 transition-colors">
+                                Nysc
+                            </button>
+                        </a>
+
+
                         <a class="text-md font-medium hover:underline hover:text-white underline-offset-4" href="{% url 'store:list' %}">
-                            Store
-                          </a>
-                    </button>
-                    <button class="bg-purple-600 text-white px-4 py-2 rounded-full hover:bg-purple-700 transition-colors">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-full hover:bg-purple-700 transition-colors">
+                                Store
+                            </button>
+                        </a>
+
+
                         <a class="text-md font-medium hover:underline hover:text-white underline-offset-4" href="{% url 'user:catalogue' %}">
-                            Catalogue
-                          </a>
-                    </button>
-                    <button class="bg-purple-600 text-white px-4 py-2 rounded-full hover:bg-purple-700 transition-colors">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-full hover:bg-purple-700 transition-colors">
+                                 Catalogue
+                            </button>
+                        </a>
+
+
                         <a class="text-md font-medium hover:underline hover:text-white underline-offset-4" href="{% url 'user:login' %}">
-                            Login
-                          </a>
-                    </button>
+                           <button class="bg-purple-600 text-white px-4 py-2 rounded-full hover:bg-purple-700 transition-colors">
+                               Login
+                           </button>
+                        </a>
+
                 </div>
             </div>
         </div>
