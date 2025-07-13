@@ -11,6 +11,8 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}"/>
 
     <!-- Optional: Custom tailwind configuration -->
     <script>
@@ -33,53 +35,13 @@
         }
     </script>
 
-    <!-- Optional: Custom CSS -->
-    <style type="text/css">
-        /* Custom styles can go here */
-        .form-input:focus {
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
-        }
-         .service-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-
-        .testimonial-card {
-            min-height: 200px;
-        }
-    </style>
-
     {% block extra_css %}{% endblock %}
 </head>
 
 <body class="bg-gray-50 min-h-screen font-sans">
 
-    <!-- Header -->
-    <header class="bg-blue-600 text-white sticky top-0 z-50">
-        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold">Simtech</div>
-            <div class="hidden md:flex space-x-6">
-                <a href="/" class="hover:text-blue-200">Home</a>
-                <a href="{% url 'user:catalogue' %}" class="hover:text-blue-200">Services</a>
-                <a href="{% url 'nysc:form' %}" class="hover:text-blue-200">Nysc</a>
-            </div>
-            <button class="md:hidden focus:outline-none" onclick="toggleMenu()">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-            </button>
-        </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-blue-700 text-white">
-            <a href="/" class="block px-4 py-2 hover:bg-blue-800">Home</a>
-            <a href="{% url 'user:catalogue' %}" class="block px-4 py-2 hover:bg-blue-800">Services</a>
-            <a href="{% url 'nysc:form' %}" class="block px-4 py-2 hover:bg-blue-800">Nysc</a>
-        </div>
-    </header>
+<!------------------------ < header> ------------------>
+{% include 'header.html' %}
 
     <div class="container mx-auto px-4 py-8">
         {% if messages %}
@@ -97,89 +59,77 @@
 
         {% endblock %}
     </div>
-
-    <br>
-
-
-        <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">SirmTech Academic Solution.</h3>
-                    <p class="text-gray-400 mb-4">Empowering Excellence, Simpifying Education</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-pinterest"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Other Services</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Printing (all sizes)</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Project Works</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Photocopying</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Passport Services</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">NIN Services</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Jamb/Neco/Waec/Nabteb</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Admission Processing</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Plastic ID Card</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Online Tutorials</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
-                    <ul class="space-y-2">
-                        <li><a href="tel:+234 814 264 6173" class="text-gray-400 hover:text-white transition duration-300"><i class="fas fa-phone"></i>08142646173</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Sirmtechacademicsolutions@gmail.com</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Website</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fas fa-phone"></i>1, Block Q, Redemption Road, Apatapiti Area, Futa Southgate, Akure Ondo State</a></li>
-                    </ul>
-                </div>
-
-<!--                <div>-->
-<!--                    <h3 class="text-lg font-semibold mb-4">Subscribe</h3>-->
-<!--                    <p class="text-gray-400 mb-4">Sign up for our newsletter to receive special offers</p>-->
-<!--                    <div class="flex">-->
-<!--                        <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900">-->
-<!--                        <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-md transition duration-300">-->
-<!--                            <i class="fas fa-arrow-right"></i>-->
-<!--                        </button>-->
-<!--                    </div>-->
-<!--                </div>-->
-            </div>
-
-            <div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400">&copy; 2025 VbelloTech.</p>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">SirmTech Academic Solution</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+<!------------------------ < footer> ------------------>
+{% include 'footer.html' %}
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <!-- JavaScript for Mobile Menu Toggle -->
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+
+<script>
+    // Optimized mobile menu toggle with improved accessibility
+    function toggleMobileMenu() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuButton = document.getElementById('mobile-menu-button');
+        const hamburger = menuButton.querySelector('.hamburger');
+        const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+
+        if (isExpanded) {
+            // Close menu
+            mobileMenu.style.maxHeight = '0';
+            mobileMenu.classList.remove('mobile-menu-active');
+            mobileMenu.classList.add('mobile-menu-enter');
+            hamburger.classList.remove('hamburger-active');
+            menuButton.setAttribute('aria-expanded', 'false');
+        } else {
+            // Open menu
+            mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+            mobileMenu.classList.remove('mobile-menu-enter');
+            mobileMenu.classList.add('mobile-menu-active');
+            hamburger.classList.add('hamburger-active');
+            menuButton.setAttribute('aria-expanded', 'true');
         }
-    </script>
+    }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuButton = document.getElementById('mobile-menu-button');
+
+        if (!menuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+            if (menuButton.getAttribute('aria-expanded') === 'true') {
+                toggleMobileMenu();
+            }
+        }
+    });
+
+    // Close mobile menu on escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            const menuButton = document.getElementById('mobile-menu-button');
+            if (menuButton.getAttribute('aria-expanded') === 'true') {
+                toggleMobileMenu();
+            }
+        }
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth >= 768) { // md breakpoint
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuButton = document.getElementById('mobile-menu-button');
+            const hamburger = menuButton.querySelector('.hamburger');
+
+            mobileMenu.style.maxHeight = '0';
+            mobileMenu.classList.remove('mobile-menu-active');
+            mobileMenu.classList.add('mobile-menu-enter');
+            hamburger.classList.remove('hamburger-active');
+            menuButton.setAttribute('aria-expanded', 'false');
+        }
+    });
+</script>
 
 
 </body>

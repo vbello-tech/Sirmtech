@@ -19,3 +19,4 @@ templates/store/__pycache__/
 db/__pycache__/
 accounts/__pycache__/
 accounts/migrations/__pycache__/
+staticfiles

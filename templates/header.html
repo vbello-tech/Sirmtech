@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+
+    <style>
+    /* Header with glassmorphism effect */
+    .header-glass {
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--glass-border);
+        transition: all 0.3s var(--animation-smooth);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .header-glass::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        transition: left 0.8s ease;
+    }
+
+    .header-glass:hover::before {
+        left: 100%;
+    }
+
+    .header-glass.scrolled {
+        background: var(--primary-blue);
+        box-shadow: var(--shadow-medium);
+        transform: translateY(-1px);
+    }
+
+     /* Custom transitions for smoother animations */
+    .nav-transition {
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Smooth mobile menu slide animation */
+    .mobile-menu-enter {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    .mobile-menu-active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    /* Focus styles for better accessibility */
+    .focus-visible:focus {
+        outline: 2px solid #fff;
+        outline-offset: 2px;
+    }
+
+    /* Hamburger animation */
+    .hamburger-line {
+        transition: all 0.3s ease;
+        transform-origin: center;
+    }
+
+    .hamburger-active .line1 {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .hamburger-active .line2 {
+        opacity: 0;
+    }
+
+    .hamburger-active .line3 {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    </style>
+
+</head>
+<body>
+
+<header class="bg-blue-600 text-white sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-4 py-4" role="navigation" aria-label="Main navigation">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="text-2xl font-bold">
+                    <a href="/" class="focus-visible:focus" aria-label="Simtech - Home">
+                        <img src="{% static 'sirmtech.png' %}" alt="Simtech Logo" class="h-12 w-auto">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8" role="menubar">
+                    <a href="/"
+                       class="nav-transition hover:text-blue-200 focus-visible:focus px-3 py-2 rounded-md text-white"
+                       role="menuitem">
+                        Home
+                    </a>
+                    <a href="{% url 'user:catalogue' %}"
+                       class="nav-transition hover:text-blue-200 focus-visible:focus px-3 py-2 rounded-md text-white"
+                       role="menuitem">
+                        Services
+                    </a>
+                    <a href="{% url 'nysc:form' %}"
+                       class="nav-transition hover:text-blue-200 focus-visible:focus px-3 py-2 rounded-md text-white"
+                       role="menuitem">
+                        NYSC
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden focus-visible:focus p-2 rounded-md hover:bg-blue-700 nav-transition"
+                        onclick="toggleMobileMenu()"
+                        aria-expanded="false"
+                        aria-controls="mobile-menu"
+                        aria-label="Toggle mobile menu"
+                        id="mobile-menu-button">
+                    <div class="hamburger w-6 h-6 flex flex-col justify-center space-y-1">
+                        <span class="hamburger-line line1 block h-0.5 w-6 bg-white"></span>
+                        <span class="hamburger-line line2 block h-0.5 w-6 bg-white"></span>
+                        <span class="hamburger-line line3 block h-0.5 w-6 bg-white"></span>
+                    </div>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+             class="md:hidden bg-blue-700 text-white nav-transition mobile-menu-enter overflow-hidden"
+             role="menu"
+             aria-labelledby="mobile-menu-button"
+             style="max-height: 0;">
+            <div class="py-2">
+                <a href="/"
+                   class="block px-6 py-3 hover:bg-blue-800 nav-transition focus-visible:focus text-white"
+                   role="menuitem">
+                    Home
+                </a>
+                <a href="{% url 'user:catalogue' %}"
+                   class="block px-6 py-3 hover:bg-blue-800 nav-transition focus-visible:focus text-white"
+                   role="menuitem">
+                    Services
+                </a>
+                <a href="{% url 'nysc:form' %}"
+                   class="block px-6 py-3 hover:bg-blue-800 nav-transition focus-visible:focus text-white"
+                   role="menuitem">
+                    NYSC
+                </a>
+            </div>
+        </div>
+    </header>
+
+</body>
+</html>

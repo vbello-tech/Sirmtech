@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .footer-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .footer-link {
+            position: relative;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .footer-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            transition: width 0.3s ease;
+        }
+
+        .footer-link:hover::after {
+            width: 100%;
+        }
+
+        .footer-link:hover {
+            transform: translateX(5px);
+            color: #ffffff !important;
+        }
+
+        .service-item {
+            padding: 4px 0;
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover {
+            padding-left: 8px;
+        }
+
+        .service-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-item:hover .service-icon {
+            opacity: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 8px 0;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            padding-left: 8px;
+        }
+
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .brand-logo {
+            color: white;
+        }
+
+
+        .footer-section {
+            position: relative;
+            z-index: 10;
+        }
+
+        .footer-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 2rem 0;
+        }
+
+        .stagger-animation {
+            animation: staggerUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @keyframes staggerUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <footer class="footer-gradient text-white py-16 relative">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <!-- Brand Section -->
+                <div class="footer-section">
+                    <div class="stagger-animation">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-graduation-cap text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold brand-logo">SirmTech Academic Solution</h3>
+                        </div>
+                        <p class="text-gray-200 mb-6 text-lg leading-relaxed">
+                            Empowering Excellence, Simplifying Education
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="social-icon group">
+                                <i class="fab fa-facebook-f text-white"></i>
+                            </a>
+                            <a href="#" class="social-icon group">
+                                <i class="fab fa-twitter text-white"></i>
+                            </a>
+                            <a href="#" class="social-icon group">
+                                <i class="fab fa-instagram text-white"></i>
+                            </a>
+                            <a href="#" class="social-icon group">
+                                <i class="fab fa-pinterest text-white"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services Section -->
+                <div class="footer-section">
+                    <div class="stagger-animation">
+                        <div class="flex items-center mb-6">
+                            <h3 class="text-xl font-bold">Other Services</h3>
+                        </div>
+                        <ul class="space-y-2">
+                            <li class="service-item">
+                                <a href="#" class="footer-link text-gray-300 hover:text-white">Printing (all sizes)</a>
+                            </li>
+                            <li class="service-item">
+                                <a href="#" class="footer-link text-gray-300 hover:text-white">Project Works</a>
+                            </li>
+                            <li class="service-item">
+                                <a href="#" class="footer-link text-gray-300 hover:text-white">Photocopying</a>
+                            </li>
+                            <li class="service-item">
+                                <a href="#" class="footer-link text-gray-300 hover:text-white">Passport Services</a>
+                            </li>
+                            <li class="service-item">
+                                <a href="#" class="footer-link text-gray-300 hover:text-white">NIN Services</a>
+                            </li>
+                            <li class="service-item">
+                                <a href="#" class="footer-link text-gray-300 hover:text-white">Jamb/Neco/Waec/Nabteb</a>
+                            </li>
+                            <li class="service-item">
+                                <a href="#" class="footer-link text-gray-300 hover:text-white">Admission Processing</a>
+                            </li>
+                            <li class="service-item">
+                                <a href="#" class="footer-link text-gray-300 hover:text-white">Plastic ID Card</a>
+                            </li>
+                            <li class="service-item">
+                                <a href="#" class="footer-link text-gray-300 hover:text-white">Online Tutorials</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="footer-section">
+                    <div class="stagger-animation">
+                        <div class="flex items-center mb-6">
+                            <h3 class="text-xl font-bold">Contact Us</h3>
+                        </div>
+                        <ul class="space-y-4">
+                            <li class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone text-sm"></i>
+                                </div>
+                                <div>
+                                    <a href="tel:+2348142646173" class="footer-link text-gray-300 hover:text-white">
+                                        08142646173
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope text-sm"></i>
+                                </div>
+                                <a href="mailto:Sirmtechacademicsolutions@gmail.com" class="footer-link text-gray-300 hover:text-white break-all">
+                                    Sirmtechacademicsolutions@gmail.com
+                                </a>
+                            </li>
+                            <li class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-globe text-sm"></i>
+                                </div>
+                                <a href="#" class="footer-link text-gray-300 hover:text-white">
+                                    Visit Website
+                                </a>
+                            </li>
+                            <li class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt text-sm"></i>
+                                </div>
+                                <div class="text-gray-300 leading-relaxed">
+                                    1, Block Q, Redemption Road, Apatapiti Area, Futa Southgate, Akure Ondo State
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Quick Links Section -->
+                <div class="footer-section">
+                    <div class="stagger-animation">
+                        <h3 class="text-xl font-bold mb-6">Quick Links</h3>
+                        <div class="space-y-3">
+                            <a href="#" class="footer-link text-gray-300 hover:text-white block">
+                                Service Catalog
+                            </a>
+                            <a href="#" class="footer-link text-gray-300 hover:text-white block">
+                                Support Center
+                            </a>
+                            <a href="#" class="footer-link text-gray-300 hover:text-white block">
+                                Privacy Policy
+                            </a>
+                            <a href="#" class="footer-link text-gray-300 hover:text-white block">
+                                Terms of Service
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-divider"></div>
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center">
+                    <p class="text-gray-300">© 2025 VbelloTech. All rights reserved.</p>
+                </div>
+                <div class="flex items-center mt-4 md:mt-0 space-x-6">
+                    <a href="#" class="footer-link text-gray-300 hover:text-white">
+                        SirmTech Academic Solution
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
