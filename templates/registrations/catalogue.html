@@ -1,28 +1,178 @@
 {% extends 'base.html' %}
 
-{% block title %} {% endblock title %}
+{% block title %} Our Services {% endblock title %}
 
- {% load crispy_forms_tags %}
+{% load crispy_forms_tags %}
+
+{% block extra_css %}
+
+/* Custom animations */
+.slide-in-left {
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.slide-in-right {
+    transform: translateX(100px);
+    opacity: 0;
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.slide-in-visible {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.service-image {
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.glow-effect {
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+{% endblock %}
 
 {% block body %}
 
+    <section class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
 
+            <!-- Service 1: Image Left, Text Right -->
+            <div class="service-item flex flex-col lg:flex-row items-center mb-24 gap-12">
+                <div class="service-image-container lg:w-1/2 slide-from-left">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                         alt="Digital Marketing"
+                         class="service-image w-full h-72 object-cover">
+                </div>
+                <div class="service-text-container lg:w-1/2 slide-from-left">
+                    <h2 class="text-3xl font-bold mb-4 text-gradient">Digital Marketing</h2>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Boost your online presence with strategic digital marketing campaigns. We help businesses reach their target audience through social media, SEO, and content marketing that drives real results.
+                    </p>
+                </div>
+            </div>
 
-<div>
-    <h3 class="text-lg font-semibold mb-4">Our Services</h3>
-    <ul class="space-y-2">
-        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Printing (all sizes)</a></li>
-        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Project Works</a></li>
-        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Photocopying</a></li>
-        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Passport Services</a></li>
-        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">NIN Services</a></li>
-        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Jamb/Neco/Waec/Nabteb</a></li>
-        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Admission Processing</a></li>
-        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Plastic ID Card</a></li>
-        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Online Tutorials</a></li>
-    </ul>
-</div>
+            <!-- Service 2: Image Right, Text Left -->
+            <div class="service-item flex flex-col lg:flex-row-reverse items-center mb-24 gap-12">
+                <div class="service-image-container lg:w-1/2 slide-from-left">
+                    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                         alt="Web Development"
+                         class="service-image w-full h-72 object-cover">
+                </div>
+                <div class="service-text-container lg:w-1/2 slide-from-left">
+                    <h2 class="text-3xl font-bold mb-4 text-gradient">Web Development</h2>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Create stunning, responsive websites that engage your visitors and convert them into customers. Our development team builds modern, fast, and secure web solutions tailored to your business.
+                    </p>
+                </div>
+            </div>
 
+            <!-- Service 1: Image Left, Text Right -->
+            <div class="service-item flex flex-col lg:flex-row items-center mb-24 gap-12">
+                <div class="service-image-container lg:w-1/2 slide-from-left">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                         alt="Digital Marketing"
+                         class="service-image w-full h-72 object-cover">
+                </div>
+                <div class="service-text-container lg:w-1/2 slide-from-left">
+                    <h2 class="text-3xl font-bold mb-4 text-gradient">Digital Marketing</h2>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Boost your online presence with strategic digital marketing campaigns. We help businesses reach their target audience through social media, SEO, and content marketing that drives real results.
+                    </p>
+                </div>
+            </div>
 
+            <!-- Service 2: Image Right, Text Left -->
+            <div class="service-item flex flex-col lg:flex-row-reverse items-center mb-24 gap-12">
+                <div class="service-image-container lg:w-1/2 slide-from-left">
+                    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                         alt="Web Development"
+                         class="service-image w-full h-72 object-cover">
+                </div>
+                <div class="service-text-container lg:w-1/2 slide-from-left">
+                    <h2 class="text-3xl font-bold mb-4 text-gradient">Web Development</h2>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Create stunning, responsive websites that engage your visitors and convert them into customers. Our development team builds modern, fast, and secure web solutions tailored to your business.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
 {% endblock body %}
+
+
+
+<!--{% block extra_script %}-->
+<!--        // Intersection Observer for scroll animations-->
+<!--        const observerOptions = {-->
+<!--            threshold: 0.1,-->
+<!--            rootMargin: '0px 0px -50px 0px'-->
+<!--        };-->
+
+<!--        const observer = new IntersectionObserver((entries) => {-->
+<!--            entries.forEach(entry => {-->
+<!--                if (entry.isIntersecting) {-->
+<!--                    entry.target.classList.add('slide-in-visible');-->
+<!--                } else {-->
+<!--                    entry.target.classList.remove('slide-in-visible');-->
+<!--                }-->
+<!--            });-->
+<!--        }, observerOptions);-->
+
+<!--        // Observe all service containers-->
+<!--        document.addEventListener('DOMContentLoaded', function() {-->
+<!--            const serviceContainers = document.querySelectorAll('.service-image-container, .service-text-container');-->
+<!--            serviceContainers.forEach(container => {-->
+<!--                observer.observe(container);-->
+<!--            });-->
+<!--        });-->
+
+<!--        // Add smooth parallax effect on scroll-->
+<!--        window.addEventListener('scroll', function() {-->
+<!--            const scrolled = window.pageYOffset;-->
+<!--            const parallaxElements = document.querySelectorAll('.service-image');-->
+
+<!--            parallaxElements.forEach(element => {-->
+<!--                const speed = 0.1;-->
+<!--                const yPos = -(scrolled * speed);-->
+<!--                element.style.transform = `translateY(${yPos}px)`;-->
+<!--            });-->
+<!--        });-->
+
+<!--        // Add stagger animation delay-->
+<!--        document.addEventListener('DOMContentLoaded', function() {-->
+<!--            const serviceItems = document.querySelectorAll('.service-item');-->
+<!--            serviceItems.forEach((item, index) => {-->
+<!--                const imageContainer = item.querySelector('.service-image-container');-->
+<!--                const textContainer = item.querySelector('.service-text-container');-->
+
+<!--                if (imageContainer && textContainer) {-->
+<!--                    imageContainer.style.transitionDelay = `${index * 0.1}s`;-->
+<!--                    textContainer.style.transitionDelay = `${index * 0.1 + 0.2}s`;-->
+<!--                }-->
+<!--            });-->
+<!--        });-->
+<!--{% endblock %}-->
+
