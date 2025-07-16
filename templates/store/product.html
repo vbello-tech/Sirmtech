@@ -23,33 +23,21 @@
           <span class="text-2xl text-green-600 font-semibold" style="color: #2980b9;">${{ item.price }}</span>
         </div>
 
-         <!-- Color Selection -->
-        <div class="mt-6">
-          <h2 class="text-lg font-medium text-gray-700 mb-2">Color</h2>
-          <div class="flex gap-3">
-            <button class="w-8 h-8 rounded-full border-2 border-gray-300 bg-black hover:ring-2 hover:ring-gray-400 focus:ring-2 focus:ring-black" title="Black"></button>
-            <button class="w-8 h-8 rounded-full border-2 border-gray-300 bg-red-600 hover:ring-2 hover:ring-gray-400 focus:ring-2 focus:ring-red-600" title="Red"></button>
-            <button class="w-8 h-8 rounded-full border-2 border-gray-300 bg-blue-500 hover:ring-2 hover:ring-gray-400 focus:ring-2 focus:ring-blue-500" title="Blue"></button>
-            <button class="w-8 h-8 rounded-full border-2 border-gray-300 bg-gray-300 hover:ring-2 hover:ring-gray-400 focus:ring-2 focus:ring-gray-500" title="Gray"></button>
-          </div>
-        </div>
-
-
         <!-- Description -->
         <div class="mt-6">
-          <h2 class="text-lg font-medium text-gray-700">Description</h2>
-          <p class="mt-2 text-sm text-gray-600">
-            This premium leather backpack is crafted for everyday use and comfort. It features multiple compartments, water-resistant material, and an elegant finish.
+          <p class="mt-2 text-md text-gray-800">
+            {{ item.description }}
           </p>
         </div>
 
         <!-- Stock & Add to Cart -->
         <div class="mt-6">
-          <p class="text-sm text-green-600" style="color: #2980b9;">In Stock</p>
+          <p class="text-sm text-green-600" style="color: #2980b9;">{% if item.in_stock %} In Stock {% else %}Out of Stock{% endif %}</p>
           <button class="mt-4 px-6 py-2 bg-black text-white text-sm rounded hover:bg-gray-800">
-            Add to Cart
+            <a href="{{ item.add_to_cart }}">Add to Cart</a>
           </button>
         </div>
+
       </div>
 
     </div>
