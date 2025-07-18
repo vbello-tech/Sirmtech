@@ -2,7 +2,7 @@
 
 {% block title %} Product Detail {% endblock title %}
 
- {% load crispy_forms_tags %}
+{% load crispy_forms_tags %}
 
 {% block body %}
 
@@ -33,8 +33,8 @@
         <!-- Stock & Add to Cart -->
         <div class="mt-6">
           <p class="text-sm text-green-600" style="color: #2980b9;">{% if item.in_stock %} In Stock {% else %}Out of Stock{% endif %}</p>
-          <button class="mt-4 px-6 py-2 bg-black text-white text-sm rounded hover:bg-gray-800">
-            <a href="{{ item.add_to_cart }}">Add to Cart</a>
+          <button class="mt-4 px-6 py-2 bg-black  text-sm rounded ">
+            <a href="{% url 'store:complete_order' item.pk %}" class="text-white hover:bg-gray-800">Place Order</a>
           </button>
         </div>
 

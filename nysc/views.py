@@ -15,13 +15,10 @@ from io import BytesIO
 from django.http import HttpResponse
 from django.template.loader import get_template, render_to_string
 from xhtml2pdf import pisa
-from django.conf import settings
-from .paystack import Paystack
-
-key = settings.PAYSTACK_PUBLIC_KEY
-
+from common import common
 
 # Create your views here.
+
 
 class NyscView(View):
     def get(self, request, *args, **kwargs):
@@ -52,17 +49,13 @@ def edit_booking(request, pk):
     return render(request, 'nysc/edit_booking.html', {'form': form})
 
 
-def ref():
-    return ''.join(random.choices(string.ascii_lowercase + string.digits, k=10))
-
-
 class PaymentView(View):
     def get(self, request, pk, *args, **kwargs):
         order = Nysc.objects.get(pk=pk)
         context = {
             'order': order,
-            "paystack_public_key": key,
-            "ref": ref(),
+            "paystack_public_key": common.key,
+            "ref": common.ref(),
         }
         return render(request, 'nysc/payment.html', context)
 
@@ -80,7 +73,7 @@ def code():
 class PaymentVerifyView(View):
     def get(self, request, pk, *args, **kwargs):
         ref = request.GET.get("ref")
-        paystack = Paystack()
+        paystack = common.Paystack()
         order = Nysc.objects.get(pk=pk)
 
         status, result = paystack.verify_payment(ref, order.amount)

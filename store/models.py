@@ -20,9 +20,10 @@ LENGTH_CHOICES = (
 )
 
 SIZE_CHOICES = (
-    ('xs', 'xs'),
-    ('xm', 'xm'),
-    ('xl', 'xl'),
+    ('Small', 'Small'),
+    ('Medium', 'Medium'),
+    ('Large', 'Large'),
+    ('Extra-Large', 'Extra-Large'),
 )
 
 
@@ -34,7 +35,9 @@ class Item(models.Model):
     admin = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     name = models.CharField(max_length=100, blank=False)
     image = models.ImageField(blank=False, upload_to="StoreImages/")
-    price = models.DecimalField(decimal_places=2, max_digits=10)
+    A_price = models.DecimalField(decimal_places=2, max_digits=10, blank=True, null=True)
+    B_price = models.DecimalField(decimal_places=2, max_digits=10, blank=True, null=True)
+    C_price = models.DecimalField(decimal_places=2, max_digits=10, blank=True, null=True)
     discount_price = models.DecimalField(decimal_places=2, max_digits=10, blank=True, null=True)
     description = models.CharField(max_length=300, blank=True, null=True)
     label = models.CharField(max_length=100, blank=True, choices=LABEL_CHOICES)
@@ -70,16 +73,19 @@ class Item(models.Model):
 
 class OrderItem(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    ordered = models.BooleanField(default=False)
     item = models.ForeignKey('Item', on_delete=models.CASCADE)
-    colour = models.CharField(max_length=300, blank=True, null=True)
-    length = models.CharField(max_length=100, blank=True, choices=LENGTH_CHOICES, null=True)
-    size = models.CharField(max_length=100, blank=True, choices=SIZE_CHOICES, null=True)
+    colour = models.CharField(max_length=20, blank=True, null=True)
+    length = models.CharField(max_length=20, blank=True, choices=LENGTH_CHOICES, null=True)
+    size = models.CharField(max_length=20, blank=True, choices=SIZE_CHOICES, null=True)
+    price = models.DecimalField(decimal_places=2, max_digits=10, blank=True, null=True)
+    grade = models.CharField(max_length=10, blank=True, null=True)
     quantity = models.IntegerField(default=1)
-    in_cart = models.BooleanField(default=False)
+    marker = models.BooleanField(default=False)
+    custom_text = models.CharField(max_length=200, blank=True, null=True)
+    ordered = models.BooleanField(default=False)
 
     def get_total_price(self):
-        return self.quantity * self.item.price
+        return (self.quantity * self.price) + 500 if self.marker else (self.quantity * self.price)
 
     def get_total_discount_price(self):
         return self.quantity * self.item.discount_price
@@ -90,29 +96,33 @@ class OrderItem(models.Model):
         return self.get_total_price()
 
     def __str__(self):
-        return f"{self.quantity} of {self.item.name} "
+        return f"{self.user} {self.item.name}"
 
 
 class Order(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     ref_code = models.CharField(max_length=20, blank=True, null=True)
-    items = models.ManyToManyField(OrderItem)
-    ordered_date = models.DateTimeField(auto_now_add=True)
+    items = models.ManyToManyField(OrderItem, related_name='item_in_order')
+    ordered_date = models.DateTimeField(blank=True, null=True)
     ordered = models.BooleanField(default=False)
     closed = models.BooleanField(default=False, blank=True, null=True)
     address = models.CharField(max_length=1000, blank=True, null=True)
     coupon = models.ForeignKey('Coupon', on_delete=models.SET_NULL, blank=True, null=True)
+    payment_id = models.CharField(max_length=20, blank=True, null=True)
 
     def __str__(self):
         return f"{self.user.username} order"
 
     def total_price(self):
-        total = 0
+        if self.address:
+            total = 2000
+        else:
+            total = 0
         for order_item in self.items.all():
             total += order_item.get_final_price()
         if self.coupon:
             total -= self.coupon.price
-        return total
+        return int(total)
 
     # def get_paystack_verify_url(self):
     #     return reverse("collection:paystackverify", kwargs={
