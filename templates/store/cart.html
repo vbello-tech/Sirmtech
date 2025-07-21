@@ -142,6 +142,8 @@
 
 {% block body %}
 
+{% if cart_item %}
+
     <div class="container">
         <div class="header">
             <h1>🛒 Your Shopping Cart</h1>
@@ -149,7 +151,7 @@
         </div>
 
         <div class="cart-content">
-            {% if cart_item %}
+
                 {% for item in cart_item.items.all %}
                 <div class="cart-item">
                     <div class="item-info">
@@ -174,19 +176,9 @@
                 Proceed to Payment
             </button>
         </div>
-                </div>
-            {% else %}
-                <div class="empty-cart">
-                    <div class="empty-cart-icon">🛒</div>
-                    <h3>Your cart is empty</h3>
-                    <p>Add some items to get started!</p>
-                </div>
-            {% endif %}
-        </div>
     </div>
 
-
-<script src="https://js.paystack.co/v1/inline.js"></script>
+            <script src="https://js.paystack.co/v1/inline.js"></script>
 
 <script>
     function payWithPayStack() {
@@ -207,5 +199,20 @@
         handler.openIframe();
     }
 </script>
+
+
+
+        </div>
+    </div>
+
+ {% else %}
+
+<div class="empty-cart">
+    <div class="empty-cart-icon">🛒</div>
+    <h3>Your cart is empty</h3>
+    <p>Add some items to get started!</p>
+</div>
+
+{% endif %}
 
 {% endblock body %}
