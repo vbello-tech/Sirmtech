@@ -53,13 +53,14 @@ def get_grade_price(item, grade):
 
 
 # function to add to cart
-@login_required(login_url='user:login')
+# @login_required(login_url='user:login')
 @csrf_protect
 @require_http_methods(["POST"])
 def place_order(request, pk):
     item = get_object_or_404(Item, pk=pk)
 
     # Get form data
+    phone = request.POST.get('phone')
     color = request.POST.get('color')
     size = request.POST.get('size')
     length = request.POST.get('length')
@@ -74,11 +75,12 @@ def place_order(request, pk):
     # Query to check if there's an active order item
     order_item_qs = OrderItem.objects.select_related('item', 'user').filter(
         item=item,
-        user=request.user,
+        # user=request.user,
+        phone=phone,
         ordered=False,
     )
     order_qs = Order.objects.filter(
-        user=request.user,
+        # user=request.user,
         ordered=False,
     )
     if order_item_qs.exists():
@@ -89,7 +91,8 @@ def place_order(request, pk):
         grade_label, price = get_grade_price(item, grade)
         order_item, created = OrderItem.objects.get_or_create(
             item=item,
-            user=request.user,
+            # user=request.user,
+            phone=phone,
             ordered=False,
             colour=color,
             size=size,
@@ -108,22 +111,27 @@ def place_order(request, pk):
         return redirect('store:product', pk=item.pk)
     else:
         order_qs = Order.objects.create(
-            user=request.user, ordered=False, address=address
+            # user=request.user,
+            phone=phone,
+            ordered=False, address=address
         ) if fulfillment == "delivery" else Order.objects.create(
-            user=request.user, ordered=False)
+            # user=request.user,
+            phone=phone,
+            ordered=False)
         order_qs.items.add(order_item)
         messages.success(request, 'Your order has been placed. Proceed to cart to complete order!')
         return redirect('store:product', pk=item.pk)
 
 
-@login_required(login_url='user:login')
+# @login_required(login_url='user:login')
 def update_cart_item(request, pk):
     item = get_object_or_404(Item, pk=pk)
 
     # Prefetch user's cart and its related items
     order = (
         Order.objects
-        .filter(user=request.user, ordered=False)
+        .filter(  # user=request.user,
+            ordered=False)
         .prefetch_related(
             Prefetch('Items', queryset=OrderItem.objects.select_related('item'))
         )
@@ -149,17 +157,18 @@ def update_cart_item(request, pk):
 
 
 # Place order page
-class CompleteOrderView(LoginRequiredMixin, View):
+class CompleteOrderView(View):  # LoginRequiredMixin,
     def get(self, request, pk, *args, **kwargs):
         item = get_object_or_404(Item, pk=pk)
         return render(self.request, 'store/complete_order.html', {'item': item})
 
 
 # VIEW TO DISPLAY ALL AVAILABLE ORDER ITEM THAT THE ORDERED STATUS IS FALSE
-class CartView(LoginRequiredMixin, View):
+class CartView(View):  # LoginRequiredMixin,
     def get(self, *args, **kwargs):
         try:
-            order = Order.objects.get(user=self.request.user, ordered=False)
+            order = Order.objects.get(  # user=self.request.user,
+                ordered=False)
             context = {
                 'cart_item': order,
                 "paystack_public_key": key,

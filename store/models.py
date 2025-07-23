@@ -5,6 +5,7 @@ from django.shortcuts import reverse
 from django.utils import timezone
 from django.conf import settings
 from phonenumber_field.modelfields import PhoneNumberField
+from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
 
@@ -72,7 +73,7 @@ class Item(models.Model):
 
 
 class OrderItem(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    # user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     item = models.ForeignKey('Item', on_delete=models.CASCADE)
     colour = models.CharField(max_length=20, blank=True, null=True)
     length = models.CharField(max_length=20, blank=True, choices=LENGTH_CHOICES, null=True)
@@ -83,6 +84,9 @@ class OrderItem(models.Model):
     marker = models.BooleanField(default=False)
     custom_text = models.CharField(max_length=200, blank=True, null=True)
     ordered = models.BooleanField(default=False)
+    phone = PhoneNumberField(unique=True, error_messages={
+        'unique': _("A user with that phone number already exists."),
+    }, )
 
     def get_total_price(self):
         return (self.quantity * self.price) + 500 if self.marker else (self.quantity * self.price)
@@ -96,11 +100,11 @@ class OrderItem(models.Model):
         return self.get_total_price()
 
     def __str__(self):
-        return f"{self.user} {self.item.name}"
+        return f"{self.phone} - {self.item.name}"
 
 
 class Order(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    # user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     ref_code = models.CharField(max_length=20, blank=True, null=True)
     items = models.ManyToManyField(OrderItem, related_name='item_in_order')
     ordered_date = models.DateTimeField(blank=True, null=True)
@@ -109,9 +113,15 @@ class Order(models.Model):
     address = models.CharField(max_length=1000, blank=True, null=True)
     coupon = models.ForeignKey('Coupon', on_delete=models.SET_NULL, blank=True, null=True)
     payment_id = models.CharField(max_length=20, blank=True, null=True)
+    email = models.CharField(max_length=200, unique=True, verbose_name='email address', error_messages={
+        'unique': _("A user with that email already exists."),
+    }, blank=True, null=True)
+    phone = PhoneNumberField(unique=True, error_messages={
+        'unique': _("A user with that phone number already exists."),
+    }, )
 
     def __str__(self):
-        return f"{self.user.username} order"
+        return f"{self.phone} order"
 
     def total_price(self):
         if self.address:
