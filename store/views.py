@@ -7,13 +7,16 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.utils import timezone
 from django.contrib import messages
 from django.views.decorators.http import require_http_methods
-from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.csrf import csrf_protect, csrf_exempt
 from decimal import Decimal
 from common import common
 from django.core.mail import send_mail
 from django.conf import settings
-
-key = settings.PAYSTACK_PUBLIC_KEY
+from django.template.loader import render_to_string
+from django.http import JsonResponse
+from django.http import HttpResponse
+from phonenumber_field.phonenumber import to_python
+from decouple import config
 
 
 # Create your views here.
@@ -72,11 +75,13 @@ def place_order(request, pk):
     text_option = request.POST.get('textOption')
     custom_text = request.POST.get('customTextInput', '')
 
+    phone_number = to_python(phone)
+
     # Query to check if there's an active order item
     order_item_qs = OrderItem.objects.select_related('item', 'user').filter(
         item=item,
         # user=request.user,
-        phone=phone,
+        phone=phone_number,
         ordered=False,
     )
     order_qs = Order.objects.filter(
@@ -92,7 +97,7 @@ def place_order(request, pk):
         order_item, created = OrderItem.objects.get_or_create(
             item=item,
             # user=request.user,
-            phone=phone,
+            phone=phone_number,
             ordered=False,
             colour=color,
             size=size,
@@ -112,11 +117,11 @@ def place_order(request, pk):
     else:
         order_qs = Order.objects.create(
             # user=request.user,
-            phone=phone,
+            phone=phone_number,
             ordered=False, address=address
         ) if fulfillment == "delivery" else Order.objects.create(
             # user=request.user,
-            phone=phone,
+            phone=phone_number,
             ordered=False)
         order_qs.items.add(order_item)
         messages.success(request, 'Your order has been placed. Proceed to cart to complete order!')
@@ -156,6 +161,27 @@ def update_cart_item(request, pk):
     return redirect('store:product', pk=item.pk)
 
 
+@csrf_exempt
+def cart_by_phone(request):
+    phone = request.GET.get("phone")
+    phone_number = to_python(phone)
+    try:
+        order = Order.objects.get(phone=phone_number, ordered=False)
+        print(order)
+        context = {
+            "cart_item": order,
+            "paystack_public_key": "pk_test_feba4156df35513a5957f20e0ad24bdb65d19284",
+            "ref": common.ref(),
+        }
+    except ObjectDoesNotExist:
+        context = {
+            "paystack_public_key": "pk_test_feba4156df35513a5957f20e0ad24bdb65d19284",
+            "ref": common.ref(),
+        }
+    html = render_to_string("store/cart_phone.html", context, request=request)
+    return HttpResponse(html)
+
+
 # Place order page
 class CompleteOrderView(View):  # LoginRequiredMixin,
     def get(self, request, pk, *args, **kwargs):
@@ -166,17 +192,7 @@ class CompleteOrderView(View):  # LoginRequiredMixin,
 # VIEW TO DISPLAY ALL AVAILABLE ORDER ITEM THAT THE ORDERED STATUS IS FALSE
 class CartView(View):  # LoginRequiredMixin,
     def get(self, *args, **kwargs):
-        try:
-            order = Order.objects.get(  # user=self.request.user,
-                ordered=False)
-            context = {
-                'cart_item': order,
-                "paystack_public_key": key,
-                "ref": common.ref(),
-            }
-            return render(self.request, 'store/cart.html', context)
-        except ObjectDoesNotExist:
-            return render(self.request, 'store/cart.html')
+        return render(self.request, 'store/cart.html')
 
 
 class PaymentVerifyView(View):

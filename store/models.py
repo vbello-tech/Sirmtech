@@ -86,7 +86,7 @@ class OrderItem(models.Model):
     ordered = models.BooleanField(default=False)
     phone = PhoneNumberField(unique=True, error_messages={
         'unique': _("A user with that phone number already exists."),
-    }, )
+    }, blank=True, null=True)
 
     def get_total_price(self):
         return (self.quantity * self.price) + 500 if self.marker else (self.quantity * self.price)
