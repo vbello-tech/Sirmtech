@@ -16,7 +16,6 @@ from django.http import HttpResponse
 from django.template.loader import get_template, render_to_string
 from xhtml2pdf import pisa
 from common import common
-from decouple import config
 
 
 # Create your views here.

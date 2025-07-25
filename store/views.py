@@ -16,8 +16,8 @@ from django.template.loader import render_to_string
 from django.http import JsonResponse
 from django.http import HttpResponse
 from phonenumber_field.phonenumber import to_python
-from decouple import config
 
+key = settings.PAYSTACK_PUBLIC_KEY
 
 # Create your views here.
 
@@ -170,12 +170,12 @@ def cart_by_phone(request):
         print(order)
         context = {
             "cart_item": order,
-            "paystack_public_key": "pk_test_feba4156df35513a5957f20e0ad24bdb65d19284",
+            "paystack_public_key": key,
             "ref": common.ref(),
         }
     except ObjectDoesNotExist:
         context = {
-            "paystack_public_key": "pk_test_feba4156df35513a5957f20e0ad24bdb65d19284",
+            "paystack_public_key": key,
             "ref": common.ref(),
         }
     html = render_to_string("store/cart_phone.html", context, request=request)

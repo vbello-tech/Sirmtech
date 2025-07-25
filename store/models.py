@@ -105,7 +105,6 @@ class OrderItem(models.Model):
 
 class Order(models.Model):
     # user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    ref_code = models.CharField(max_length=20, blank=True, null=True)
     items = models.ManyToManyField(OrderItem, related_name='item_in_order')
     ordered_date = models.DateTimeField(blank=True, null=True)
     ordered = models.BooleanField(default=False)
