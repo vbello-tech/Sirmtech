@@ -339,3 +339,29 @@ html {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+/* Mobile-specific optimizations */
+@media (max-width: 640px) {
+    .mobile-text-adjust {
+        line-height: 1.2;
+        letter-spacing: -0.025em;
+    }
+
+    .mobile-padding {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .mobile-button {
+        min-height: 48px; /* Touch target minimum */
+        font-size: 1rem;
+    }
+}
+
+/* Improved button hover states for mobile */
+@media (hover: hover) and (pointer: fine) {
+    .desktop-hover:hover {
+        transform: scale(1.05);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+}

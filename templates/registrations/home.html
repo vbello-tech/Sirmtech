@@ -7,21 +7,26 @@
 {% block body %}
 
 <!-- Hero Section -->
-<section class="container mx-auto px-6 py-20 text-center animate-fade-in-up">
-    <div class="max-w-4xl mx-auto">
-        <h1 class="text-5xl md:text-5xl font-bold mb-8 text-gradient float-animation">
-            Welcome To<br> SIRMTECH ACADEMIC SOLUTIONS
-        </h1>
-        <p class="text-xl md:text-2xl text-gray-700 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Empowering students, professionals, and businesses with innovative technology solutions, comprehensive educational services, and creative brand development.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <button class="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 focus-ring">
-                Learn More
-            </button>
+    <section class="container mx-auto mobile-padding px-4 sm:px-6 py-12 sm:py-16 md:py-20 text-center animate-fade-in-up">
+        <div class="max-w-4xl mx-auto">
+
+            <h1 class="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 text-gradient float-animation mobile-text-adjust">
+                Welcome To<br class="hidden xs:block">
+                <span class="block xs:inline">SIRMTECH ACADEMIC</span>
+                <span class="block xs:inline">SOLUTIONS</span>
+            </h1>
+
+            <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 mb-8 sm:mb-10 md:mb-12 max-w-2xl mx-auto leading-relaxed px-2 sm:px-0 text-left sm:text-center text-center">
+                Empowering students, professionals, and businesses with innovative technology solutions, comprehensive educational services, and creative brand development.
+            </p>
+
+            <div class="flex justify-center px-4 sm:px-0">
+                <a href="#service" class="inline-block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 focus-ring mobile-button mobile-touch-feedback desktop-hover">
+                    Learn More
+                </a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 <!-- &lt;!&ndash; Services Section &ndash;&gt;-->
 <!-- <section class="relative py-24 overflow-hidden">-->
@@ -115,11 +120,11 @@
 <!--</section>-->
 
     <!-- Services Section -->
-<section class="relative py-24 overflow-hidden">
+<section class="relative py-24 overflow-hidden" id="service">
     <div class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Our Service</h2>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Our Services</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto mb-8"></div>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                     Three comprehensive service categories designed to meet all your educational, technological, and creative needs.
