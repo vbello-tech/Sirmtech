@@ -84,9 +84,7 @@ class OrderItem(models.Model):
     marker = models.BooleanField(default=False)
     custom_text = models.CharField(max_length=200, blank=True, null=True)
     ordered = models.BooleanField(default=False)
-    phone = PhoneNumberField(unique=True, error_messages={
-        'unique': _("A user with that phone number already exists."),
-    }, blank=True, null=True)
+    phone = PhoneNumberField(blank=True, null=True)
 
     def get_total_price(self):
         return (self.quantity * self.price) + 500 if self.marker else (self.quantity * self.price)
@@ -112,12 +110,8 @@ class Order(models.Model):
     address = models.CharField(max_length=1000, blank=True, null=True)
     coupon = models.ForeignKey('Coupon', on_delete=models.SET_NULL, blank=True, null=True)
     payment_id = models.CharField(max_length=20, blank=True, null=True)
-    email = models.CharField(max_length=200, unique=True, verbose_name='email address', error_messages={
-        'unique': _("A user with that email already exists."),
-    }, blank=True, null=True)
-    phone = PhoneNumberField(unique=True, error_messages={
-        'unique': _("A user with that phone number already exists."),
-    }, )
+    email = models.CharField(max_length=200, verbose_name='email address', blank=True, null=True)
+    phone = PhoneNumberField()
 
     def __str__(self):
         return f"{self.phone} order"

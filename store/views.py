@@ -108,7 +108,6 @@ def place_order(request, pk):
             grade=grade_label,
             quantity=pieces,
             marker=add_marker,
-            email=email,
             custom_text=custom_text if text_option == "custom" else None
         )
     if order_qs:
@@ -216,6 +215,9 @@ class PaymentVerifyView(View):
                     order.payment_id = ref
                     order.ordered_date = timezone.now()
                     order.save()
+                    for item in order.items.all:
+                        item.ordered = True
+                        item.save()
                     # subject = "NYSC Registration Confirmation"
                     # html_message = render_to_string('nysc/order.html', {'order': order})
                     # plain_message = strip_tags(html_message)
