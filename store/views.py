@@ -171,7 +171,7 @@ def cart_by_phone(request):
     countryCode = request.GET.get('countryCode')
     phone = request.GET.get('phoneNumber')
     phone_number = to_python(countryCode + phone)
-    print(countryCode, phone, phone_number)
+
     try:
         order = Order.objects.get(phone=phone_number, ordered=False)
         # print(order, countryCode, phone, phone_number)
