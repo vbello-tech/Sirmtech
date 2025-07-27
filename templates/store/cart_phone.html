@@ -1,7 +1,5 @@
-<div class="cart-content" id="cart-section">
+
 {% if cart_item %}
-
-
 
             {% for item in cart_item.items.all %}
             <div class="cart-item">
@@ -22,11 +20,16 @@
                     <span>Total:</span>
                     <span>${{ cart_item.total_price }}</span>
                 </div>
+
                  <div class="mt-6 flex justify-center">
                     <button onclick="payWithPayStack()" class="px-8 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500">
                         Proceed to Payment
                     </button>
                 </div>
+
+                 <p class="text-xs text-gray-500 mt-1 text-center">
+                    An email will be sent to {{ cart_item.email }} when your payment is successful
+                </p>
             </div>
 
             <script src="https://js.paystack.co/v1/inline.js"></script>
@@ -38,7 +41,7 @@
                 let ref = "{{ ref }}";
                 let obj = {
                     key: "{{ paystack_public_key }}",
-                    email: "olatope@gmail.com",
+                    email: "{{ cart_item.email }}",
                     amount: {{ cart_item.total_price }} * 100,
                     ref: ref,
                     callback: function(response) {
@@ -61,4 +64,3 @@
     </div>
 
 {% endif %}
-</div>

@@ -63,7 +63,9 @@ def place_order(request, pk):
     item = get_object_or_404(Item, pk=pk)
 
     # Get form data
-    phone = request.POST.get('phone')
+    countryCode = request.POST.get('countryCode')
+    email = request.POST.get('email')
+    phone = request.POST.get('phoneNumber')
     color = request.POST.get('color')
     size = request.POST.get('size')
     length = request.POST.get('length')
@@ -75,7 +77,7 @@ def place_order(request, pk):
     text_option = request.POST.get('textOption')
     custom_text = request.POST.get('customTextInput', '')
 
-    phone_number = to_python(phone)
+    phone_number = to_python(countryCode + phone)
 
     # Query to check if there's an active order item
     order_item_qs = OrderItem.objects.select_related('item', 'user').filter(
@@ -106,6 +108,7 @@ def place_order(request, pk):
             grade=grade_label,
             quantity=pieces,
             marker=add_marker,
+            email=email,
             custom_text=custom_text if text_option == "custom" else None
         )
     if order_qs:
@@ -118,10 +121,12 @@ def place_order(request, pk):
         order_qs = Order.objects.create(
             # user=request.user,
             phone=phone_number,
+            email=email,
             ordered=False, address=address
         ) if fulfillment == "delivery" else Order.objects.create(
             # user=request.user,
             phone=phone_number,
+            email=email,
             ordered=False)
         order_qs.items.add(order_item)
         messages.success(request, 'Your order has been placed. Proceed to cart to complete order!')
@@ -163,11 +168,13 @@ def update_cart_item(request, pk):
 
 @csrf_exempt
 def cart_by_phone(request):
-    phone = request.GET.get("phone")
-    phone_number = to_python(phone)
+    countryCode = request.GET.get('countryCode')
+    phone = request.GET.get('phoneNumber')
+    phone_number = to_python(countryCode + phone)
+    print(countryCode, phone, phone_number)
     try:
         order = Order.objects.get(phone=phone_number, ordered=False)
-        print(order)
+        # print(order, countryCode, phone, phone_number)
         context = {
             "cart_item": order,
             "paystack_public_key": key,
