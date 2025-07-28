@@ -332,7 +332,7 @@
         25% { transform: translateX(-5px); }
         75% { transform: translateX(5px); }
     }
-    /* Custom styles for image upload */
+     /* Custom styles for image upload */
         .upload-area {
             transition: all 0.3s ease;
             cursor: pointer;
@@ -556,6 +556,15 @@
                         </div>
                     </div>
 
+                    <!-- Error Message -->
+                    <div id="errorMessage" class="hidden mt-2 p-3 bg-red-50 border border-red-200 rounded-lg">
+                        <div class="flex items-center text-red-700 text-sm">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span id="errorText"></span>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Country Code and Phone Number -->
@@ -658,122 +667,122 @@
 </script>
 
 <script>
-    // image upload script
+    // upload image script
 
-        const uploadArea = document.getElementById('uploadArea');
-        const fileInput = document.getElementById('imageUpload');
-        const imagePreview = document.getElementById('imagePreview');
-        const previewImage = document.getElementById('previewImage');
-        const fileName = document.getElementById('fileName');
-        const fileSize = document.getElementById('fileSize');
-        const removeButton = document.getElementById('removeImage');
-        const errorMessage = document.getElementById('errorMessage');
-        const errorText = document.getElementById('errorText');
+    const uploadArea = document.getElementById('uploadArea');
+    const fileInput = document.getElementById('imageUpload');
+    const imagePreview = document.getElementById('imagePreview');
+    const previewImage = document.getElementById('previewImage');
+    const fileName = document.getElementById('fileName');
+    const fileSize = document.getElementById('fileSize');
+    const removeButton = document.getElementById('removeImage');
+    const errorMessage = document.getElementById('errorMessage');
+    const errorText = document.getElementById('errorText');
 
-        // Maximum file size (5MB)
-        const MAX_FILE_SIZE = 5 * 1024 * 1024;
+    // Maximum file size (5MB)
+    const MAX_FILE_SIZE = 5 * 1024 * 1024;
 
-        // Click to upload
-        uploadArea.addEventListener('click', () => {
-            fileInput.click();
-        });
+    // Click to upload
+    uploadArea.addEventListener('click', () => {
+        fileInput.click();
+    });
 
-        // Drag and drop functionality
-        uploadArea.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            uploadArea.classList.add('dragover');
-        });
+    // Drag and drop functionality
+    uploadArea.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        uploadArea.classList.add('dragover');
+    });
 
-        uploadArea.addEventListener('dragleave', () => {
-            uploadArea.classList.remove('dragover');
-        });
+    uploadArea.addEventListener('dragleave', () => {
+        uploadArea.classList.remove('dragover');
+    });
 
-        uploadArea.addEventListener('drop', (e) => {
-            e.preventDefault();
-            uploadArea.classList.remove('dragover');
+    uploadArea.addEventListener('drop', (e) => {
+        e.preventDefault();
+        uploadArea.classList.remove('dragover');
 
-            const files = e.dataTransfer.files;
-            if (files.length > 0) {
-                handleFile(files[0]);
-            }
-        });
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
+            handleFile(files[0]);
+        }
+    });
 
-        // File input change
-        fileInput.addEventListener('change', (e) => {
-            if (e.target.files.length > 0) {
-                handleFile(e.target.files[0]);
-            }
-        });
+    // File input change
+    fileInput.addEventListener('change', (e) => {
+        if (e.target.files.length > 0) {
+            handleFile(e.target.files[0]);
+        }
+    });
 
-        // Remove image
-        removeButton.addEventListener('click', (e) => {
-            e.stopPropagation();
-            clearImage();
-        });
+    // Remove image
+    removeButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        clearImage();
+    });
 
-        function handleFile(file) {
-            // Hide any previous errors
-            hideError();
+    function handleFile(file) {
+        // Hide any previous errors
+        hideError();
 
-            // Validate file type
-            if (!file.type.startsWith('image/')) {
-                showError('Please select a valid image file (JPG, PNG, GIF)');
-                return;
-            }
-
-            // Validate file size
-            if (file.size > MAX_FILE_SIZE) {
-                showError('File size must be less than 5MB');
-                return;
-            }
-
-            // Create file reader
-            const reader = new FileReader();
-
-            reader.onload = (e) => {
-                // Display preview
-                previewImage.src = e.target.result;
-                fileName.textContent = file.name;
-                fileSize.textContent = ` (${formatFileSize(file.size)})`;
-
-                // Show preview, hide upload area
-                imagePreview.classList.remove('hidden');
-                uploadArea.style.display = 'none';
-            };
-
-            reader.readAsDataURL(file);
+        // Validate file type
+        if (!file.type.startsWith('image/')) {
+            showError('Please select a valid image file (JPG, PNG, GIF)');
+            return;
         }
 
-        function clearImage() {
-            // Clear preview
-            previewImage.src = '';
-            fileName.textContent = '';
-            fileSize.textContent = '';
-            fileInput.value = '';
-
-            // Show upload area, hide preview
-            imagePreview.classList.add('hidden');
-            uploadArea.style.display = 'block';
-
-            hideError();
+        // Validate file size
+        if (file.size > MAX_FILE_SIZE) {
+            showError('File size must be less than 5MB');
+            return;
         }
 
-        function showError(message) {
-            errorText.textContent = message;
-            errorMessage.classList.remove('hidden');
-        }
+        // Create file reader
+        const reader = new FileReader();
 
-        function hideError() {
-            errorMessage.classList.add('hidden');
-        }
+        reader.onload = (e) => {
+            // Display preview
+            previewImage.src = e.target.result;
+            fileName.textContent = file.name;
+            fileSize.textContent = ` (${formatFileSize(file.size)})`;
 
-        function formatFileSize(bytes) {
-            if (bytes === 0) return '0 Bytes';
-            const k = 1024;
-            const sizes = ['Bytes', 'KB', 'MB'];
-            const i = Math.floor(Math.log(bytes) / Math.log(k));
-            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
-        }
-    </script>
+            // Show preview, hide upload area
+            imagePreview.classList.remove('hidden');
+            uploadArea.style.display = 'none';
+        };
+
+        reader.readAsDataURL(file);
+    }
+
+    function clearImage() {
+        // Clear preview
+        previewImage.src = '';
+        fileName.textContent = '';
+        fileSize.textContent = '';
+        fileInput.value = '';
+
+        // Show upload area, hide preview
+        imagePreview.classList.add('hidden');
+        uploadArea.style.display = 'block';
+
+        hideError();
+    }
+
+    function showError(message) {
+        errorText.textContent = message;
+        errorMessage.classList.remove('hidden');
+    }
+
+    function hideError() {
+        errorMessage.classList.add('hidden');
+    }
+
+    function formatFileSize(bytes) {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const sizes = ['Bytes', 'KB', 'MB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+</script>
 
 {% endblock body %}

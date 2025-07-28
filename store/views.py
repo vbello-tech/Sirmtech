@@ -77,7 +77,7 @@ def place_order(request, pk):
     text_option = request.POST.get('textOption')
     custom_text = request.POST.get('customTextInput', '')
     note = request.POST.get('note')
-    imageUpload = request.POST.get('imageUpload')
+    image = request.FILES.get('imageUpload')
 
     phone_number = to_python(countryCode + phone)
 
@@ -111,7 +111,7 @@ def place_order(request, pk):
             quantity=pieces,
             marker=add_marker,
             note=note,
-            sample=imageUpload,
+            sample=image,
             custom_text=custom_text if text_option == "custom" else None
         )
     if order_qs:
@@ -219,7 +219,7 @@ class PaymentVerifyView(View):
                     order.payment_id = ref
                     order.ordered_date = timezone.now()
                     order.save()
-                    for item in order.items.all:
+                    for item in order.items.all():
                         item.ordered = True
                         item.save()
                     # subject = "NYSC Registration Confirmation"
