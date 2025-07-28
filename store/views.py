@@ -76,6 +76,8 @@ def place_order(request, pk):
     address = request.POST.get('address', '')
     text_option = request.POST.get('textOption')
     custom_text = request.POST.get('customTextInput', '')
+    note = request.POST.get('note')
+    imageUpload = request.POST.get('imageUpload')
 
     phone_number = to_python(countryCode + phone)
 
@@ -108,6 +110,8 @@ def place_order(request, pk):
             grade=grade_label,
             quantity=pieces,
             marker=add_marker,
+            note=note,
+            sample=imageUpload,
             custom_text=custom_text if text_option == "custom" else None
         )
     if order_qs:

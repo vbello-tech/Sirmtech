@@ -53,6 +53,8 @@ THIRD_PARTY_APPS = [
     'gunicorn',
     'whitenoise',
     'corsheaders',
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS

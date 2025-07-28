@@ -31,7 +31,6 @@ DATABASES = {
 # }
 
 # storage settings
-
 STORAGES = {
     "default": {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
@@ -40,6 +39,7 @@ STORAGES = {
         "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
     },
 }
+
 
 # mail
 

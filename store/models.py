@@ -84,7 +84,9 @@ class OrderItem(models.Model):
     marker = models.BooleanField(default=False)
     custom_text = models.CharField(max_length=200, blank=True, null=True)
     ordered = models.BooleanField(default=False)
+    note = models.CharField(max_length=100, blank=True, null=True)
     phone = PhoneNumberField(blank=True, null=True)
+    sample = models.ImageField(upload_to='Prototype/', blank=True, null=True)
 
     def get_total_price(self):
         return (self.quantity * self.price) + 500 if self.marker else (self.quantity * self.price)

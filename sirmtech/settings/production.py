@@ -35,6 +35,25 @@ DATABASES = {
 #     },
 # }
 
+# cloudinary api key
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': config('CLOUD_NAME'),
+    'API_KEY': config('API_KEY'),
+    'API_SECRET': config('API_SECRET'),
+}
+
+# storage settings
+STORAGES = {
+    "default": {
+        "BACKEND": 'cloudinary_storage.storage.MediaCloudinaryStorage',
+        # "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        # "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+}
+
 # Email
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = "smtp.gmail.com"
