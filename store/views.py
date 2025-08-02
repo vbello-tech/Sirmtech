@@ -227,7 +227,7 @@ class PaymentVerifyView(View):
                     # plain_message = strip_tags(html_message)
                     # send_mail(subject, plain_message, 'vbellotech@gmail.com', [order.email],
                     #           html_message=html_message)
-                    messages.success(self.request, "Your booking was successful. We will send an email to the email "
+                    messages.success(self.request, "Your order was successful. We will send an email to the email "
                                                    "address provided.")
                     return redirect("/")
                 except ObjectDoesNotExist:
