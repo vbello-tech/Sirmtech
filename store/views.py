@@ -82,24 +82,20 @@ def place_order(request, pk):
     phone_number = to_python(countryCode + phone)
 
     # Query to check if there's an active order item
-    order_item_qs = OrderItem.objects.get(
-        item=item,
-        # user=request.user,
-        phone=phone_number,
-        ordered=False,
-    )
-    order_qs = Order.objects.get(
-        # user=request.user,
-        ordered=False,
-        phone=phone_number,
-    )
-    if order_item_qs.exists():
-        messages.success(request, 'You have an active order for this product')
-        return redirect('store:product', pk=item.pk)
-    else:
+    try:
+        order_item_qs = OrderItem.objects.get(
+            item=item,
+            # user=request.user,
+            phone=phone_number,
+            ordered=False,
+        )
+        if order_item_qs:
+            messages.success(request, 'You have an active order for this product')
+            return redirect('store:product', pk=item.pk)
+    except ObjectDoesNotExist:
         # create order for item.
         grade_label, price = get_grade_price(item, grade)
-        order_item, created = OrderItem.objects.create(
+        order_item = OrderItem.objects.create(
             item=item,
             # user=request.user,
             phone=phone_number,
@@ -115,15 +111,21 @@ def place_order(request, pk):
             sample=image,
             custom_text=custom_text if text_option == "custom" else None
         )
-    if order_qs:
-        order_qs.items.add(order_item)
-        if fulfillment == "delivery":
-            order_qs.address = address
-        order_qs.save()
-        messages.success(request, 'Your order has been placed. Proceed to cart to complete order!')
-        return redirect('store:product', pk=item.pk)
-    else:
-        order_qs = Order.objects.create(
+    try:
+        order_qs = Order.objects.get(
+            # user=request.user,
+            ordered=False,
+            phone=phone_number,
+        )
+        if order_qs:
+            order_qs.items.add(order_item)
+            if fulfillment == "delivery":
+                order_qs.address = address
+            order_qs.save()
+            messages.success(request, 'Your order has been placed. Proceed to cart to complete order!')
+            return redirect('store:product', pk=item.pk)
+    except ObjectDoesNotExist:
+        order = Order.objects.create(
             # user=request.user,
             phone=phone_number,
             email=email,
@@ -133,8 +135,8 @@ def place_order(request, pk):
             phone=phone_number,
             email=email,
             ordered=False)
-        order_qs.items.add(order_item)
-        order_qs.save()
+        order.items.add(order_item)
+        order.save()
         messages.success(request, 'Your order has been placed. Proceed to cart to complete order!')
         return redirect('store:product', pk=item.pk)
 

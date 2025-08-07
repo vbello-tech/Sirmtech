@@ -108,6 +108,11 @@
                        role="menuitem">
                         NYSC
                     </a>
+                    <a href="{% url 'store:cart' %}"
+                       class="nav-transition hover:text-blue-200 focus-visible:focus px-3 py-2 rounded-md text-white"
+                       role="menuitem">
+                        CART
+                    </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -147,6 +152,11 @@
                    class="block px-6 py-3 hover:bg-blue-800 nav-transition focus-visible:focus text-white"
                    role="menuitem">
                     NYSC
+                </a>
+                <a href="{% url 'store:cart' %}"
+                   class="block px-6 py-3 hover:bg-blue-800 nav-transition focus-visible:focus text-white"
+                   role="menuitem">
+                    CART
                 </a>
             </div>
         </div>
