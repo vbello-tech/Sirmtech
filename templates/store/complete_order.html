@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %} Product Detail {% endblock title %}
+{% block title %} Complete Order {% endblock title %}
 
 {% load crispy_forms_tags %}
 
@@ -392,7 +392,7 @@
                         <label for="color">Color *</label>
                         <select id="color" name="color" required>
                             <option value="">Select Color</option>
-                            <option value="red">Red</option>
+                            <option value="red">Black</option>
                             <option value="white">White</option>
                         </select>
                     </div>
@@ -419,6 +419,9 @@
                             <option value="SHORT SLEEVE">SHORT SLEEVE</option>
                             <option value="LONG SLEEVE">LONG SLEEVE</option>
                         </select>
+                        <p class="text-xs text-gray-500 mt-1">
+                            LONG SLEEVE are unavailable for Round Neck Shirts
+                        </p>
                     </div>
 
                     <!--   grade of order    -->
@@ -426,30 +429,38 @@
                         <label for="grade">Quality Grade *</label>
                         <select id="grade" name="grade" required>
                             <option value="">Select Grade</option>
+                            {% if item.C_price %}<option value="C">Grade C (₦{{ item.C_price }})</option>{% endif %}
+                            {% if item.B_price %}<option value="B">Grade B (₦{{ item.B_price }})</option>{% endif %}
                             <option value="A">Grade A (₦{{ item.A_price }})</option>
-                            <option value="B">Grade B (₦{{ item.B_price }})</option>
-                            <option value="C">Grade C (₦{{ item.C_price }}</option>
                         </select>
                     </div>
                 </div>
 
+                <div class="form-row">
                 <!--   number of items to order    -->
-                <div class="form-group">
-                    <label for="pieces">Number of Pieces *</label>
-                    <input type="number" id="pieces" name="pieces" min="1" value="1" required>
-                </div>
+                    <div class="form-group">
+                        <label for="pieces">Number of Pieces *</label>
+                        <input type="number" id="pieces" name="pieces" min="1" value="1" required>
+                    </div>
 
-                <!--   add marker to order    -->
-                <div class="form-group">
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="addMarker" name="addMarker">
-                        <label for="addMarker">Add marker to order (+ #500)</label>
+                    <!--   add marker to order    -->
+                    <div class="form-group">
+                        <br>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="addMarker" name="addMarker">
+                            <label for="addMarker">Add marker to order (+ #500)</label>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">
+                        </p>
                     </div>
                 </div>
 
                 <!--   customize or not customize   -->
                 <div class="form-group">
                     <label>Text Option *</label>
+                    <p class="text-xs text-gray-500 mt-1">
+                        For Not customize, Our default text will be used on your order
+                    </p>
                     <div class="radio-group">
                         <div class="radio-option">
                             <input type="radio" id="defaultText" name="textOption" value="default" required>
@@ -598,18 +609,35 @@
                     </div>
                 </div>
 
+                <div class="form-row">
                 <!--   email     -->
-                <div class="form-group">
-                    <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
-                        Email Address *
-                    </label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        class="form-input mobile-input w-full px-4 py-3 border border-gray-300 rounded-xl bg-white/70 placeholder-gray-400 text-gray-900"
-                        placeholder="your.email@example.com"
-                    >
+                    <div class="form-group">
+                        <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                            Email Address *
+                        </label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            class="form-input mobile-input w-full px-4 py-3 border border-gray-300 rounded-xl bg-white/70 placeholder-gray-400 text-gray-900"
+                            placeholder="your.email@example.com"
+                        >
+                    </div>
+
+                    <!---     name ----->
+                    <div class="form-group">
+                        <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                            Name *
+                        </label>
+                        <input
+                            type="text"
+                            id="customer"
+                            name="customer"
+                            required
+                            class="form-input mobile-input w-full px-4 py-3 border border-gray-300 rounded-xl bg-white/70 placeholder-gray-400 text-gray-900"
+                            placeholder="Enter your name"
+                        >
+                    </div>
                 </div>
 
                 <button type="submit" class="submit-btn">Place Order</button>

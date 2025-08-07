@@ -78,6 +78,7 @@ def place_order(request, pk):
     custom_text = request.POST.get('customTextInput', '')
     note = request.POST.get('note')
     image = request.FILES.get('imageUpload')
+    customer = request.POST.get('customer')
 
     phone_number = to_python(countryCode + phone)
 
@@ -85,7 +86,6 @@ def place_order(request, pk):
     try:
         order_item_qs = OrderItem.objects.get(
             item=item,
-            # user=request.user,
             phone=phone_number,
             ordered=False,
         )
@@ -113,7 +113,6 @@ def place_order(request, pk):
         )
     try:
         order_qs = Order.objects.get(
-            # user=request.user,
             ordered=False,
             phone=phone_number,
         )
@@ -126,12 +125,12 @@ def place_order(request, pk):
             return redirect('store:product', pk=item.pk)
     except ObjectDoesNotExist:
         order = Order.objects.create(
-            # user=request.user,
+            customer=customer,
             phone=phone_number,
             email=email,
             ordered=False, address=address
         ) if fulfillment == "delivery" else Order.objects.create(
-            # user=request.user,
+            customer=customer,
             phone=phone_number,
             email=email,
             ordered=False)

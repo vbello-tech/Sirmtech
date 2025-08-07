@@ -37,7 +37,15 @@
                     {% endif %}
                 </p>
                 <div class="flex items-center justify-between">
-                    <span class="text-2xl font-bold" style="color: #2980b9;">₦{{ item.A_price }} - ₦{{ item.C_price }}</span>
+                    <span class="text-2xl font-bold" style="color: #2980b9;">
+                       {% if item.C_price %}
+                        ₦{{ item.C_price }} - ₦{{ item.A_price }}
+                        {% elif not item.C_price and item.B_price %}
+                        ₦{{ item.B_price }} - ₦{{ item.A_price }}
+                        {% else %}
+                        ₦{{ item.A_price }}
+                        {% endif %}
+                    </span>
                 </div>
             </div>
         </div>
