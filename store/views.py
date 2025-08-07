@@ -82,15 +82,16 @@ def place_order(request, pk):
     phone_number = to_python(countryCode + phone)
 
     # Query to check if there's an active order item
-    order_item_qs = OrderItem.objects.select_related('item', 'user').filter(
+    order_item_qs = OrderItem.objects.get(
         item=item,
         # user=request.user,
         phone=phone_number,
         ordered=False,
     )
-    order_qs = Order.objects.filter(
+    order_qs = Order.objects.get(
         # user=request.user,
         ordered=False,
+        phone=phone_number,
     )
     if order_item_qs.exists():
         messages.success(request, 'You have an active order for this product')
@@ -98,7 +99,7 @@ def place_order(request, pk):
     else:
         # create order for item.
         grade_label, price = get_grade_price(item, grade)
-        order_item, created = OrderItem.objects.get_or_create(
+        order_item, created = OrderItem.objects.create(
             item=item,
             # user=request.user,
             phone=phone_number,
@@ -116,7 +117,8 @@ def place_order(request, pk):
         )
     if order_qs:
         order_qs.items.add(order_item)
-        order_qs.address = address
+        if fulfillment == "delivery":
+            order_qs.address = address
         order_qs.save()
         messages.success(request, 'Your order has been placed. Proceed to cart to complete order!')
         return redirect('store:product', pk=item.pk)
@@ -132,6 +134,7 @@ def place_order(request, pk):
             email=email,
             ordered=False)
         order_qs.items.add(order_item)
+        order_qs.save()
         messages.success(request, 'Your order has been placed. Proceed to cart to complete order!')
         return redirect('store:product', pk=item.pk)
 
