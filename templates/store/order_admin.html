@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Order Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes slideOut {
+            from { opacity: 1; transform: translateX(0); }
+            to { opacity: 0; transform: translateX(100%); }
+        }
+
+        @keyframes statusChange {
+            0% { background-color: #fef3c7; }
+            50% { background-color: #f3f4f6; }
+            100% { background-color: #f9fafb; }
+        }
+
+        .slide-out {
+            animation: slideOut 0.5s ease-in-out forwards;
+        }
+
+        .status-change {
+            animation: statusChange 1s ease-in-out;
+        }
+
+        .status-badge {
+            transition: all 0.3s ease;
+        }
+
+        .order-row {
+            transition: all 0.3s ease;
+        }
+
+        .order-row:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .success-flash {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            animation: slideInRight 0.3s ease-out, slideOutRight 0.3s ease-in 2.7s forwards;
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideOutRight {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-lg border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-6">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">Order Management</h1>
+                    <p class="text-gray-600 mt-1">Manage and process customer orders</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="bg-blue-50 px-4 py-2 rounded-lg">
+                        <span class="text-sm font-medium text-blue-700">Total Orders: </span>
+                        <span id="totalOrders" class="text-lg font-bold text-blue-900">12</span>
+                    </div>
+                    <div class="bg-green-50 px-4 py-2 rounded-lg">
+                        <span class="text-sm font-medium text-green-700">Active: </span>
+                        <span id="activeOrders" class="text-lg font-bold text-green-900">8</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Filters -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-8">
+            <div class="flex flex-wrap gap-4 items-center">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Filter by Status</label>
+                    <select id="statusFilter" class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="all">All Orders</option>
+                        <option value="pending">Pending</option>
+                        <option value="processing">Processing</option>
+                        <option value="paid">Paid</option>
+                        <option value="closed">Closed</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Search Orders</label>
+                    <input type="text" id="searchInput" placeholder="Search by order ID or customer..."
+                           class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-64">
+                </div>
+                <div class="ml-auto">
+                    <button onclick="refreshOrders()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200">
+                        Refresh Orders
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Orders Table -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead class="bg-gray-50 border-b border-gray-200">
+                        <tr>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Order ID</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Items</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ordersTableBody" class="divide-y divide-gray-200">
+                        <!-- Orders will be inserted here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="hidden text-center py-16">
+            <div class="text-gray-400 text-6xl mb-4">📦</div>
+            <h3 class="text-lg font-medium text-gray-900 mb-2">No orders found</h3>
+            <p class="text-gray-600">No orders match your current filters.</p>
+        </div>
+    </main>
+
+    <!-- Close Order Modal -->
+    <div id="closeOrderModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-xl p-6 max-w-md w-mx-4 shadow-xl">
+            <h3 class="text-lg font-medium text-gray-900 mb-4">Close Order</h3>
+            <p class="text-gray-600 mb-6">Are you sure you want to close order <span id="closeOrderId" class="font-mono font-semibold"></span>? This action cannot be undone.</p>
+            <div class="flex space-x-3">
+                <button id="confirmCloseBtn" onclick="confirmCloseOrder()" class="flex-1 bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-lg font-medium transition-colors duration-200">
+                    Close Order
+                </button>
+                <button onclick="cancelCloseOrder()" class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-700 py-2 px-4 rounded-lg font-medium transition-colors duration-200">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Orders data will be provided by Django template
+        let orders = {{ orders|safe }};
+
+        let orderToClose = null;
+
+        function showSuccessMessage(message) {
+            // Remove any existing success messages
+            const existingMessage = document.querySelector('.success-flash');
+            if (existingMessage) {
+                existingMessage.remove();
+            }
+
+            // Create and show new success message
+            const successDiv = document.createElement('div');
+            successDiv.className = 'success-flash bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg';
+            successDiv.innerHTML = `
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    ${message}
+                </div>
+            `;
+            document.body.appendChild(successDiv);
+
+            // Remove the message after 3 seconds
+            setTimeout(() => {
+                if (successDiv.parentNode) {
+                    successDiv.remove();
+                }
+            }, 3000);
+        }
+
+        function getStatusBadge(order) {
+            let status = 'pending';
+            if (order.closed) {
+                status = 'closed';
+            } else if (order.ordered) {
+                status = order.payment_id ? 'paid' : 'processing';
+            }
+
+            const statusClasses = {
+                'pending': 'bg-yellow-100 text-yellow-800',
+                'processing': 'bg-blue-100 text-blue-800',
+                'paid': 'bg-green-100 text-green-800',
+                'closed': 'bg-gray-100 text-gray-800'
+            };
+
+            return `<span class="status-badge px-3 py-1 rounded-full text-xs font-medium ${statusClasses[status] || 'bg-gray-100 text-gray-800'}">${status.charAt(0).toUpperCase() + status.slice(1)}</span>`;
+        }
+
+        function calculateTotal(order) {
+            // Total comes from Django's total_price() method
+            return order.total_price || 0;
+        }
+
+        function getOrderStatus(order) {
+            if (order.closed) return 'closed';
+            if (order.ordered) return order.payment_id ? 'paid' : 'processing';
+            return 'pending';
+        }
+
+        function updateOrderStatusInUI(orderId) {
+            const orderRow = document.querySelector(`[data-order-id="${orderId}"]`);
+            if (orderRow) {
+                // Add visual feedback for the status change
+                orderRow.classList.add('status-change');
+
+                // Update the status badge
+                const statusCell = orderRow.querySelector('.status-badge').parentElement;
+                const order = orders.find(o => o.id == orderId);
+                if (order) {
+                    statusCell.innerHTML = getStatusBadge(order);
+                }
+
+                // Update the actions cell
+                const actionsCell = orderRow.querySelector('td:last-child');
+                actionsCell.innerHTML = '<span class="text-gray-400 text-sm">Order Closed</span>';
+
+                // Remove the animation class after animation completes
+                setTimeout(() => {
+                    orderRow.classList.remove('status-change');
+                }, 1000);
+            }
+        }
+
+        function renderOrders(ordersToRender = orders) {
+            const tbody = document.getElementById('ordersTableBody');
+            const emptyState = document.getElementById('emptyState');
+
+            if (ordersToRender.length === 0) {
+                tbody.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+
+            tbody.innerHTML = ordersToRender.map(order => {
+                const total = calculateTotal(order);
+                const totalQuantity = order.items ? order.items.length : 0;
+                const itemsList = order.items_display || 'No items'; // This should come from Django
+                const orderStatus = getOrderStatus(order);
+                const customerName = order.customer || order.email || 'Unknown Customer';
+                const orderDate = order.ordered_date ? new Date(order.ordered_date).toLocaleDateString() : 'Not ordered';
+
+                return `
+                    <tr class="order-row bg-white hover:bg-gray-50" data-order-id="${order.id}">
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm font-mono font-medium text-gray-900">ORD-${order.id}</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm font-medium text-gray-900">${customerName}</div>
+                            ${order.email && order.customer ? `<div class="text-xs text-gray-500">${order.email}</div>` : ''}
+                            ${order.phone ? `<div class="text-xs text-gray-500">${order.phone}</div>` : ''}
+                        </td>
+                        <td class="px-6 py-4">
+                            <div class="text-sm text-gray-900 max-w-xs truncate" title="${itemsList}">${itemsList}</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm font-medium text-gray-900">${total.toFixed(2)}</div>
+                            ${order.coupon ? `<div class="text-xs text-green-600">Coupon Applied</div>` : ''}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            ${getStatusBadge(order)}
+                            ${order.payment_id ? `<div class="text-xs text-gray-500 mt-1">ID: ${order.payment_id}</div>` : ''}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm text-gray-500">${orderDate}</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            ${!order.closed ?
+                                `<button onclick="showCloseOrderModal('${order.id}')"
+                                    class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
+                                    Close Order
+                                </button>` :
+                                `<span class="text-gray-400 text-sm">Order Closed</span>`
+                            }
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+
+            updateCounters();
+        }
+
+        function updateCounters() {
+            const totalOrders = orders.length;
+            const activeOrders = orders.filter(order => !order.closed).length;
+
+            document.getElementById('totalOrders').textContent = totalOrders;
+            document.getElementById('activeOrders').textContent = activeOrders;
+        }
+
+        function showCloseOrderModal(orderId) {
+            orderToClose = orderId;
+            document.getElementById('closeOrderId').textContent = `ORD-${orderId}`;
+            document.getElementById('closeOrderModal').classList.remove('hidden');
+        }
+
+        function cancelCloseOrder() {
+            orderToClose = null;
+            document.getElementById('closeOrderModal').classList.add('hidden');
+        }
+
+        function confirmCloseOrder() {
+            if (!orderToClose) return;
+
+            // Show loading state on button
+            const confirmBtn = document.getElementById('confirmCloseBtn');
+            const originalText = confirmBtn.innerHTML;
+            confirmBtn.innerHTML = `
+                <div class="flex items-center justify-center">
+                    <div class="animate-spin w-4 h-4 border-2 border-white border-t-transparent rounded-full mr-2"></div>
+                    Closing...
+                </div>
+            `;
+            confirmBtn.disabled = true;
+
+            // Build the URL using the solution from the original question
+            const orderId = orderToClose;
+            const closeOrderUrl = "{% url 'store:close_order' 0 %}".replace('0', orderId);
+
+            fetch(closeOrderUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCookie('csrftoken'),
+                },
+                body: JSON.stringify({
+                    'order_id': orderToClose
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Update order status locally for immediate UI feedback
+                    const orderIndex = orders.findIndex(order => order.id == orderToClose);
+                    if (orderIndex !== -1) {
+                        orders[orderIndex].closed = true;
+
+                        // Show success message
+                        showSuccessMessage(`Order ORD-${orderToClose} has been successfully closed`);
+
+                        // Update the UI immediately
+                        updateOrderStatusInUI(orderToClose);
+
+                        // Update counters
+                        updateCounters();
+
+                        // If the current filter doesn't show closed orders, re-render to remove it
+                        const currentFilter = document.getElementById('statusFilter').value;
+                        if (currentFilter !== 'all' && currentFilter !== 'closed') {
+                            setTimeout(() => {
+                                renderOrders(getFilteredOrders());
+                            }, 1500); // Give time to see the status change animation
+                        }
+                    }
+                } else {
+                    alert('Error closing order: ' + (data.message || 'Unknown error'));
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error closing order. Please try again.');
+            })
+            .finally(() => {
+                // Reset button state
+                confirmBtn.innerHTML = originalText;
+                confirmBtn.disabled = false;
+                cancelCloseOrder();
+            });
+        }
+
+        // Function to get CSRF token
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        function getFilteredOrders() {
+            const statusFilter = document.getElementById('statusFilter').value;
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+            return orders.filter(order => {
+                const orderStatus = getOrderStatus(order);
+                const matchesStatus = statusFilter === 'all' || orderStatus === statusFilter;
+
+                const customerName = order.customer || order.email || '';
+                const orderId = `ORD-${order.id}`;
+                const matchesSearch = !searchTerm ||
+                    orderId.toLowerCase().includes(searchTerm) ||
+                    customerName.toLowerCase().includes(searchTerm) ||
+                    (order.items_display && order.items_display.toLowerCase().includes(searchTerm));
+
+                return matchesStatus && matchesSearch;
+            });
+        }
+
+        function refreshOrders() {
+            // Show loading state
+            document.getElementById('ordersTableBody').innerHTML = `
+                <tr><td colspan="7" class="text-center py-8">
+                    <div class="animate-spin inline-block w-6 h-6 border-2 border-blue-600 border-t-transparent rounded-full"></div>
+                    <span class="ml-2">Loading orders...</span>
+                </td></tr>
+            `;
+
+            // Fetch fresh data from Django
+            const refreshOrderUrl = "{% url 'store:refresh_order'  %}";
+
+            fetch(refreshOrderUrl, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCookie('csrftoken'),
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    orders = data.orders;
+                    renderOrders(getFilteredOrders());
+                    showSuccessMessage('Orders refreshed successfully');
+                } else {
+                    alert('Error refreshing orders: ' + data.message);
+                    renderOrders(getFilteredOrders());
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error refreshing orders. Showing cached data.');
+                renderOrders(getFilteredOrders());
+            });
+        }
+
+        // Event listeners
+        document.getElementById('statusFilter').addEventListener('change', () => {
+            renderOrders(getFilteredOrders());
+        });
+
+        document.getElementById('searchInput').addEventListener('input', () => {
+            renderOrders(getFilteredOrders());
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('closeOrderModal').addEventListener('click', (e) => {
+            if (e.target.id === 'closeOrderModal') {
+                cancelCloseOrder();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !document.getElementById('closeOrderModal').classList.contains('hidden')) {
+                cancelCloseOrder();
+            }
+        });
+
+        // Initial render
+        renderOrders();
+    </script>
+</body>
+</html>

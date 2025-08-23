@@ -1,3 +1,5 @@
+import json
+
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import CreateView, View, ListView, DetailView
 from .models import Item, Coupon, Order, OrderItem
@@ -6,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
 from django.utils import timezone
 from django.contrib import messages
-from django.views.decorators.http import require_http_methods
+from django.views.decorators.http import require_http_methods, require_POST
 from django.views.decorators.csrf import csrf_protect, csrf_exempt
 from decimal import Decimal
 from common import common
@@ -239,3 +241,54 @@ class PaymentVerifyView(View):
                     return redirect("/")
         else:
             messages.error(request, 'Your payment could not be verified')
+
+
+# admin page for order.
+def admin_orders_view(request):
+    orders = []
+    for order in Order.objects.all().prefetch_related('items'):
+        # Calculate items display string
+        items_display = ", ".join([
+            f"{item.item.name} ({item.quantity})"
+            for item in order.items.all()
+        ])
+
+        orders.append({
+            'id': order.id,
+            'customer': order.customer,
+            'email': order.email,
+            'phone': str(order.phone) if order.phone else None,
+            'items_display': items_display,
+            'total_price': order.total_price(),  # Uses your model method
+            'ordered': order.ordered,
+            'closed': order.closed,
+            'ordered_date': order.ordered_date.isoformat() if order.ordered_date else None,
+            'payment_id': order.payment_id,
+            'address': order.address,
+        })
+
+    return render(request, 'store/order_admin.html', {
+        'orders': json.dumps(orders, default=str)
+    })
+
+
+@require_POST
+def close_order_view(request, order_id):
+    try:
+        order = Order.objects.get(id=order_id)
+        if order.payment_id:
+            order.closed = True
+            order.save()
+            return JsonResponse({'success': True})
+        else:
+            return JsonResponse({'success': False, 'message': 'Payment has not been made for this Order'})
+    except Order.DoesNotExist:
+        return JsonResponse({'success': False, 'message': 'Order not found'})
+
+
+def refresh_orders_view(request):
+    orders = Order.objects.all().values()
+    return JsonResponse({
+        'success': True,
+        'orders': list(orders)
+    }, json_dumps_params={'default': str})
