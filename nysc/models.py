@@ -10,17 +10,23 @@ p_p = 1000
 m_p = 1500
 c_m_p = 500
 
-BatchNumber = [
+StreamNumber = [
     ('1', '1'),
     ('2', '2'),
     ('3', '3'),
+]
+
+BatchNumber = [
+    ('A', 'A'),
+    ('B', 'B'),
+    ('C', 'C'),
 ]
 
 
 class Batch(models.Model):
     year = models.CharField(max_length=4)
     batch = models.CharField(max_length=2, choices=BatchNumber, blank=True, null=True)
-    stream = models.CharField(max_length=2, choices=BatchNumber, blank=True, null=True)
+    stream = models.CharField(max_length=2, choices=StreamNumber, blank=True, null=True)
     last_no = models.IntegerField(default=0)
 
 

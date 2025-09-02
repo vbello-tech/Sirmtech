@@ -65,7 +65,7 @@ class PaymentView(View):
 def code():
     batch = Batch.objects.order_by('year').first()
     slot = batch.last_no + 1
-    code = f"N{batch.year[2:]}-B{batch.batch}-S{batch.stream}-{slot}"
+    code = f"N{batch.year[2:]}-{batch.batch}({batch.stream})-{slot}"
     batch.last_no = slot
     batch.save()
     return code
@@ -86,7 +86,7 @@ class PaymentVerifyView(View):
                     order.payment_id = ref
                     order.save()
                     subject = "NYSC Registration Confirmation"
-                    html_message = render_to_string('nysc/order.html', {'order': order})
+                    html_message = render_to_string('nysc/order.html', {'order': order, 'batch': Batch.objects.order_by('year').first()})
                     plain_message = strip_tags(html_message)
                     send_mail(subject, plain_message, 'vbellotech@gmail.com', [order.email],
                               html_message=html_message)
