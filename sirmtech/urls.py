@@ -14,8 +14,8 @@ urlpatterns = [
 ]
 
 
-# handler404 = 'Users.views.handler404'
-# handler500 = 'Users.views.handler500'
+handler404 = 'accounts.views.handler404'
+handler500 = 'accounts.views.handler500'
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 if settings.DEBUG:
