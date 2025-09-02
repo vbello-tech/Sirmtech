@@ -8,6 +8,8 @@ django.utils.encoding.force_text = force_str
 
 # settings for development server.
 
+DEBUG = True
+
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 

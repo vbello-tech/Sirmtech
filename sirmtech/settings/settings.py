@@ -17,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG')
+# DEBUG = config('DEBUG')
 
 ALLOWED_HOSTS = [
     'ayomidebello.pythonanywhere.com',
@@ -26,7 +26,6 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'sirmtech.fly.dev',
 ]
-
 
 # Application definition
 
