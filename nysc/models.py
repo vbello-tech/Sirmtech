@@ -47,9 +47,6 @@ class Nysc(models.Model):
         help_text="Enter a valid email address",
         null=False,  # Ensure database doesn't allow null
         blank=False,  # Ensure form validation requires this field
-        unique=True, error_messages={
-            'unique': "A user with that username already exists.",
-        },
     )
     capturing = models.BooleanField(
         default=False,

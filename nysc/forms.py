@@ -66,3 +66,5 @@ class NyscForm(forms.ModelForm):
             for name, field in self.fields.items():
                 if field.required:
                     field.label = f'{field.label} <span style="color:red;">*</span>'
+
+

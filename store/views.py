@@ -231,7 +231,7 @@ class PaymentVerifyView(View):
                     # subject = "NYSC Registration Confirmation"
                     # html_message = render_to_string('nysc/order.html', {'order': order})
                     # plain_message = strip_tags(html_message)
-                    # send_mail(subject, plain_message, 'vbellotech@gmail.com', [order.email],
+                    # send_mail(subject, plain_message, common.sender, [order.email],
                     #           html_message=html_message)
                     messages.success(self.request, "Your order was successful. We will send an email to the email "
                                                    "address provided.")
