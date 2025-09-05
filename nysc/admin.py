@@ -9,4 +9,4 @@ admin.site.register(Batch)
 
 @admin.register(Nysc)
 class OrderItemAdmin(admin.ModelAdmin):
-    list_display = ['first_name', 'slot', 'payment_status', ]
+    list_display = ['first_name', 'email', 'slot', 'payment_status', ]

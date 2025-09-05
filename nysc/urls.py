@@ -3,7 +3,7 @@ URL configuration for nysc app.
 """
 
 from django.urls import path
-from .views import NyscView, PaymentView, PaymentVerifyView, GeneratePdf, SlotPreviewView, edit_booking
+from .views import NyscView, PaymentView, PaymentVerifyView, GeneratePdf, SlotPreviewView, edit_booking, SendEmailView
 
 app_name = "nysc"
 
@@ -14,4 +14,5 @@ urlpatterns = [
     path('slot/preview/<int:pk>/', SlotPreviewView.as_view(), name="preview"),
     path('slot/edit/<int:pk>/', edit_booking, name="edit"),
     path('slot/generate-pdf/<int:pk>/', GeneratePdf.as_view(), name="generate_pdf"),
+    path('send-email/', SendEmailView.as_view(), name="send_email"),
 ]

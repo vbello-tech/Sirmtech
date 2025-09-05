@@ -141,3 +141,28 @@ class GeneratePdf(View, LoginRequiredMixin):
             response['Content-disposition'] = content
             return response
         return HttpResponse("Not Found")
+
+
+class SendEmailView(View):
+    def get(self, request, *args, **kwargs):
+        context = {
+            'form': NyscForm(request.POST)
+        }
+        return render(request, 'nysc/send_email.html', context)
+
+    def post(self, request, *args, **kwargs):
+        email = request.POST.get('email')
+        code = request.POST.get('code')
+        order = Nysc.objects.filter(email=email).first()
+        order.slot = code
+        order.save()
+        if request.method == "POST":
+            form = NyscForm(request.POST)
+            subject = "NYSC Registration Confirmation"
+            html_message = render_to_string('nysc/order.html',
+                                            {'order': order, 'batch': Batch.objects.order_by('year').first()})
+            plain_message = strip_tags(html_message)
+            send_mail(subject, plain_message, common.sender, [order.email],
+                      html_message=html_message)
+            messages.success(self.request, "Email sent successfully")
+            return redirect("nysc:send_email")
