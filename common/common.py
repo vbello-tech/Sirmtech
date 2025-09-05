@@ -7,6 +7,8 @@ from django.conf import settings
 
 key = settings.PAYSTACK_PUBLIC_KEY
 
+sender = settings.EMAIL_HOST_USER
+
 
 def ref():
     return ''.join(random.choices(string.ascii_lowercase + string.digits, k=10))

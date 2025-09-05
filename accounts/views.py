@@ -17,7 +17,7 @@ class CatalogueView(View):
 # handle 404 error
 def handler404(request, exception):
     context = {"<h1>PAGE NOT FOUND!! ARE YOU SURE YOU ARE NAVIGATING TO THE RIGHT PAGE?</h1>"}
-    response = render(request, "templates/404.html", context)
+    response = render(request, "registrations/404.html", context)
     response.status_code = 404
     return response
 
@@ -25,6 +25,6 @@ def handler404(request, exception):
 # handle 500 error
 def handler500(request):
     context = {"<h1>OOPS !!! <br> SEVER ERROR!!! <br> </h1>"}
-    response = render(request, "templates/500.html", context)
+    response = render(request, "registrations/500.html", context)
     response.status_code = 500
     return response
